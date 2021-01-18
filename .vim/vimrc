@@ -1,0 +1,75 @@
+" General configs
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set colorcolumn=110
+set encoding=utf-8
+set expandtab
+set autoindent
+set mouse=a
+set hidden
+set nowrap
+set exrc
+set secure
+syntax on
+set number
+highlight LineNr ctermfg=darkgray
+
+" ex sudo in vim 
+cmap w!! w !sudo tee > /dev/null %
+
+
+" Ask to make directory if does not exist
+augroup vimrc-auto-mkdir
+    autocmd!
+    autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
+    function! s:auto_mkdir(dir, force)
+        if !isdirectory(a:dir)
+            \ && (a:force
+            \ || input("'" . a:dir . "' does not exist. Create? [y/N]") =~? '^y\%[es]$')
+
+            call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
+        endif
+    endfunction
+augroup END
+
+
+" Toggle paste mode with F3
+set pastetoggle=<F3>
+
+
+" Plugins
+call plug#begin()
+Plug 'preservim/NERDTree'
+Plug 'mgutz/gosu-colors'
+Plug 'arcticicestudio/nord-vim'
+Plug 'valloric/YouCompleteMe'
+call plug#end()
+
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR> | :let NERDTreeWinSize = 15 | :wincmd w
+
+
+" Word Processor mode
+func! WordProcessorMode()
+	setlocal textwidth=80
+	setlocal smartindent
+	setlocal spell spelllang=en_us
+	setlocal noexpandtab
+endfu
+com! WP call WordProcessorMode()
+
+
+" Python formatting
+au BufNewFile,BufRead *.py
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+
+" C/C++ configs
+nnoremap <F4> :make!<cr>
+
