@@ -1,0 +1,31 @@
+# Ingore all
+*
+
+# Except these files
+!.bashrc
+!.gitignore
+
+!.vim/
+.vim/*
+!.vim/vimrc
+
+!.config/
+.config/*
+!.config/sway/
+.config/sway/*
+!.config/sway/config
+
+!.config/waybar/
+.config/waybar/*
+!.config/waybar/config
+!.config/waybar/style.css
+
+!.swaylock/
+.swaylock/*
+!.swaylock/config
+
+!Scripts/
+Scripts/*
+!Scripts/Bash
+Scripts/Bash/*
+!Scripts/Bash/start_webenv.sh
