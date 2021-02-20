@@ -21,10 +21,17 @@
    
     # Window colors
     # Class                 border  Backgr  Text    indicator   child_border
-    client.focused          #000000 #a0a0c5 #a0a0c5 #efeff5     #a0a0c5
-    client.unfocused        #003d99 #003d99 #003d99 #003d99     #003d99
-    client.focused_inactive #003d99 #003d99 #003d99 #003d99     #003d99
+    client.unfocused        #000000 #909099 #909095 #efeff5     #909099
+    client.focused          #4080bf #4080bf #003d99 #003d99     #4080bf
+    client.focused_inactive #4080bf #4080bf #003d99 #003d99     #4080bf
     client.urgent           #33ccff #33ccff #33ccff #33ccff     #33ccff
+
+#    # Window colors 1
+#    # Class                 border  Backgr  Text    indicator   child_border
+#    client.focused          #000000 #a0a0a9 #a0a0c5 #efeff5     #a0a0a9
+#    client.unfocused        #003d99 #003d99 #003d99 #003d99     #003d99
+#    client.focused_inactive #003d99 #003d99 #003d99 #003d99     #003d99
+#    client.urgent           #33ccff #33ccff #33ccff #33ccff     #33ccff
 
 	# Gaps
 	gaps inner 10
@@ -34,8 +41,8 @@
 
 ### Idle configuration
 exec swayidle -w \
-    timeout 600 'swaylock -f -C /home/dg/.swaylock/config' \
-    timeout 660 'systemctl suspend' \
+    timeout 720 'swaylock -f -C /home/dg/.swaylock/config' \
+    timeout 900 'systemctl suspend' \
         resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f -C /home/dg/.swaylock/config'
 
