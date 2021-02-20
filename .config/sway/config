@@ -1,7 +1,6 @@
 ### Sway Configuration
 
 ### Variables
-	# Logo key. Use Mod1 for Alt.
 	set $mod Mod4
 
 	# Home row direction keys, like vim
@@ -22,8 +21,7 @@
     # Window colors
     # Class                 border  Backgr  Text    indicator   child_border
     client.unfocused        #000000 #909099 #909095 #efeff5     #909099
-    client.focused          #4080bf #4080bf #003d99 #003d99     #4080bf
-    client.focused_inactive #4080bf #4080bf #003d99 #003d99     #4080bf
+    client.focused          #4080bf #4080bf #003d99 #b0b0b9     #4080bf
     client.urgent           #33ccff #33ccff #33ccff #33ccff     #33ccff
 
 #    # Window colors 1
