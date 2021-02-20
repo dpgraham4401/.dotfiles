@@ -15,6 +15,10 @@
 .config/sway/*
 !.config/sway/config
 
+!.config/kitty/
+.config/kitty/*
+!.config/kitty/kitty.conf
+
 !.config/waybar/
 .config/waybar/*
 !.config/waybar/config
