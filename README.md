@@ -12,7 +12,7 @@
 10. light
 
 
-`dnf install sway swaylock swayidle waybar wev kitty firefox-wayland`
+`dnf install sway swaylock swayidle waybar wev kitty firefox-wayland wofi light playerctl`
 
 ### Packages for vim
 1. YouCompleteMe
