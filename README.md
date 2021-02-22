@@ -11,9 +11,11 @@
 9. playerctl
 10. light
 11. gammastep
+12. pavucontrol
 
 
-`dnf install sway swaylock swayidle waybar wev kitty firefox-wayland wofi light playerctl`
+`dnf install sway swaylock swayidle waybar wev kitty firefox-wayland wofi light`
+`dnf install playerctl pavucontrol`
 
 ### Packages for vim
 1. YouCompleteMe
