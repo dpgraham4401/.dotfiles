@@ -12,6 +12,6 @@
 `dnf install sway swaylock swayidle waybar wev kitty firefox-wayland`
 
 ### Packages for vim
-1. ouCompleteMe
+1. YouCompleteMe
 2. NerdTree
 3. gosu-colors
