@@ -5,8 +5,11 @@
 3. swayidle
 4. waybar
 5. wev
-6. kitty
-7. firefox-wayland
+6. wofi
+7. kitty
+8. firefox-wayland
+9. playerctl
+10. light
 
 
 `dnf install sway swaylock swayidle waybar wev kitty firefox-wayland`
