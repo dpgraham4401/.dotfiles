@@ -10,6 +10,7 @@
 8. firefox-wayland
 9. playerctl
 10. light
+11. gammastep
 
 
 `dnf install sway swaylock swayidle waybar wev kitty firefox-wayland wofi light playerctl`
