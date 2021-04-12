@@ -17,3 +17,4 @@ export PATH
 
 # User specific aliases and functions
 export PS1="\e[1;32m\u\e[1;33m@\e[1;32m\h \W\$ \e[37m"
+alias ssh="kitty +kitten ssh"

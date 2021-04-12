@@ -15,21 +15,16 @@
 ### Apperance
 
 	# Wallpaper
-	#output * bg /usr/share/backgrounds/images/fedora-splat-2560x1600.jpg fill
-	output * bg /usr/share/backgrounds/images/scr950.jpg fill 
+	output * bg /usr/share/backgrounds/images/fedora_rustic_2560x1440.jpg fill
+
+    focus_wrapping no
    
     # Window colors
     # Class                 border  Backgr  Text    indicator   child_border
-    client.unfocused        #000000 #909099 #909095 #efeff5     #909099
-    client.focused          #4080bf #4080bf #003d99 #b0b0b9     #4080bf
+    client.focused          #000000 #c0c0cc #c0c0cc #c0c0cc     #efeff5
+    #client.focused         #000000 #909099 #909095 #efeff5     #909099
+    client.unfocused        #4080bf #4080bf #003d99 #b0b0b9     #4080bf
     client.urgent           #33ccff #33ccff #33ccff #33ccff     #33ccff
-
-#    # Window colors 1
-#    # Class                 border  Backgr  Text    indicator   child_border
-#    client.focused          #000000 #a0a0a9 #a0a0c5 #efeff5     #a0a0a9
-#    client.unfocused        #003d99 #003d99 #003d99 #003d99     #003d99
-#    client.focused_inactive #003d99 #003d99 #003d99 #003d99     #003d99
-#    client.urgent           #33ccff #33ccff #33ccff #33ccff     #33ccff
 
 	# Gaps
 	gaps inner 10
@@ -39,8 +34,8 @@
 
 ### Idle configuration
 exec swayidle -w \
-    timeout 720 'swaylock -f -C /home/dg/.swaylock/config' \
-    timeout 900 'systemctl suspend' \
+    timeout 900 'swaylock -f -C /home/dg/.swaylock/config' \
+    timeout 1020 'systemctl suspend' \
         resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f -C /home/dg/.swaylock/config'
 
@@ -77,11 +72,12 @@ exec swayidle -w \
     bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit'
 
 ### Applications shortcuts 
 	# Launcher
 	bindsym XF86LaunchB exec --no-startup-id wofi --show drun -I -i 
+	bindsym $mod+Space exec --no-startup-id wofi --show drun -I -i 
 
 	# Start a terminal
     bindsym $mod+Return exec $term
@@ -190,6 +186,7 @@ bar {
 	exec CLUTTER_BACKEND=wayland
 	exec --no-startup-id gammastep -t 5000:2500
 	#exec --no-startup-id nm-applet
+    Xwayland enable
 
 	#include /etc/sway/config.d/*
 
