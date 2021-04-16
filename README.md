@@ -15,7 +15,7 @@
 13. grim
 
 #### Sway essentials
-`$ sudo dnf install sway swaylock swayidle waybar wev wofi`
+`$ sudo dnf install sway swaylock swayidle waybar wev`
 
 #### Audio Control
 `$ sudo dnf install playerctl pavucontrol`
@@ -27,7 +27,7 @@
 `$ sudo dnf install kitty`
 
 #### Wayland Specific Applicatin/utilities
-`$ sudo dnf install firefox-wayland grim slurp`
+`$ sudo dnf install wofi firefox-wayland grim slurp`
 
 
 ### Packages for vim
