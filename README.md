@@ -1,5 +1,5 @@
 # dotfiles-sway
-### Fedora ackages for Sway
+### Fedora packages for Sway tiling window manager
 1. sway
 2. swaylock
 3. swayidle
@@ -15,19 +15,19 @@
 13. grim
 
 #### Sway essentials
-`dnf install sway swaylock swayidle waybar wev wofi`
+`$ sudo dnf install sway swaylock swayidle waybar wev wofi`
 
 #### Audio Control
-`dnf install playerctl pavucontrol`
+`$ sudo dnf install playerctl pavucontrol`
 
 #### Backlight Control
-`dnf install light gammastep`
+`$ sudo dnf install light gammastep`
 
 #### Terminal Emulator
-`dnf install kitty`
+`$ sudo dnf install kitty`
 
-#### Wayland Specific Applicatin
-`dnf install firefox-wayland grim`
+#### Wayland Specific Applicatin/utilities
+`$ sudo dnf install firefox-wayland grim slurp`
 
 
 ### Packages for vim
