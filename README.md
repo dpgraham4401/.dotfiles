@@ -12,10 +12,23 @@
 10. light
 11. gammastep
 12. pavucontrol
+13. grim
 
+#### Sway essentials
+`dnf install sway swaylock swayidle waybar wev wofi`
 
-`dnf install sway swaylock swayidle waybar wev kitty firefox-wayland wofi light`
+#### Audio Control
 `dnf install playerctl pavucontrol`
+
+#### Backlight Control
+`dnf install light gammastep`
+
+#### Terminal Emulator
+`dnf install kitty`
+
+#### Wayland Specific Applicatin
+`dnf install firefox-wayland grim`
+
 
 ### Packages for vim
 1. YouCompleteMe
