@@ -205,3 +205,4 @@ output HDMI-A-1 {
 	resolution 1920x1080
 	pos 1600 0
 }
+

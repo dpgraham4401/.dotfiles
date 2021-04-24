@@ -45,6 +45,7 @@ Plug 'preservim/NERDTree'
 Plug 'mgutz/gosu-colors'
 Plug 'arcticicestudio/nord-vim'
 Plug 'valloric/YouCompleteMe'
+Plug 'tmsvg/pear-tree'
 call plug#end()
 
 
@@ -69,8 +70,7 @@ au BufNewFile,BufRead *.py
     \ set textwidth=79 |
     \ set expandtab |
     \ set autoindent |
-    \ set fileformat=unix
+    \ set fileformat=unix``
 
 " C/C++ configs
 nnoremap <F4> :make!<cr>
-
