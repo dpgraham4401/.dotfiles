@@ -46,6 +46,7 @@ Plug 'mgutz/gosu-colors'
 Plug 'arcticicestudio/nord-vim'
 Plug 'valloric/YouCompleteMe'
 Plug 'tmsvg/pear-tree'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 
@@ -62,6 +63,10 @@ func! WordProcessorMode()
 endfu
 com! WP call WordProcessorMode()
 
+au BufNewFile,BufRead *.js
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set tabstop=2
 
 " Python formatting
 au BufNewFile,BufRead *.py
