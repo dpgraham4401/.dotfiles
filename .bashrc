@@ -16,7 +16,7 @@ export PATH
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-export PS1="\e[1;32m\u\e[1;33m@\e[1;32m\h \W\$ \e[37m"
+export PS1="\[\033[1;32m\]\u@\[\033[1;34m\]\W\[\033[1;34m\] \$\[\033[0m\] "
 alias ssh="kitty +kitten ssh"
 
 export GDK_DPI_SCALE=1.6
