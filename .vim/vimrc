@@ -1,3 +1,4 @@
+" DG's vim config file, Hell Yeah Brother!
 " General configs
 colorscheme desert
 set tabstop=4
@@ -12,6 +13,7 @@ set hidden
 set nowrap
 set exrc
 set secure
+set nohlsearch 
 syntax on
 set number
 highlight LineNr ctermfg=darkgray
@@ -34,10 +36,8 @@ augroup vimrc-auto-mkdir
     endfunction
 augroup END
 
-
 " Toggle paste mode with F3
 set pastetoggle=<F3>
-
 
 " Plugins
 call plug#begin()
@@ -49,10 +49,20 @@ Plug 'tmsvg/pear-tree'
 Plug 'dense-analysis/ale'
 call plug#end()
 
+" Visual block
+noremap X <c-v>
+
+" save file
+map <C-s> :w<CR>
+
+" save and exit
+map <C-x> :x<CR>
+
+" exit
+map <C-q> :q<CR>
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR> | :let NERDTreeWinSize = 15 | :wincmd w
-
 
 " Word Processor mode
 func! WordProcessorMode()
@@ -64,6 +74,11 @@ endfu
 com! WP call WordProcessorMode()
 
 au BufNewFile,BufRead *.js
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set tabstop=2
+
+au BufNewFile,BufRead *.json
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
     \ set tabstop=2
