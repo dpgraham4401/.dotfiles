@@ -9,16 +9,18 @@
 7. kitty
 8. firefox-wayland
 9. playerctl
-10. light
-11. gammastep
-12. pavucontrol
-13. grim
+10. pactl
+11. pavucontrol
+12. light (or brightnessctl)
+13. gammastep
+14. grim
+15. slurp
 
 #### Sway essentials
 `$ sudo dnf install sway swaylock swayidle waybar wev`
 
 #### Audio Control
-`$ sudo dnf install playerctl pavucontrol`
+`$ sudo dnf install pactl playerctl pavucontrol`
 
 #### Backlight Control
 `$ sudo dnf install light gammastep`
@@ -31,6 +33,7 @@
 
 
 ### Packages for vim
-1. YouCompleteMe
-2. NerdTree
-3. gosu-colors
+1. YouCompleteMe  &rarr; autocompletion
+2. NerdTree       &rarr; file explorer
+3. ale            &rarr; eslint and syntax checking
+4. pear-tree      &rarr; auto pair ()""{} and such
