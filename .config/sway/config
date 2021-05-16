@@ -64,7 +64,6 @@ exec swayidle -w \
     # Screenshot
     bindsym XF86LaunchA exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
 
-
     # Kill focused window
     bindsym $mod+Shift+q kill
 
@@ -193,8 +192,6 @@ bar {
 	exec --no-startup-id gammastep -t 5000:2500
 	#exec --no-startup-id nm-applet
     Xwayland enable
-
-	#include /etc/sway/config.d/*
 
 ### Input/Output devices
 input type:touchpad {
