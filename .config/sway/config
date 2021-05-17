@@ -15,7 +15,7 @@
 ### Apperance
 
 	# Wallpaper
-	output * bg /usr/share/backgrounds/images/fedora_rustic_2560x1440.jpg fill
+	output * bg /usr/share/backgrounds/images/default.png fill
 
     focus_wrapping no
    

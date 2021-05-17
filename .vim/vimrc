@@ -1,6 +1,6 @@
 " DG's vim config file, Hell Yeah Brother!
 " General configs
-colorscheme desert
+colorscheme desert 
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -21,7 +21,6 @@ highlight LineNr ctermfg=darkgray
 " ex sudo in vim 
 cmap w!! w !sudo tee > /dev/null %
 
-
 " Ask to make directory if does not exist
 augroup vimrc-auto-mkdir
     autocmd!
@@ -36,13 +35,9 @@ augroup vimrc-auto-mkdir
     endfunction
 augroup END
 
-" Toggle paste mode with F3
-set pastetoggle=<F3>
-
 " Plugins
 call plug#begin()
 Plug 'preservim/NERDTree'
-Plug 'mgutz/gosu-colors'
 Plug 'arcticicestudio/nord-vim'
 Plug 'valloric/YouCompleteMe'
 Plug 'tmsvg/pear-tree'
@@ -60,6 +55,9 @@ map <C-x> :x<CR>
 
 " exit
 map <C-q> :q<CR>
+
+" copy
+xnoremap <silent> <C-C> :w !wl-copy<CR><CR>
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR> | :let NERDTreeWinSize = 15 | :wincmd w
