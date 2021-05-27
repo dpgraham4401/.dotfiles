@@ -1,7 +1,7 @@
 ### Sway Configuration
 
 ### Variables
-	set $mod Mod4
+	set $mod Mod1
 
 	# Home row direction keys, like vim
 	set $left h
@@ -10,18 +10,19 @@
 	set $right l
 
 	# Preferred terminal emulator
-	set $term kitty
+	set $term kitty 
 
 ### Apperance
 
 	# Wallpaper
-	#output * bg /usr/share/backgrounds/images/fedora-splat-2560x1600.jpg fill
-	output * bg /usr/share/backgrounds/images/scr950.jpg fill 
+	output * bg /usr/share/backgrounds/fedorasplat_2560x1600.jpg fill
+
+    focus_wrapping no
    
     # Window colors
     # Class                 border  Backgr  Text    indicator   child_border
-    client.unfocused        #000000 #909099 #909095 #efeff5     #909099
-    client.focused          #4080bf #4080bf #003d99 #b0b0b9     #4080bf
+    client.focused          #ffffff #ffffff #ffffff #0066ff     #ffffff
+    client.unfocused        #4080bf #4080bf #4080bf #4080bf     #4080bf
     client.urgent           #33ccff #33ccff #33ccff #33ccff     #33ccff
 
 #    # Window colors 1
@@ -39,26 +40,32 @@
 
 ### Idle configuration
 exec swayidle -w \
-    timeout 720 'swaylock -f -C /home/dg/.swaylock/config' \
-    timeout 900 'systemctl suspend' \
+    timeout 1200 'swaylock -f -C /home/dg/.config/swaylock/config' \
+    timeout 2700 'systemctl suspend' \
         resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock -f -C /home/dg/.swaylock/config'
+    before-sleep 'swaylock -f -C /home/dg/.config/swaylock/config'
 
 ### Key bindings
 	
     ## Volume
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
-	bindsym XF86AudioMute exec pactl set-sink-mute  $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+	bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
    
 	# Media playerctl  
 	bindsym XF86AudioNext exec playerctl next
 	bindsym XF86AudioPrev exec playerctl previous
 	bindsym XF86AudioPlay exec playerctl play-pause
 
+    # Calculator
+    bindsym XF86Calculator exec gnome-calculator
+
 	# Backlight
 	bindsym XF86MonBrightnessUp exec light -A 2
 	bindsym XF86MonBrightnessDown exec light -U 2
+
+    # Screenshot
+    bindsym print exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
 
     # Leds
     bindsym XF86KbdBrightnessUp exec light -A 5 -s sysfs/leds/smc::kbd_backlight
@@ -77,11 +84,11 @@ exec swayidle -w \
     bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
 ### Applications shortcuts 
 	# Launcher
-	bindsym XF86LaunchB exec --no-startup-id wofi --show drun -I -i 
+	bindsym $mod+space exec --no-startup-id wofi --show run --style='/home/dg/.config/wofi/wofi.css'
 
 	# Start a terminal
     bindsym $mod+Return exec $term
@@ -188,23 +195,20 @@ bar {
 ### Startup commands
 	exec GDK_BACKEND=wayland
 	exec CLUTTER_BACKEND=wayland
-	exec --no-startup-id gammastep -t 5000:2500
+	exec --no-startup-id gammastep -t 5000:2700
 	#exec --no-startup-id nm-applet
 
-	#include /etc/sway/config.d/*
+### Startup Applications
+    exec --no-startup-id swaymsg 'Workspace 2:  ; exec /var/lib/snapd/snap/bin/spotify'
+    exec --no-startup-id swaymsg 'workspace 1; exec /usr/bin/kitty'
+    exec --no-startup-id swaymsg 'workspace 1; exec /usr/bin/firefox-wayland'
 
 ### Input/Output devices
-input type:touchpad {
-    tap enabled
-}
-
-output eDP-1 {
-	resolution 2560x1600
-	scale 1.6
-	pos 0 0
-}
-
 output HDMI-A-1 {
 	resolution 1920x1080
 	pos 1600 0
+}
+
+input "Logitech MX Keys" {
+xkb_layout br
 }

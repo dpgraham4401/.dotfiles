@@ -12,13 +12,15 @@ set hidden
 set nowrap
 set exrc
 set secure
-syntax on
+syntax on 
+filetype on
 set number
+set belloff=all
+set completeopt-=preview
 highlight LineNr ctermfg=darkgray
 
 " ex sudo in vim 
 cmap w!! w !sudo tee > /dev/null %
-
 
 " Ask to make directory if does not exist
 augroup vimrc-auto-mkdir
@@ -27,30 +29,42 @@ augroup vimrc-auto-mkdir
     function! s:auto_mkdir(dir, force)
         if !isdirectory(a:dir)
             \ && (a:force
-            \ || input("'" . a:dir . "' does not exist. Create? [y/N]") =~? '^y\%[es]$')
+            \ || input("'" . a:dir . "' does not exist. Create? [y/n]") =~? '^y\%[es]$')
 
             call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
         endif
     endfunction
 augroup END
 
-
-" Toggle paste mode with F3
-set pastetoggle=<F3>
-
-
 " Plugins
 call plug#begin()
 Plug 'preservim/NERDTree'
-Plug 'mgutz/gosu-colors'
-Plug 'arcticicestudio/nord-vim'
 Plug 'valloric/YouCompleteMe'
+Plug 'tmsvg/pear-tree'
+Plug 'dense-analysis/ale'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
+" Visual block
+noremap X <c-v>
+
+" save file
+map <C-s> :w<CR>
+
+" exit
+map <C-q> :q<CR>
+
+" copy
+xnoremap <silent> <C-C> :w !wl-copy<CR><CR>
+
+" move around splits
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR> | :let NERDTreeWinSize = 15 | :wincmd w
-
 
 " Word Processor mode
 func! WordProcessorMode()
@@ -61,16 +75,28 @@ func! WordProcessorMode()
 endfu
 com! WP call WordProcessorMode()
 
-
 " Python formatting
 au BufNewFile,BufRead *.py
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
     \ set textwidth=79 |
-    \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
+
+au BufNewFile,BufRead *.js
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set tabstop=2
+
+au BufNewFile,BufRead *.json
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set tabstop=2
 
 " C/C++ configs
 nnoremap <F4> :make!<cr>
 
+let g:ale_linters = {
+        \   'python': ['pylint'],
+        \   'javascript': ['eslint'],
+        \}
