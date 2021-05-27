@@ -1,3 +1,4 @@
+" DG's vim config file, Hell Yeah Brother!
 " General configs
 colorscheme desert
 set tabstop=4
@@ -14,6 +15,7 @@ set exrc
 set secure
 syntax on 
 filetype on
+set nohlsearch 
 set number
 set belloff=all
 set completeopt-=preview
@@ -54,9 +56,6 @@ map <C-s> :w<CR>
 " exit
 map <C-q> :q<CR>
 
-" copy
-xnoremap <silent> <C-C> :w !wl-copy<CR><CR>
-
 " move around splits
 map <c-j> <c-w>j
 map <c-k> <c-w>k
@@ -81,7 +80,7 @@ au BufNewFile,BufRead *.py
     \ set shiftwidth=4 |
     \ set textwidth=79 |
     \ set autoindent |
-    \ set fileformat=unix
+    \ set fileformat=unix``
 
 au BufNewFile,BufRead *.js
     \ set softtabstop=2 |

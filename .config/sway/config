@@ -25,13 +25,6 @@
     client.unfocused        #4080bf #4080bf #4080bf #4080bf     #4080bf
     client.urgent           #33ccff #33ccff #33ccff #33ccff     #33ccff
 
-#    # Window colors 1
-#    # Class                 border  Backgr  Text    indicator   child_border
-#    client.focused          #000000 #a0a0a9 #a0a0c5 #efeff5     #a0a0a9
-#    client.unfocused        #003d99 #003d99 #003d99 #003d99     #003d99
-#    client.focused_inactive #003d99 #003d99 #003d99 #003d99     #003d99
-#    client.urgent           #33ccff #33ccff #33ccff #33ccff     #33ccff
-
 	# Gaps
 	gaps inner 10
 	gaps outer 4
@@ -70,6 +63,9 @@ exec swayidle -w \
     # Leds
     bindsym XF86KbdBrightnessUp exec light -A 5 -s sysfs/leds/smc::kbd_backlight
     bindsym XF86KbdBrightnessDown exec light -U 5 -s sysfs/leds/smc::kbd_backlight
+
+    # Screenshot
+    bindsym XF86LaunchA exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
 
     # Kill focused window
     bindsym $mod+Shift+q kill
