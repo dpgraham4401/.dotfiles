@@ -81,8 +81,8 @@ exec swayidle -w \
 
 ### Applications shortcuts 
 	# Launcher
-	bindsym XF86LaunchB exec --no-startup-id wofi --show drun -I -i 
-	bindsym $mod+Space exec --no-startup-id wofi --show drun -I -i 
+	bindsym XF86LaunchB exec --no-startup-id wofi --show run -I -i 
+	bindsym $mod+Space exec --no-startup-id wofi --show run -I -i 
 
 	# Start a terminal
     bindsym $mod+Return exec $term

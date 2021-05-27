@@ -16,6 +16,7 @@ set secure
 set nohlsearch 
 syntax on
 set number
+set belloff=all
 highlight LineNr ctermfg=darkgray
 
 " ex sudo in vim 
@@ -38,7 +39,7 @@ augroup END
 " Plugins
 call plug#begin()
 Plug 'preservim/NERDTree'
-Plug 'arcticicestudio/nord-vim'
+" Plug 'arcticicestudio/nord-vim'
 Plug 'valloric/YouCompleteMe'
 Plug 'tmsvg/pear-tree'
 Plug 'dense-analysis/ale'
@@ -51,7 +52,7 @@ noremap X <c-v>
 map <C-s> :w<CR>
 
 " save and exit
-map <C-x> :x<CR>
+" map <C-x> :x<CR>
 
 " exit
 map <C-q> :q<CR>
