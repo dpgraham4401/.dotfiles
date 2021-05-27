@@ -1,5 +1,5 @@
 # dotfiles-sway
-### Fedora packages
+### Fedora packages list
 1. sway
 2. swaylock
 3. swayidle
@@ -15,6 +15,14 @@
 13. gammastep
 14. grim
 15. slurp
+
+### pip packages
+1. pylint
+
+### npm packages (global)
+1. eslint
+
+just breaking it down for clarity 
 
 #### Sway essentials
 `$ sudo dnf install sway swaylock swayidle waybar wev`
