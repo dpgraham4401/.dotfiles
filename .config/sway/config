@@ -30,7 +30,7 @@
 	gaps inner 10
 	gaps outer 4
 	smart_gaps on
-	default_border pixel 3
+	default_border pixel 2
 
 ### Idle configuration
 exec swayidle -w \
@@ -45,8 +45,8 @@ exec swayidle -w \
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% 
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% 
 	bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle 
-   # bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-   # bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+    # bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+    # bindsym XF86MonBrightnessUp exec brightnessctl set +5%
    
 	# Media playerctl  
 	bindsym XF86AudioNext exec playerctl next
@@ -81,14 +81,17 @@ exec swayidle -w \
 
 ### Applications shortcuts 
 	# Launcher
-	bindsym XF86LaunchB exec --no-startup-id wofi --show run -I -i 
-	bindsym $mod+Space exec --no-startup-id wofi --show run -I -i 
+	bindsym XF86LaunchB exec --no-startup-id wofi --show drun -I -i 
+	bindsym $mod+Space exec --no-startup-id wofi --show drun -I -i 
 
 	# Start a terminal
     bindsym $mod+Return exec $term
 
 	# Browser
 	bindsym $mod+Shift+f exec firefox-wayland
+
+    # Explorer
+    bindsym $mod+n exec kitty -e "ranger"
 
 ### Moving around:
     # Move your focus around
@@ -189,7 +192,7 @@ bar {
 ### Startup commands
 	exec GDK_BACKEND=wayland
 	exec CLUTTER_BACKEND=wayland
-	exec --no-startup-id gammastep -t 5000:2500
+	exec --no-startup-id gammastep -t 4500:1500
 	#exec --no-startup-id nm-applet
     Xwayland enable
 

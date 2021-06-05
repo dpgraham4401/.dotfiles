@@ -15,18 +15,14 @@ export PATH
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
-# User specific aliases and functions
+##### User specific aliases and functions
 export PS1="\[\033[1;32m\]\u@\[\033[1;34m\]\W\[\033[1;34m\] \$\[\033[0m\] "
 alias ssh="kitty +kitten ssh"
+export EDITOR='/usr/bin/vim'
+#export GDK_DPI_SCALE=1.6
 
-export GDK_DPI_SCALE=1.6
 ###-begin-npm-completion-###
-#
-# npm command completion script
-#
 # Installation: npm completion >> ~/.bashrc  (or ~/.zshrc)
-# Or, maybe: npm completion > /usr/local/etc/bash_completion.d/npm
-#
 
 if type complete &>/dev/null; then
   _npm_completion () {
