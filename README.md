@@ -15,6 +15,7 @@
 13. gammastep
 14. grim
 15. slurp
+16. Ranger
 
 ### pip packages
 1. pylint
@@ -33,8 +34,8 @@ just breaking it down for clarity
 #### Backlight Control
 `$ sudo dnf install light gammastep`
 
-#### Terminal Emulator
-`$ sudo dnf install kitty`
+#### CLI goodness
+`$ sudo dnf install kitty ranger`
 
 #### Wayland Specific Applicatin/utilities
 `$ sudo dnf install wofi firefox-wayland grim slurp`
