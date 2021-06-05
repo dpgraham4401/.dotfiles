@@ -1,104 +1,88 @@
 * {
     border: none;
-    border-radius: 0;
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Font Awesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: Font Awesome, Roboto, Arial, sans-serif;
     font-size: 13px;
-    min-height: 0;
 }
 
 window {
 	font-weight: bold;
 }
-
 window#waybar {
-    background-color: rgba(45, 52, 39, 0.5);
-    border-radius: 0 0 10 10;
-    border-bottom: none;
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+    background: rgba(0, 0, 0, 0);
 }
-
+#workspaces {
+    margin: 2px 0 0 5px;
+	background-color: rgba(0,119,179,0.6);
+    border-radius: 10px 10px;
+}
 #workspaces button {
-    padding: 0 5px;
-    border-radius: 10 10 10 10;
+    padding: 1px 5px;
+    border-radius: 10px 10px;
     background-color: transparent;
     color: #ffffff;
 }
-
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
     box-shadow: inherit;
-    border-bottom: 3px solid #ffffff;
+	background-color: rgba(20,63,71,0.85);
 }
 
 #workspaces button.focused {
-    /*background-color: ##64727D;*/
-    background-color: #4080bf;
+	background-color: rgba(0,43,51,0.85);
 }
 
-#workspaces button.urgent {
-    background-color: #eb4d4b;
-}
-
+/*-----modules----*/
 #clock,
 #battery,
 #cpu,
 #memory,
+#temperature,
 #network,
 #pulseaudio,
 #custom-media,
 #tray,
 #mode,
-#custom-power
+#custom-power,
 #idle_inhibitor {
     padding: 0 10px;
-    margin: 0 5px;
     color: #ffffff;
-	background-color: transparent;
+    margin: 2px 0 0 0;
+	background-color: rgba(0,43,51,0.85);
 }
-
+#custom-power {
+    border-radius: 0 10px 10px 0;
+    margin: 2px 10px 0 0;
+}
+#pulseaudio {
+    border-radius: 10px 0 0 10px;
+}
+#clock {
+    border-radius: 10px 0 0 10px;
+}
+#idle_inhibitor {
+    border-radius: 0 10px 10px 0;
+}
+/*-----Indicators----*/
 #idle_inhibitor.activated {
     color: #2dcc36;
 }
-
 #pulseaudio.muted {
     color: #cc3436;
 }
-#clock {
-	font-weight: bold;
-    font-size: 17px;
-    margin: 5px 0px 0px 0px;
-}
-
 #battery.charging {
     color: #2dcc36;
 }
-
 #battery.warning:not(.charging) {
 	color: #e6e600;
 }
-
 #battery.critical:not(.charging) {
     color: #cc3436;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
-
-
 #temperature.critical {
     color: #cc3436;
 }
-
-#custom-power {
-    color: #ffffff;
-    padding: 0 3px;
-	margin: 4px 7px;
-    background-color: #4080bf;
-    border-radius: 100px
-}
-
+/*-----Colors----*/
+/*
+ *rgba(0,85,102,1),#005566 --> Indigo(dye)
+ *rgba(0,43,51,1),#002B33 --> Dark Green 
+ *
+ */
