@@ -24,6 +24,14 @@
 !.config/waybar/config
 !.config/waybar/style.css
 
+!.config/ranger/
+.config/ranger/*
+!.config/ranger/rc.conf
+!.config/ranger/commands.py
+!.config/ranger/rifle.conf
+!.config/ranger/commands_full.py
+!.config/ranger/scope.sh
+
 !.swaylock/
 .swaylock/*
 !.swaylock/config

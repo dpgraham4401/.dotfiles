@@ -19,6 +19,7 @@ export PATH
 export PS1="\[\033[1;32m\]\u@\[\033[1;34m\]\W\[\033[1;34m\] \$\[\033[0m\] "
 alias ssh="kitty +kitten ssh"
 export EDITOR='/usr/bin/vim'
+export RANGER_LOAD_DEFAULT_RC=FALSE
 #export GDK_DPI_SCALE=1.6
 
 ###-begin-npm-completion-###
