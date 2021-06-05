@@ -39,11 +39,13 @@ augroup END
 
 " Plugins
 call plug#begin()
-Plug 'preservim/NERDTree'
 Plug 'valloric/YouCompleteMe'
 Plug 'tmsvg/pear-tree'
 Plug 'dense-analysis/ale'
 Plug 'sheerun/vim-polyglot'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Visual block
@@ -61,8 +63,14 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
-" NERDTree
-map <C-n> :NERDTreeToggle<CR> | :let NERDTreeWinSize = 15 | :wincmd w
+" Tree explorer
+let g:ranger_map_keys = 0
+map <C-n> :Ranger<CR> 
+
+let g:airline_theme='lucius'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline_section_y = ""
 
 " Word Processor mode
 func! WordProcessorMode()
@@ -76,8 +84,7 @@ com! WP call WordProcessorMode()
 " Python formatting
 au BufNewFile,BufRead *.py
     \ set textwidth=79 |
-    \ set autoindent |
-    \ set fileformat=unix``
+    \ set autoindent
 
 au BufNewFile,BufRead *.{js,json}
     \ set softtabstop=2 |
