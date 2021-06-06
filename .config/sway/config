@@ -30,7 +30,7 @@
 	gaps inner 10
 	gaps outer 4
 	smart_gaps on
-	default_border pixel 2
+	default_border pixel 3
 
 ### Idle configuration
 exec swayidle -w \

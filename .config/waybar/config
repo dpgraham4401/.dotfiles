@@ -1,7 +1,7 @@
 {
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["clock", "idle_inhibitor"],
-    "modules-right": ["pulseaudio", "temperature", "battery", "tray", "custom/power"],
+    "modules-right": ["network", "pulseaudio", "temperature", "battery", "tray", "custom/power"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -20,6 +20,13 @@
     // },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname} ",
+        "format-disconnected": "", 
+        "max-length": 50,
+        "on-click": "kitty -e 'nmtui'"
     },
     "idle_inhibitor": {
         "format": "{icon}",
