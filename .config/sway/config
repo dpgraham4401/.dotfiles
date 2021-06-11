@@ -29,7 +29,7 @@
 	gaps inner 10
 	gaps outer 4
 	smart_gaps on
-	default_border pixel 2
+	default_border pixel 3
 
 ### Idle configuration
 exec swayidle -w \
@@ -80,7 +80,12 @@ exec swayidle -w \
     bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
+<<<<<<< HEAD
     bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+=======
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33
+
+>>>>>>> macbook
 
 ### Applications shortcuts 
 	# Launcher
@@ -194,7 +199,10 @@ bar {
 ### Startup commands
 	exec GDK_BACKEND=wayland
 	exec CLUTTER_BACKEND=wayland
-	exec --no-startup-id gammastep -t 5000:2700
+	exec --no-startup-id gammastep -l 38.89511:-77.03637 -t 5000:3000
+    exec mako
+    exec wal -R
+    Xwayland enable
 
 ### Startup Applications
     exec --no-startup-id swaymsg 'Workspace 2:  ; exec /var/lib/snapd/snap/bin/spotify'

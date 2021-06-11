@@ -1,12 +1,7 @@
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 25, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["clock", "idle_inhibitor"],
-    "modules-right": ["pulseaudio", "cpu", "memory", "temperature", "battery", "tray", "custom/power"],
+    "modules-right": ["network", "pulseaudio", "temperature", "battery", "tray", "custom/power"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -25,6 +20,13 @@
     // },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname} ",
+        "format-disconnected": "", 
+        "max-length": 50,
+        "on-click": "kitty -e 'nmtui'"
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -97,11 +99,10 @@
         },
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
 
 	"custom/power": {
 		"format": "",
-		"on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Suspend' 'zzz' -b 'Restart' 'shutdown -r now' -b 'Shutdown'  'shutdown -h now'"
+		"on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Restart' 'shutdown -r now' -b 'Shutdown'  'shutdown -h now' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33"
 	}
 }
