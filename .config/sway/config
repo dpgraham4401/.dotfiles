@@ -77,7 +77,8 @@ exec swayidle -w \
     bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33
+
 
 ### Applications shortcuts 
 	# Launcher
@@ -192,8 +193,9 @@ bar {
 ### Startup commands
 	exec GDK_BACKEND=wayland
 	exec CLUTTER_BACKEND=wayland
-	exec --no-startup-id gammastep -t 4500:1500
-	#exec --no-startup-id nm-applet
+	exec --no-startup-id gammastep -l 38.89511:-77.03637 -t 5000:3000
+    exec mako
+    exec wal -R
     Xwayland enable
 
 ### Input/Output devices

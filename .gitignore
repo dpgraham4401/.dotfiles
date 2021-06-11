@@ -4,6 +4,7 @@
 # Except these files
 !.bashrc
 !.gitignore
+!.zshrc
 
 !.vim/
 .vim/*
