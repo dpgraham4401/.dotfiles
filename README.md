@@ -16,6 +16,7 @@
 14. grim
 15. slurp
 16. Ranger
+17. zsh
 
 ### pip packages
 1. pylint
