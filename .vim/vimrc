@@ -17,7 +17,7 @@ set number
 set belloff=all
 set completeopt-=preview
 highlight LineNr ctermfg=darkgray
-syntax on 
+syntax on
 filetype on
 
 " ex sudo in vim 
@@ -39,8 +39,6 @@ augroup END
 
 " Plugins
 call plug#begin()
-"Plug 'preservim/NERDTree'
-"Plug 'mcchrish/nnn.vim'
 Plug 'valloric/YouCompleteMe'
 Plug 'tmsvg/pear-tree'
 Plug 'dense-analysis/ale'
