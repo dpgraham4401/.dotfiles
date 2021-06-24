@@ -17,8 +17,11 @@ set number
 set belloff=all
 set completeopt-=preview
 highlight LineNr ctermfg=darkgray
-syntax on
+syntax enable
 filetype on
+
+" neovim additions
+set clipboard=unnamedplus
 
 " ex sudo in vim 
 cmap w!! w !sudo tee > /dev/null %
@@ -51,11 +54,16 @@ call plug#end()
 " Visual block
 noremap X <c-v>
 
+nnoremap ; :
+
 " save file
 map <C-s> :w<CR>
 
 " exit
 map <C-q> :q<CR>
+
+" cycle buffers
+:nnoremap <Tab> :bnext<CR>
 
 " move around splits
 map <c-j> <c-w>j
@@ -67,10 +75,18 @@ map <c-h> <c-w>h
 let g:ranger_map_keys = 0
 map <C-n> :Ranger<CR> 
 
-let g:airline_theme='lucius'
-let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled = 2
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_section_y = ""
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#right_sep = ' '
+let g:airline#extensions#tabline#right_alt_sep = '|'
+let g:airline_left_sep = ' '
+let g:airline_left_alt_sep = '|'
+let g:airline_right_sep = ' '
+let g:airline_right_alt_sep = '|'
 
 " Word Processor mode
 func! WordProcessorMode()
@@ -88,6 +104,7 @@ au BufNewFile,BufRead *.py
 
 au BufNewFile,BufRead *.{js,json}
     \ set softtabstop=2 |
+    \ set expandtab |
     \ set shiftwidth=2 |
     \ set tabstop=2
 
