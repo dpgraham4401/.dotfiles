@@ -5,6 +5,7 @@
 !.bashrc
 !.gitignore
 !.zshrc
+!.p10k.zsh
 
 !.vim/
 .vim/*
@@ -15,6 +16,10 @@
 !.config/sway/
 .config/sway/*
 !.config/sway/config
+
+!.config/nvim/
+.config/nvim/*
+!.config/nvim/init.vim
 
 !.config/kitty/
 .config/kitty/*

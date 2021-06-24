@@ -98,7 +98,7 @@ exec swayidle -w \
 	bindsym $mod+Shift+f exec firefox-wayland
 
     # Explorer
-    bindsym $mod+n exec kitty -e "ranger"
+    bindsym $mod+n exec kitty sh -c "source ~/.zshrc & source ranger"
 
 ### Moving around:
     # Move your focus around
@@ -153,7 +153,7 @@ exec swayidle -w \
     #bindsym $mod+v splitv
 
     #bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
+    bindsym $mod+t layout tabbed
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
