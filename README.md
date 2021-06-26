@@ -20,12 +20,6 @@
 18. [oh-my-zsh](https://github.com/ohmyzsh)
 19. [neovim](https://github.com/neovim/neovim)
 
-### pip packages
-1. pylint
-
-### npm packages (global)
-1. eslint
-
 just breaking it down for clarity 
 
 #### Sway essentials
@@ -45,6 +39,13 @@ just breaking it down for clarity
 
 #### non-dnf installs
 1. oh-my-zsh
+
+### pip packages
+1. pylint pynvim
+
+### npm packages (global)
+1. eslint neovim
+
 
 ### Packages for vim
 1. YouCompleteMe  &rarr; autocompletion
