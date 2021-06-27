@@ -15,7 +15,7 @@
 ### Apperance
 
 	# Wallpaper
-	output * bg /usr/share/backgrounds/images/default.png fill
+	output * bg /usr/share/backgrounds/f34/default/f34-02-night.png fill
 
     focus_wrapping no
    
