@@ -21,6 +21,10 @@
 .config/nvim/*
 !.config/nvim/init.vim
 
+!.config/mako/
+.config/mako/*
+!.config/mako/config
+
 !.config/kitty/
 .config/kitty/*
 !.config/kitty/kitty.conf

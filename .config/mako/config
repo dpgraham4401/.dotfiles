@@ -1,0 +1,6 @@
+default-timeout=2000
+
+font=Roboto 11
+background-color=#002b33
+border-color=#005566
+border-radius=10
