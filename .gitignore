@@ -21,6 +21,10 @@
 .config/nvim/*
 !.config/nvim/init.vim
 
+!.config/sworkstyle/
+.config/sworkstyle/*
+!.config/sworkstyle/config.toml
+
 !.config/mako/
 .config/mako/*
 !.config/mako/config
