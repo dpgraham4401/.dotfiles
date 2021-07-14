@@ -92,7 +92,7 @@ exec swayidle -w \
 	bindsym $mod+Shift+f exec firefox-wayland
 
     # Explorer
-    bindsym $mod+n exec kitty sh -c "source ~/.zshrc & source ranger"
+    bindsym $mod+n exec kitty --class=ranger sh -c "source ~/.zshrc & source ranger"
 
 ### Moving around:
     # Move your focus around
@@ -197,6 +197,8 @@ bar {
     exec mako
     exec wal -R
     Xwayland enable
+    exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
+    exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
 
 ### Input/Output devices
 input type:touchpad {
