@@ -1,5 +1,5 @@
 {
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
+    "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock", "idle_inhibitor"],
     "modules-right": ["network", "pulseaudio", "temperature", "battery", "tray", "custom/power"],
     // Modules configuration

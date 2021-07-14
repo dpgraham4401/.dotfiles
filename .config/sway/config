@@ -80,12 +80,7 @@ exec swayidle -w \
     bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-<<<<<<< HEAD
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-=======
     bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33
-
->>>>>>> macbook
 
 ### Applications shortcuts 
 	# Launcher
@@ -98,7 +93,7 @@ exec swayidle -w \
 	bindsym $mod+Shift+f exec firefox-wayland
 
     # Explorer
-    bindsym $mod+n exec kitty sh -c "source ~/.zshrc & source ranger"
+    bindsym $mod+n exec kitty --class=ranger sh -c "source ~/.zshrc & source ranger"
 
 ### Moving around:
     # Move your focus around
@@ -203,6 +198,8 @@ bar {
     exec mako
     exec wal -R
     Xwayland enable
+    exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
+    exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
 
 ### Startup Applications
     exec --no-startup-id swaymsg 'Workspace 2:  ; exec /var/lib/snapd/snap/bin/spotify'

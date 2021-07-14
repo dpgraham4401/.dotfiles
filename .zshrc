@@ -5,6 +5,7 @@ alias ssh="kitty +kitten ssh"
 alias vim="/usr/bin/nvim"
 export EDITOR='/usr/bin/vim'
 export PATH="${PATH}:${HOME}/.local/bin/"
+export PATH="${PATH}:${HOME}/.cargo/bin/"
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000

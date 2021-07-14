@@ -23,6 +23,7 @@
 # You can use {app_name} to do an exact match
 
 fallback = ''
+unique = true
 
 [matching]
 'discord' = ''
@@ -33,9 +34,7 @@ fallback = ''
 'org.qbittorrent.qBittorrent' = ''
 'Thunderbird' = ''
 'thunderbird' = ''
-'Postman' = ''
 'Insomnia' = ''
-'Bitwarden' = ''
 'Google-chrome' = ''
 'Chromium' = ''
 'Slack' = ''
@@ -50,4 +49,6 @@ fallback = ''
 '/npm/' = ''
 '/node/' = ''
 '/yarn/' = ''
-'Alacritty' = ''
+'kitty' = ''
+'org.gnome.Nautilus' = ""
+'ranger' = ""
