@@ -46,7 +46,7 @@ just breaking it down for clarity
 1. pylint pynvim
 
 ### npm packages (global)
-1. eslint neovim
+1. eslint neovim pyright
 
 
 ### Packages for vim
