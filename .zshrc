@@ -3,9 +3,11 @@
 autoload -U colors && colors
 alias ssh="kitty +kitten ssh"
 alias vim="/usr/bin/nvim"
+alias vi="/usr/bin/nvim"
+alias v="/usr/bin/nvim"
 export EDITOR='/usr/bin/vim'
 export PATH="${PATH}:${HOME}/.local/bin/"
-export PATH="${PATH}:${HOME}/.cargo/bin/"
+fpath+=~/.zfunc
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000

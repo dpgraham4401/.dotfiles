@@ -18,7 +18,7 @@ set belloff=all
 set completeopt-=preview
 highlight LineNr ctermfg=darkgray
 syntax enable
-filetype on
+filetype plugin indent on
 
 " neovim additions
 set clipboard=unnamedplus
@@ -42,10 +42,13 @@ augroup END
 
 " Plugins
 call plug#begin()
-Plug 'valloric/YouCompleteMe'
+" Plug 'valloric/YouCompleteMe'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/lsp_extensions.nvim'
+Plug 'nvim-lua/completion-nvim'
 Plug 'tmsvg/pear-tree'
-Plug 'dense-analysis/ale'
-Plug 'sheerun/vim-polyglot'
+" Plug 'dense-analysis/ale'
+" Plug 'sheerun/vim-polyglot'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -111,7 +114,57 @@ au BufNewFile,BufRead *.{js,json}
 " C/C++ configs
 nnoremap <F4> :make!<cr>
 
-let g:ale_linters = {
-        \   'python': ['pylint'],
-        \   'javascript': ['eslint'],
-        \}
+" let g:ale_linters = {
+"         \   'python': ['pylint'],
+"         \   'javascript': ['eslint'],
+"         \   'rust': ['analyzer']
+"         \}
+" let g:ale_completion_enabled = 1
+
+" :help completeopt
+" menuone: popup even when there's only one match
+" noinsert: Do not insert text until a selection is made
+" noselect: Do not select, force user to select one from the menu
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing extra messages when using completion
+set shortmess+=c
+
+" Configure LSP
+" https://github.com/neovim/nvim-lspconfig#rust_analyzer
+lua <<EOF
+
+-- nvim_lsp object
+local nvim_lsp = require'lspconfig'
+
+-- function to attach completion when setting up lsp
+local on_attach = function(client)
+    require'completion'.on_attach(client)
+end
+
+-- Enable rust_analyzer
+nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
+
+-- Enable diagnostics
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text = true,
+    signs = true,
+    update_in_insert = true,
+  }
+)
+EOF
+
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" use <Tab> as trigger keys
+imap <Tab> <Plug>(completion_smart_tab)
+imap <S-Tab> <Plug>(completion_smart_s_tab)
+
+" Set updatetime for CursorHold
+" 300ms of no cursor movement to trigger CursorHold
+set updatetime=300
+" Show diagnostic popup on cursor hold
+autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
