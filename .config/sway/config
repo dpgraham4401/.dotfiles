@@ -15,7 +15,8 @@
 ### Apperance
 
 	# Wallpaper
-	output * bg /usr/share/backgrounds/f34/default/f34-02-night.png fill
+	# output * bg /usr/share/backgrounds/f34/default/f34-02-night.png fill
+	output * bg /usr/share/backgrounds/images/tokyo_rainy.jpg fill
 
     focus_wrapping no
    
@@ -80,7 +81,7 @@ exec swayidle -w \
     bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33 --button-margin-right=10px
 
 ### Applications shortcuts 
 	# Launcher

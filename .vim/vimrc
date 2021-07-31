@@ -18,7 +18,7 @@ set belloff=all
 set completeopt-=preview
 highlight LineNr ctermfg=darkgray
 syntax enable
-filetype on
+filetype plugin indent on
 
 " neovim additions
 set clipboard=unnamedplus
@@ -42,10 +42,13 @@ augroup END
 
 " Plugins
 call plug#begin()
-Plug 'valloric/YouCompleteMe'
+" neovim specific, will not work with vim
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'nvim-lua/lsp_extensions.nvim'
+" Plug 'nvim-lua/completion-nvim'
 Plug 'tmsvg/pear-tree'
-Plug 'dense-analysis/ale'
-Plug 'sheerun/vim-polyglot'
+Plug 'valloric/YouCompleteMe'
+" Plug 'dense-analysis/ale'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -108,10 +111,10 @@ au BufNewFile,BufRead *.{js,json}
     \ set shiftwidth=2 |
     \ set tabstop=2
 
-" C/C++ configs
-nnoremap <F4> :make!<cr>
-
 let g:ale_linters = {
         \   'python': ['pylint'],
         \   'javascript': ['eslint'],
+        \   'rust': ['analyzer']
         \}
+let g:ale_completion_enabled = 1
+
