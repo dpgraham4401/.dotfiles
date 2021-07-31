@@ -138,11 +138,19 @@ for _, lsp in pairs(servers) do
 end
 
 -- Enable diagnostics
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+--   vim.lsp.diagnostic.on_publish_diagnostics, {
+--     virtual_text = true,
+--     signs = true,
+--     update_in_insert = true,
+--   }
+-- )
+-- Disable diagnostics
+vim.g.diagnostics_active = false
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = true,
-    signs = true,
-    update_in_insert = true,
+    -- Disable signs
+    signs = false,
   }
 )
 EOF

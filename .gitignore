@@ -21,6 +21,10 @@
 .config/nvim/*
 !.config/nvim/init.vim
 
+!.config/qutebrowser/
+.config/qutebrowser/*
+!.config/qutebrowser/config.py
+
 !.config/sworkstyle/
 .config/sworkstyle/*
 !.config/sworkstyle/config.toml
