@@ -33,7 +33,7 @@
 1. chromium-widevine for simplicity to play DRM on arch 
 
 ### pip packages
-1. pylint pynvim
+1. pylint pynvim pillow
 
 ### npm packages (global)
 1. eslint neovim pyright
