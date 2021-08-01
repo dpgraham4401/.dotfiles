@@ -30,13 +30,17 @@
 1. qt5-qtwebengine-freeworld to play DRM (netflix etc.) on the qutebrowser
 
 ### Arch specific
-1. chromium-widevine for simplicity to play DRM on arch 
+1. chromium-widevine &rarr; simplicity to play DRM on arch 
 
 ### pip packages
-1. pylint pynvim pillow
+1. pylint  &rarr; 
+2. pynvim &rarr; 
+3. pillow &rarr; image preview in ranger
 
 ### npm packages (global)
-1. eslint neovim pyright
+1. eslint &rarr; 
+2. neovim 
+3. pyright
 
 ### NeoVim Plugins
 1. neovim/nvim-lspconfig  &rarr; language server (linting/completion)
