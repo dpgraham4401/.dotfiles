@@ -15,8 +15,8 @@
 ### Apperance
 
 	# Wallpaper
-	# output * bg /usr/share/backgrounds/f34/default/f34-02-night.png fill
-	output * bg /usr/share/backgrounds/images/tokyo_rainy.jpg fill
+	output * bg /usr/share/backgrounds/f34/default/f34-02-night.png fill
+	# output * bg /usr/share/backgrounds/images/tokyo_rainy.jpg fill
 
     focus_wrapping no
    
@@ -91,6 +91,7 @@ exec swayidle -w \
 
 	# Browser
 	bindsym $mod+Shift+f exec firefox-wayland
+	bindsym $mod+b exec qutebrowser
 
     # Explorer
     bindsym $mod+n exec kitty --class=ranger sh -c "source ~/.zshrc & source ranger"
