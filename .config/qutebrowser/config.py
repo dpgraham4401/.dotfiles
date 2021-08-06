@@ -1,15 +1,10 @@
 config.load_autoconfig()
 
+### Title/Tabs ###
 # Show favicons in tab bar
 c.tabs.favicons.show = 'always'
-
-# Padding (in pixels) around text for tabs.
 c.tabs.padding = {'bottom': 3, 'left': 2, 'right': 2, 'top': 3}
-
-# Position of the tab bar.
 c.tabs.position = 'top'
-
-# Alignment of the text inside of tabs.
 c.tabs.title.alignment = 'left'
 
 # Width of tab indicators.
@@ -21,19 +16,11 @@ c.tabs.indicator.padding = {'bottom': 0, 'left': 0, 'right': 5, 'top': 0}
 # Height (in pixels or as percentage of the window) of the completion.
 c.completion.height = '30%'
 
-# Padding (in pixels) for the statusbar.
+### Status Bar ###
 c.statusbar.padding = {'bottom': 5, 'left': 5, 'right': 5, 'top': 5}
-
-# Widgets in statusbar
 c.statusbar.widgets = ["keypress", "url", "scroll", "history", "tabs", "progress"]
-
-# Position of the status bar.
 c.statusbar.position = 'bottom'
-
-# Text color of the completion widget
 c.colors.completion.fg = 'black'
-
-# Background color of the completion widget for odd rows.
 c.colors.completion.odd.bg = '#F2F2F2'
 
 # Background color of the completion widget for even rows.
