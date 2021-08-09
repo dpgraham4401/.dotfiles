@@ -33,19 +33,21 @@
 1. chromium-widevine &rarr; simplicity to play DRM on arch 
 
 ### pip packages
-1. pylint  &rarr; 
-2. pynvim &rarr; 
-3. pillow &rarr; image preview in ranger
+1. pynvim &rarr; 
+2. pillow &rarr; image preview in ranger
 
 ### npm packages (global)
-1. eslint &rarr; 
-2. neovim 
-3. pyright
+1. eslint
+2. neovim
+3. typescript
+4. semvar
+
 
 ### NeoVim Plugins
-1. neovim/nvim-lspconfig  &rarr; language server (linting/completion)
-2. nvim-lua/lspextensions.nvim &rarr
-4. tmsvg/pear-tree      &rarr; auto pair ()""{} and such
-5. francoiscabrol/ranger
-6. vim-airline/vim-airline    &rarr; airline status bar (meh)
-7. vim-airline/vim-airline-theme &rarr; color the status bar
+1. neovim/nvim-lspconfig &rarr; neovim native LSP client
+2. kabouzeid/nvim-lspinstall &rarr; install language servers independent of package manager
+3. nvim-lua/lspextensions.nvim
+4. tmsvg/pear-tree &rarr; auto close (){}[]
+5. francoiscabrol/ranger &rarr; file explorer
+6. vim-airline/vim-airline &rarr; airline status
+7. vim-airline/vim-airline-theme &rarr; make airline loos cool
