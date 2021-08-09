@@ -21,6 +21,10 @@
 .config/nvim/*
 !.config/nvim/init.vim
 
+!.config/nvim/lua/
+.config/nvim/lua/*
+!.config/nvim/lua/lsp-settings.lua
+
 !.config/qutebrowser/
 .config/qutebrowser/*
 !.config/qutebrowser/config.py
@@ -50,9 +54,9 @@
 !.config/ranger/commands_full.py
 !.config/ranger/scope.sh
 
-!.swaylock/
-.swaylock/*
-!.swaylock/config
+!.config/swaylock/
+.config/swaylock/*
+!.config/swaylock/config
 
 !Scripts/
 Scripts/*
