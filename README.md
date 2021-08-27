@@ -1,4 +1,7 @@
 # dotfiles-sway
+
+![Screenshot](https://ibb.co/7Ggwp0B)
+
 ### sway essesitals
 1. [sway](https://github.com/swaywm/sway)
 2. [swaylock](https://github.com/swaywm/swaylock)
