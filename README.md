@@ -1,6 +1,6 @@
 # dotfiles-sway
 
-![Screenshot](https://ibb.co/7Ggwp0B)
+![Screenshot](https://i.ibb.co/xMmpgrw/screenshot-21-08-27-09-42.png)
 
 ### sway essesitals
 1. [sway](https://github.com/swaywm/sway)
