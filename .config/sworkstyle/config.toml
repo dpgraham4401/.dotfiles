@@ -38,6 +38,7 @@ unique = true
 'Google-chrome' = ''
 'Chromium' = ''
 'qutebrowser' = ''
+'org.qutebrowser.qutebrowser' = ''
 'Slack' = ''
 'Code' = ''
 'code-oss' = ''
