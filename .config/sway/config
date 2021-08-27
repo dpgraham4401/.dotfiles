@@ -15,8 +15,7 @@
 ### Apperance
 
 	# Wallpaper
-	output * bg /usr/share/backgrounds/f34/default/f34-02-night.png fill
-	# output * bg /usr/share/backgrounds/images/tokyo_rainy.jpg fill
+	output * bg /home/dg/.config/wallpaper/floating_nature_1900x1200.jpg fill
 
     focus_wrapping no
    
@@ -35,8 +34,8 @@
 
 ### Idle configuration
 exec swayidle -w \
-    timeout 900 'swaylock -f -C /home/dg/.config/swaylock/config' \
-    timeout 1020 'systemctl suspend' \
+    timeout 1200 'swaylock -f -C /home/dg/.config/swaylock/config' \
+    timeout 1320 'systemctl suspend' \
         resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f -C /home/dg/.config/swaylock/config'
 
@@ -201,6 +200,7 @@ bar {
     Xwayland enable
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
+    # exec_always --no-startup-id /home/dg/.cargo/bin/workstyle &> /tmp/workstyle.log
 
 ### Input/Output devices
 input type:touchpad {
@@ -209,7 +209,7 @@ input type:touchpad {
 
 output eDP-1 {
 	resolution 2560x1600
-	scale 1.6
+	scale 1.8
 	pos 0 0
     scale_filter linear
 }
