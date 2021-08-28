@@ -4,7 +4,8 @@ autoload -U colors && colors
 alias ssh="kitty +kitten ssh"
 alias vim="/usr/bin/nvim"
 alias vi="/usr/bin/nvim"
-alias v="/usr/bin/nvim"
+alias tn="tmux -u new"
+alias tmux="tmux -f /home/dg/.config/tmux/tmux.conf"
 export EDITOR='/usr/bin/vim'
 export XDG_CONFIG_HOME='/home/dg/.config/'
 export PATH="${PATH}:${HOME}/.local/bin/"

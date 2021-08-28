@@ -21,6 +21,11 @@
 .config/nvim/*
 !.config/nvim/init.vim
 
+!.config/tmux/
+.config/tmux/*
+!.config/tmux/tmux.conf
+
+
 !.config/nvim/lua/
 .config/nvim/lua/*
 !.config/nvim/lua/lsp-settings.lua
