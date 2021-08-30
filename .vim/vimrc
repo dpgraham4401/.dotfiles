@@ -47,11 +47,11 @@ call plug#begin()
 " Plug 'nvim-lua/lsp_extensions.nvim'
 " Plug 'nvim-lua/completion-nvim'
 Plug 'tmsvg/pear-tree'
-Plug 'valloric/YouCompleteMe'
+" Plug 'valloric/YouCompleteMe'
 " Plug 'dense-analysis/ale'
 Plug 'francoiscabrol/ranger.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Visual block

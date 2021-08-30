@@ -9,6 +9,7 @@ alias tmux="tmux -f /home/dg/.config/tmux/tmux.conf"
 export EDITOR='/usr/bin/vim'
 export XDG_CONFIG_HOME='/home/dg/.config/'
 export PATH="${PATH}:${HOME}/.local/bin/"
+export GOPATH="$HOME/go"
 fpath+=~/.zfunc
 HISTFILE=~/.histfile
 HISTSIZE=1000

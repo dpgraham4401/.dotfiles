@@ -78,3 +78,4 @@ elif type compctl &>/dev/null; then
 fi
 ###-end-npm-completion-###
 . "$HOME/.cargo/env"
+export GOPATH=$HOME/go
