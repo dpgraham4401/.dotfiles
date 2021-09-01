@@ -15,7 +15,7 @@
 ### Apperance
 
 	# Wallpaper
-	output * bg /home/dg/.config/wallpaper/floating_nature_1900x1200.jpg fill
+	# output * bg /home/dg/.config/wallpaper/floating_nature_1900x1200.jpg fill
 
     focus_wrapping no
    
@@ -203,24 +203,10 @@ bar {
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
     # exec_always --no-startup-id /home/dg/.cargo/bin/workstyle &> /tmp/workstyle.log
 
-<<<<<<< HEAD
 ### Startup Applications
     exec --no-startup-id swaymsg 'Workspace 2:  ; exec /var/lib/snapd/snap/bin/spotify'
     exec --no-startup-id swaymsg 'workspace 1; exec /usr/bin/kitty'
     exec --no-startup-id swaymsg 'workspace 1; exec /usr/bin/firefox-wayland'
-=======
-### Input/Output devices
-input type:touchpad {
-    tap enabled
-}
-
-output eDP-1 {
-	resolution 2560x1600
-	scale 1.8
-	pos 0 0
-    scale_filter linear
-}
->>>>>>> macbook
 
 ### Input/Output devices
 output HDMI-A-1 {
