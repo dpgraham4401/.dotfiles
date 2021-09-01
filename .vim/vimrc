@@ -41,23 +41,25 @@ augroup vimrc-auto-mkdir
 augroup END
 
 " Plugins
-call plug#begin()
-" neovim specific, will not work with vim
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'nvim-lua/lsp_extensions.nvim'
-" Plug 'nvim-lua/completion-nvim'
-Plug 'tmsvg/pear-tree'
-Plug 'valloric/YouCompleteMe'
-" Plug 'dense-analysis/ale'
-Plug 'francoiscabrol/ranger.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-call plug#end()
+" call plug#begin()
+" Plug 'tmsvg/pear-tree'
+" Plug 'valloric/YouCompleteMe'
+" " Plug 'dense-analysis/ale'
+" Plug 'francoiscabrol/ranger.vim'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" call plug#end()
 
 " Visual block
 noremap X <c-v>
 
 nnoremap ; :
+
+" move around in insert mode 
+inoremap <c-l> <Right>
+inoremap <c-h> <Left>
+inoremap <c-k> <Up>
+inoremap <c-j> <Down>
 
 " save file
 map <C-s> :w<CR>
