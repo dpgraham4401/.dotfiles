@@ -14,8 +14,11 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd nomatch
 unsetopt beep extendedglob notify
+. "$HOME/.cargo/env"
 
 ###--Prompt-###
+autoload -Uz compinit
+compinit
 autoload -Uz vcs_info 
 precmd () { vcs_info } 
 zstyle ':vcs_info:*' enable git

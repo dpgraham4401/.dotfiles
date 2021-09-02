@@ -32,6 +32,12 @@ let g:ranger_map_keys = 0
 map <C-n> :Ranger<CR> 
 cmap w!! w !sudo tee > /dev/null %
 
+" move around in insert mode 
+inoremap <c-l> <Right>
+inoremap <c-h> <Left>
+inoremap <c-k> <Up>
+inoremap <c-j> <Down>
+
 " Word Processor mode
 func! WordProcessorMode()
 	setlocal textwidth=80

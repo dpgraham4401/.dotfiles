@@ -15,7 +15,7 @@
 ### Apperance
 
 	# Wallpaper
-	# output * bg /home/dg/.config/wallpaper/floating_nature_1900x1200.jpg fill
+	output * bg /home/dg/.config/wallpaper/floating_nature_1900x1200.jpg fill
 
     focus_wrapping no
    
@@ -84,13 +84,14 @@ exec swayidle -w \
 
 ### Applications shortcuts 
 	# Launcher
-	bindsym $mod+space exec --no-startup-id wofi --show run --style='/home/dg/.config/wofi/wofi.css'
+	bindsym $mod+space exec --no-startup-id wofi --show drun -I -i
+	bindsym XF86LaunchB exec --no-startup-id wofi --show drun -I -i
 
 	# Start a terminal
     bindsym $mod+Return exec $term
 
 	# Browser
-	bindsym $mod+Shift+f exec firefox-wayland
+	bindsym $mod+Shift+f exec firefox
 	bindsym $mod+b exec qutebrowser
 
     # Explorer
