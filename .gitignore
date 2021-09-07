@@ -21,6 +21,10 @@
 .config/nvim/*
 !.config/nvim/init.vim
 
+!.config/spotifyd
+.config/spotifyd/*
+!.config/spotifyd/spotifyd.conf
+
 !.config/nvim/lua/
 .config/nvim/lua/*
 !.config/nvim/lua/lsp-settings.lua

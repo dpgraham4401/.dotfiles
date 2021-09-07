@@ -7,11 +7,12 @@ alias vi="/usr/bin/nvim"
 alias v="/usr/bin/nvim"
 export EDITOR='/usr/bin/vim'
 export XDG_CONFIG_HOME='/home/dg/.config/'
+export XDG_DATA_DIRS='/usr/share/:/usr/local/share/'
 export PATH="${PATH}:${HOME}/.local/bin/"
 fpath+=~/.zfunc
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 setopt autocd nomatch
 unsetopt beep extendedglob notify
 . "$HOME/.cargo/env"

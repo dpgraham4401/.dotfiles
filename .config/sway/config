@@ -33,8 +33,8 @@
 
 ### Idle configuration
 exec swayidle -w \
-    timeout 1200 'swaylock -f -C /home/dg/.config/swaylock/config' \
-    timeout 1320 'systemctl suspend' \
+    timeout 3000 'swaylock -f -C /home/dg/.config/swaylock/config' \
+    timeout 3200 'systemctl suspend' \
         resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f -C /home/dg/.config/swaylock/config'
 
@@ -61,8 +61,8 @@ exec swayidle -w \
     bindsym print exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
 
     # Leds
-    bindsym XF86KbdBrightnessUp exec light -A 5 -s sysfs/leds/smc::kbd_backlight
-    bindsym XF86KbdBrightnessDown exec light -U 5 -s sysfs/leds/smc::kbd_backlight
+    # bindsym XF86KbdBrightnessUp exec light -A 5 -s sysfs/leds/smc::kbd_backlight
+    # bindsym XF86KbdBrightnessDown exec light -U 5 -s sysfs/leds/smc::kbd_backlight
 
     # Screenshot
     bindsym XF86LaunchA exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
@@ -85,17 +85,20 @@ exec swayidle -w \
 ### Applications shortcuts 
 	# Launcher
 	bindsym $mod+space exec --no-startup-id wofi --show drun -I -i
-	bindsym XF86LaunchB exec --no-startup-id wofi --show drun -I -i
+	# bindsym XF86LaunchB exec --no-startup-id wofi --show drun -I -i
 
 	# Start a terminal
     bindsym $mod+Return exec $term
 
 	# Browser
 	bindsym $mod+Shift+f exec firefox
-	bindsym $mod+b exec qutebrowser
+	bindsym $mod+q exec qutebrowser
 
     # Explorer
     bindsym $mod+n exec kitty --class=ranger sh -c "source ~/.zshrc & source ranger"
+
+	# spotify-tui
+	bindsym $mod+s exec kitty --class=spotify -e "spt"
 
 ### Moving around:
     # Move your focus around
@@ -160,7 +163,7 @@ exec swayidle -w \
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    #bindsym $mod+space focus mode_toggle
+    # bindsym $mod+space focus mode_toggle
 
 ### Scratchpad:
 	bindsym $mod+Shift+minus move scratchpad
@@ -188,7 +191,6 @@ bindsym $mod+r mode "resize"
 
 ### Status Bar:
 bar {
-	# Config in $HOME/.config/waybar/config    
 	swaybar_command waybar
 	workspace_buttons yes
 }
@@ -198,16 +200,15 @@ bar {
 	exec CLUTTER_BACKEND=wayland
 	exec --no-startup-id gammastep -l 38.89511:-77.03637 -t 5000:3000
     exec mako
-    exec wal -R
+    exec nm-applet --indicator 
+	exec blueman-applet
+	exec spotifyd
     Xwayland enable
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
-    # exec_always --no-startup-id /home/dg/.cargo/bin/workstyle &> /tmp/workstyle.log
 
 ### Startup Applications
-    exec --no-startup-id swaymsg 'Workspace 2:  ; exec /var/lib/snapd/snap/bin/spotify'
-    exec --no-startup-id swaymsg 'workspace 1; exec /usr/bin/kitty'
-    exec --no-startup-id swaymsg 'workspace 1; exec /usr/bin/firefox-wayland'
+    # exec --no-startup-id swaymsg 'workspace 1; exec /usr/bin/kitty'
 
 ### Input/Output devices
 output HDMI-A-1 {
@@ -215,6 +216,6 @@ output HDMI-A-1 {
 	pos 1600 0
 }
 
-input "Logitech MX Keys" {
-xkb_layout br
+input * {
+	xkb_layout "us"
 }
