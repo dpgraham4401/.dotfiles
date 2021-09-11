@@ -31,6 +31,7 @@
 	gaps outer 4
 	smart_gaps on
 	default_border pixel 3
+	for_window [app_id="gnome-calendar"] floating enable
 
 ### Idle configuration
 exec swayidle -w \
@@ -89,7 +90,7 @@ exec swayidle -w \
     bindsym $mod+Return exec $term
 
 	# Browser
-	bindsym $mod+Shift+f exec firefox-wayland
+	bindsym $mod+Shift+f exec firefox
 	bindsym $mod+b exec qutebrowser
 
     # Explorer
@@ -196,8 +197,9 @@ bar {
 	exec CLUTTER_BACKEND=wayland
 	exec --no-startup-id gammastep -l 38.89511:-77.03637 -t 5000:3000
     exec mako
-    exec wal -R
-    Xwayland enable
+	exec nm-applet --indicator
+	exec blueman-applet
+    # Xwayland enable
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
     # exec_always --no-startup-id /home/dg/.cargo/bin/workstyle &> /tmp/workstyle.log
