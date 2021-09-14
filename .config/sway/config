@@ -33,8 +33,8 @@
 
 ### Idle configuration
 exec swayidle -w \
-    timeout 3000 'swaylock -f -C /home/dg/.config/swaylock/config' \
-    timeout 3200 'systemctl suspend' \
+    timeout 2520 'swaylock -f -C /home/dg/.config/swaylock/config' \
+    timeout 2800 'systemctl suspend' \
         resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f -C /home/dg/.config/swaylock/config'
 
@@ -203,7 +203,8 @@ bar {
     exec nm-applet --indicator 
 	exec blueman-applet
 	exec spotifyd
-    Xwayland enable
+	exec remotecontrol
+    # Xwayland enable
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
 

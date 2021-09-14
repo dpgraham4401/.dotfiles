@@ -51,7 +51,7 @@ au BufNewFile,BufRead *.py
     \ set textwidth=79 |
     \ set autoindent
 
-au BufNewFile,BufRead *.{js,json}
+au BufNewFile,BufRead *.{mjs,js,json}
     \ set softtabstop=2 |
     \ set expandtab |
     \ set shiftwidth=2 |
@@ -111,5 +111,4 @@ autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
 lua <<EOF
 require('lsp-settings')
 EOF
-
 

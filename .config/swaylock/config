@@ -1,5 +1,5 @@
 # Image
-image=$XDG_CONFIG_HOME/wallpaper/cute_rocket.png
+image=/home/dg/.config/wallpaper/cute_rocket.png
 scaling=fill
 
 # Indicator
