@@ -1,5 +1,5 @@
 ### Sway Configuration
-
+	
 ### Variables
 	set $mod Mod1
 
@@ -8,6 +8,10 @@
 	set $down j
 	set $up k
 	set $right l
+
+	# cursor movement
+	set $fast 50
+	set $slow 10
 
 	# Preferred terminal emulator
 	set $term kitty 
@@ -117,11 +121,12 @@ exec swayidle -w \
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
+
     # Ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
+    # bindsym $mod+Shift+Left move left
+    # bindsym $mod+Shift+Down move down
+    # bindsym $mod+Shift+Up move up
+    # bindsym $mod+Shift+Right move right
 
 ### Workspaces:
     # Switch to workspace
@@ -170,6 +175,19 @@ exec swayidle -w \
 
 	bindsym $mod+minus scratchpad show
 
+	# move cursor
+	bindsym $mod+KP_Left seat - cursor move -10 0
+	bindsym $mod+KP_Down seat - cursor move 0 10
+	bindsym $mod+KP_Up seat - cursor move 0 -10
+	bindsym $mod+KP_Right seat - cursor move 10 0
+
+	bindsym $mod+Shift+KP_Left seat - cursor move -50 0
+	bindsym $mod+Shift+KP_Down seat - cursor move 0 50
+	bindsym $mod+Shift+KP_Up seat - cursor move 0 -50
+	bindsym $mod+Shift+KP_Right seat - cursor move 50 0
+
+	bindsym KP_Begin seat - cursor press button1
+
 ### Resizing containers:
 mode "resize" {
     bindsym $left resize shrink width 40px
@@ -207,6 +225,7 @@ bar {
     # Xwayland enable
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
+	exec "avizo-service"
 
 ### Startup Applications
     # exec --no-startup-id swaymsg 'workspace 1; exec /usr/bin/kitty'

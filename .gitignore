@@ -21,6 +21,10 @@
 .config/nvim/*
 !.config/nvim/init.vim
 
+!.config/environment.d/
+.config/environment.d/*
+!.config/environment.d/envvars.conf
+
 !.config/spotifyd
 .config/spotifyd/*
 !.config/spotifyd/spotifyd.conf

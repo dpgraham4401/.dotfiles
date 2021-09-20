@@ -42,6 +42,8 @@ c.colors.hints.match.fg = 'lime'
 config.bind('<backspace>', 'back')
 config.bind('gT', 'tab-prev')
 config.bind('gt', 'tab-next')
+config.unbind('d')
 config.unbind('q')
+config.bind('q', 'tab-close')
 config.bind('qq', 'quit')
 config.bind('<Meta-R>', 'reload')
