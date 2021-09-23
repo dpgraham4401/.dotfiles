@@ -5,6 +5,7 @@ alias ssh="kitty +kitten ssh"
 alias vim="/usr/bin/nvim"
 alias vi="/usr/bin/nvim"
 alias v="/usr/bin/nvim"
+alias venv="/usr/bin/python -m venv"
 alias rustbook="setsid qutebrowser /home/dg/OneDrive/Documents/Books/theRustBookHtml/index.html"
 export EDITOR='/usr/bin/vim'
 export XDG_CONFIG_HOME='/home/dg/.config/'
