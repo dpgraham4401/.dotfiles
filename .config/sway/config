@@ -89,6 +89,9 @@ exec swayidle -w \
 	# Start a terminal
     bindsym $mod+Return exec $term
 
+	# Start a terminal
+    bindsym $mod+q exec qutebrowser
+	
 	# Browser
 	bindsym $mod+Shift+f exec firefox
 	bindsym $mod+b exec qutebrowser

@@ -45,6 +45,7 @@ unique = true
 'Spotify' = ''
 '/(?i)Github.*Firefox/' = ''
 'firefox' = ''
+'Firefox' = ''
 'Nightly' = ''
 'firefoxdeveloperedition' = ''
 '/nvim ?\w*/' = ''
