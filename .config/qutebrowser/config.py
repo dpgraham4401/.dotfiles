@@ -51,7 +51,6 @@ c.colors.completion.item.selected.border.bottom = 'black'
 c.colors.completion.item.selected.border.top = 'black'
 
 # keybindings
-config.bind('<backspace>', 'back')
 config.unbind('d')
 config.bind('qq', 'close')
 config.bind('q', 'tab-close')

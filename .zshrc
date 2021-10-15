@@ -8,6 +8,7 @@ alias tn="tmux -u new"
 alias rustbook="firefox /home/dg/OneDrive/Documents/Books/theRustBookHtml/index.html"
 export EDITOR='/usr/bin/vim'
 export XDG_CONFIG_HOME='/home/dg/.config/'
+export XDG_DATA_HOME='/home/dg/.local/share/applications/'
 export PATH="${PATH}:${HOME}/.local/bin/"
 export GOPATH="$HOME/go"
 fpath+=~/.zfunc
