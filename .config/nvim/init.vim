@@ -8,12 +8,13 @@ set nowrap
 set exrc
 set secure
 set nohlsearch 
+set relativenumber
 set number
 set belloff=all
-set completeopt-=preview
-set completeopt=menuone,noinsert,noselect
+" set completeopt-=preview
+" set completeopt=menuone,noinsert,noselect
 set shortmess+=c
-" set updatetime=300
+set updatetime=300
 syntax enable
 filetype plugin indent on
 
@@ -71,8 +72,8 @@ augroup END
 " Plugins
 call plug#begin()
 " Plug 'valloric/YouCompleteMe'
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
-Plug 'kabouzeid/nvim-lspinstall'
 Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'nvim-lua/completion-nvim'
 Plug 'tmsvg/pear-tree'
@@ -103,7 +104,7 @@ imap <S-Tab> <Plug>(completion_smart_s_tab)
 autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
 
 lua <<EOF
-require('lsp-settings')
+ require('lsp-settings')
 EOF
 
 

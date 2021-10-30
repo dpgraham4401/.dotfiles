@@ -35,8 +35,8 @@
 
 ### Idle configuration
 exec swayidle -w \
-    timeout 1200 'swaylock -f -C /home/dg/.config/swaylock/config' \
-    timeout 1320 'systemctl suspend' \
+    timeout 1800 'swaylock -f -C /home/dg/.config/swaylock/config' \
+    timeout 1920 'systemctl suspend' \
         resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f -C /home/dg/.config/swaylock/config'
 

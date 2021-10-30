@@ -2,9 +2,7 @@
 ###--Old file--###
 autoload -U colors && colors
 alias ssh="kitty +kitten ssh"
-alias vim="/usr/bin/nvim"
-alias vi="/usr/bin/nvim"
-alias tn="tmux -u new"
+alias vim="/home/dg/.local/bin/lvim"
 alias rustbook="firefox /home/dg/OneDrive/Documents/Books/theRustBookHtml/index.html"
 export EDITOR='/usr/bin/vim'
 export XDG_CONFIG_HOME='/home/dg/.config/'
@@ -17,6 +15,8 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd nomatch
 unsetopt beep extendedglob notify
+
+bindkey '^H' backward-kill-word
 
 ###--Prompt-###
 autoload -Uz vcs_info 
@@ -38,7 +38,7 @@ export ZSH="/home/dg/.oh-my-zsh"
 #ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="true"
+CASE_SENSITIVE="false"
 
 # Uncomment the following line to enable command auto-correction.
 #ENABLE_CORRECTION="true"
