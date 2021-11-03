@@ -27,23 +27,19 @@
 !.config/nvim/lua/modules/
 .config/nvim/lua/modules/*
 
+!.config/nvim/lua/modules/lsp/
+!.config/nvim/lua/modules/lsp/*
+
 !.config/nvim/lua/modules/core/
-.config/nvim/lua/modules/core/*
-!.config/nvim/lua/modules/core/init.lua
-!.config/nvim/lua/modules/core/autocommands.lua
+!.config/nvim/lua/modules/core/*
 
 !.config/environment.d/
 .config/environment.d/*
 !.config/environment.d/envvars.conf
 
-!.config/tmux/
-.config/tmux/*
-!.config/tmux/tmux.conf
-
-
-!.config/nvim/lua/
-.config/nvim/lua/*
-!.config/nvim/lua/lsp-settings.lua
+!.config/spotifyd
+.config/spotifyd/*
+!.config/spotifyd/spotifyd.conf
 
 !.config/qutebrowser/
 .config/qutebrowser/*
