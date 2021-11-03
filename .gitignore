@@ -21,6 +21,17 @@
 .config/nvim/*
 !.config/nvim/init.vim
 
+!.config/nvim/lua/
+.config/nvim/lua/*
+
+!.config/nvim/lua/modules/
+.config/nvim/lua/modules/*
+
+!.config/nvim/lua/modules/core/
+.config/nvim/lua/modules/core/*
+!.config/nvim/lua/modules/core/init.lua
+!.config/nvim/lua/modules/core/autocommands.lua
+
 !.config/environment.d/
 .config/environment.d/*
 !.config/environment.d/envvars.conf
