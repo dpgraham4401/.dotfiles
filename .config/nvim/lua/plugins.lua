@@ -10,6 +10,7 @@ return require('packer').startup(function()
   use { 'simrat39/rust-tools.nvim' }
 
   -- ui
+  use { 'francoiscabrol/ranger.vim'}
   use { 'kyazdani42/nvim-web-devicons' }
   use { 'tjdevries/colorbuddy.nvim' }
   use { '~/.config/nvim/colors/onedark.nvim' }
@@ -49,8 +50,8 @@ return require('packer').startup(function()
   -- utils
   use { 'nvim-lua/plenary.nvim' }
   use { 'tpope/vim-abolish' } -- better substitution
-  use { 'tpope/vim-surround' }
-  use { 'b3nj5m1n/kommentary' } 
+  use { 'tpope/vim-surround' } -- change inner word surrounding w/ cs<current><replace>
+  use { 'b3nj5m1n/kommentary' } -- comment/uncomment w/ "gcc"
   use { 'jeffkreeftmeijer/vim-numbertoggle' }
 
 end)

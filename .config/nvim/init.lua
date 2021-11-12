@@ -23,8 +23,8 @@
 --   end
 -- )
 ----------------------------------------------------------
-vim.o.completeopt = 'menu,menuone,noselect,noinsert'
-vim.o.mouse = 'nv'
+vim.o.completeopt = 'menuone,noinsert,noselect'
+vim.o.mouse = 'a'
 vim.o.number = true
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
@@ -33,16 +33,17 @@ vim.o.expandtab = true
 vim.o.clipboard = 'unnamedplus'
 vim.o.spell = false
 vim.o.spelllang = 'en_us'
-vim.o.termguicolors = true
-vim.o.background = 'dark'
+vim.o.wrap = false
+-- vim.o.termguicolors = true
+-- vim.o.background = 'dark'
 vim.o.showcmd = true
 vim.o.signcolumn = 'number'
 vim.o.swapfile = false
 vim.o.foldenable = false
 vim.o.hidden = true
 
--- vim.g.python_host_prog = '/Users/kylemccarthy/.pyenv/versions/nvim2/bin/python'
--- vim.g.python3_host_prog = '/Users/kylemccarthy/.pyenv/versions/nvim3/bin/python'
+vim.g.python3_host_prog = '/usr/bin/python'
+vim.g.colors_name = 'onedark'
 
 require('plugins')
 require('plugins.cmp')
@@ -54,8 +55,6 @@ require('plugins.nerdtree')
 require('plugins.autopairs')
 require('plugins.kommentary')
 require('plugins.telescope')
-
-vim.cmd [[colorscheme onedark]]
 
 vim.cmd [[command! PackerInstall packadd packer.nvim | lua require('plugins').install()]]
 vim.cmd [[command! PackerUpdate packadd packer.nvim | lua require('plugins').update()]]
@@ -70,9 +69,6 @@ vim.cmd([[
   autocmd FileType typescript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
   autocmd FileType typescriptreact setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 ]])
-
-vim.api.nvim_set_keymap('n', '<C-l>', ':noh<CR>', { noremap = true, nowait = true, silent = true })
-
 
 -- Key mappings
 ----------------------------------------------------------
@@ -90,4 +86,9 @@ key_mapper('n', '<C-s>', ':w<CR>')
 key_mapper('n', '<C-q>', ':q<CR>')
 key_mapper('n', '<Tab>', ':bprevious<CR>')
 key_mapper('v', '<C-c>', ':y<CR>')
+key_mapper('n', '<C-n>', ':Ranger<CR>')
+
+vim.api.nvim_set_keymap('n', '<C-l>', ':noh<CR>', { noremap = true, nowait = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "<Tab>", "pumvisible() ? '<C-n>' : '<Tab>'", {noremap = true, silent = true, expr = true})
+-- vim.api.nvim_set_keymap("i", "<S-Tab>", "pumvisible() ? '<C-p>' : '<C-h>'", {noremap = true, expr = true})
 
