@@ -1,2 +1,0 @@
-require('modules.core.autocommands')
-

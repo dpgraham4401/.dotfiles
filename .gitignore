@@ -19,10 +19,11 @@
 
 !.config/nvim/
 .config/nvim/*
-!.config/nvim/init.vim
+!.config/nvim/init.lua
 
 !.config/nvim/lua/
 .config/nvim/lua/*
+!.config/nvim/lua/plugins.lua
 
 !.config/nvim/lua/modules/
 .config/nvim/lua/modules/*
