@@ -39,6 +39,7 @@ unique = true
 'font-manager' = ''
 'Google-chrome' = ''
 'Chromium' = ''
+'Brave-browser' = ''
 'qutebrowser' = ''
 'org.qutebrowser.qutebrowser' = ''
 'Slack' = ''

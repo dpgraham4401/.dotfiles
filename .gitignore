@@ -62,6 +62,10 @@
 !.config/waybar/config
 !.config/waybar/style.css
 
+!.config/waybar/modules
+.config/waybar/modules/*
+!.config/waybar/modules/test_mod.py
+
 !.config/ranger/
 .config/ranger/*
 !.config/ranger/rc.conf

@@ -3,6 +3,8 @@
 autoload -U colors && colors
 alias ssh="kitty +kitten ssh"
 alias vim="/usr/bin/nvim"
+alias venv="python -m venv"
+alias od="onedrive --synchronize"
 alias rustbook="firefox /home/dg/OneDrive/Documents/Books/theRustBookHtml/index.html"
 export EDITOR='/usr/bin/vim'
 export XDG_CONFIG_HOME='/home/dg/.config/'

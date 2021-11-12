@@ -50,6 +50,7 @@ window#waybar {
 #tray,
 #mode,
 #custom-power,
+#custom-menu,
 #idle_inhibitor {
     padding: 0 10px;
 }

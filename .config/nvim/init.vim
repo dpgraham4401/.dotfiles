@@ -17,6 +17,8 @@ if has('nvim')
 	" For vsnip users.
 	Plug 'hrsh7th/cmp-vsnip'
 	Plug 'hrsh7th/vim-vsnip'
+	" airline
+	Plug 'vim-airline/vim-airline'
 	call plug#end()
 else
 	call plug#begin()
@@ -40,8 +42,6 @@ set mouse=a
 set clipboard=unnamedplus
 set belloff=all
 set hidden
-" set completeopt-=preview
-" set completeopt=menuone,noinsert,noselect
 syntax enable
 filetype plugin indent on
 
@@ -65,11 +65,41 @@ map <C-q> :q<CR>
 " open ranger file explorer
 map <C-n> :Ranger<CR> 
 
-" Autocomplete
-" if PUM then <C-n>, else normal tab
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<Tab>"
-set completeopt=menu,menuone,noselect
+" move around splits with Alt-arrow
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
 
+" Autocomplete
+set completeopt=menu,menuone,noselect
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<Tab>"
+
+"let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+"let g:airline#extensions#tabline#formatter = 'unique_tail'
+"let g:airline_section_y = ""
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:airline#extensions#tabline#right_sep = ' '
+"let g:airline#extensions#tabline#right_alt_sep = '|'
+"let g:airline_left_sep = ' '
+"let g:airline_left_alt_sep = '|'
+"let g:airline_right_sep = ' '
+"let g:airline_right_alt_sep = '|'
+
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+" let g:airline_symbols.branch = ''
+" let g:airline_symbols.readonly = ''
+" let g:airline_symbols.linenr = '☰'
+" let g:airline_symbols.maxlinenr = ''
+" let g:airline_symbols.dirty='⚡'
 
 if has('nvim')
 lua <<EOF
@@ -77,4 +107,3 @@ require('modules.core')
 require('modules.lsp')
 EOF
 endif
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<Tab>"

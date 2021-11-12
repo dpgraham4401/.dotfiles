@@ -1,7 +1,7 @@
 {
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock", "idle_inhibitor"],
-    "modules-right": ["tray", "pulseaudio", "temperature", "battery", "custom/power"],
+    "modules-right": ["tray", "custom/onedrive", "pulseaudio", "temperature", "battery", "custom/power", "custom/menu"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -85,8 +85,17 @@
     //     "escape": true,
     //     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
     // },
-	"custom/power": {
-		"format": "",
-		"on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Restart' 'shutdown -r now' -b 'Shutdown'  'shutdown -h now' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33"
-	}
+	// "custom/power": {
+	// 	"format": "",
+	// 	"on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Restart' 'shutdown -r now' -b 'Shutdown'  'shutdown -h now' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33"
+	// },
+	// "custom/example_runscript_3 seconds": {
+	// 	"interval": 3,
+	// 	"exec": "/home/dg/.config/waybar/modules/menu_test.py",
+	// 	"format": "{}",
+	// },
+	"custom/menu": {
+		"format": "",
+	 	"on-click": "/home/dg/.config/waybar/modules/menu_test.py",
+	},
 }
