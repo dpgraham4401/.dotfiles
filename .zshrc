@@ -2,9 +2,12 @@
 ###--Old file--###
 autoload -U colors && colors
 alias ssh="kitty +kitten ssh"
-alias vi="/home/dg/.local/bin/lvim"
+alias vim="/usr/bin/nvim"
 alias venv="/usr/bin/python -m venv"
 alias rustbook="setsid qutebrowser /home/dg/OneDrive/Documents/Books/theRustBookHtml/index.html"
+alias pacr="pacman -Rs"
+alias pacs="pacman -Ss"
+alias paci="pacman -Si"
 export EDITOR='/usr/bin/vim'
 export XDG_CONFIG_HOME='/home/dg/.config/'
 export XDG_DATA_DIRS='/usr/share/:/usr/local/share/'
@@ -39,7 +42,7 @@ export ZSH="/home/dg/.oh-my-zsh"
 #ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="true"
+CASE_SENSITIVE="false"
 
 # Uncomment the following line to enable command auto-correction.
 #ENABLE_CORRECTION="true"
@@ -49,3 +52,11 @@ CASE_SENSITIVE="true"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+# autostart ssh agent
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+if [[ ! "$SSH_AUTH_SOCK" ]]; then
+    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+fi

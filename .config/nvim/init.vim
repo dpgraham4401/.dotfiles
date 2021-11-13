@@ -1,67 +1,80 @@
-colorscheme desert
+" Vim init 2.0
+" Plugins
+if has('nvim')
+	call plug#begin()
+	Plug 'tmsvg/pear-tree'
+	Plug 'francoiscabrol/ranger.vim'
+	" colorschemes
+	Plug 'rafi/awesome-vim-colorschemes'
+	" LSP setup
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'williamboman/nvim-lsp-installer'
+	" Autocomplete
+	Plug 'hrsh7th/cmp-buffer'
+	Plug 'hrsh7th/cmp-path'
+	Plug 'hrsh7th/cmp-cmdline'
+	Plug 'hrsh7th/nvim-cmp'
+	" For vsnip users.
+	Plug 'hrsh7th/cmp-vsnip'
+	Plug 'hrsh7th/vim-vsnip'
+	call plug#end()
+else
+	call plug#begin()
+	Plug 'tmsvg/pear-tree'
+	Plug 'francoiscabrol/ranger.vim'
+	Plug 'rafi/awesome-vim-colorschemes'
+	call plug#end()
+endif
+
+" tabs
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set mouse=a
-set hidden
+set autoindent
+"lines and numbers
 set nowrap
-set exrc
-set secure
-set nohlsearch 
-set number
 set relativenumber
+set number
+" mouse and clipboard
+set mouse=a
+set clipboard=unnamedplus
 set belloff=all
+set hidden
+" set completeopt-=preview
+" set completeopt=menuone,noinsert,noselect
+syntax enable
+filetype plugin indent on
+
+" Appearance
+colorscheme iceberg
+" highlight Normal ctermbg=black
 
 " Keybindings
-noremap X <c-v>
+inoremap jk <Esc>
 nnoremap ; :
+" navigate buffers
+noremap <S-j> :bnext<CR>
+noremap <S-k> :bprevious<CR>
+noremap <Tab> :bprevious<CR>
+" open ranger file explorer
+map <C-n> :Ranger<CR>
+" save with Control-S
 map <C-s> :w<CR>
+" quit with Control-q
 map <C-q> :q<CR>
-:nnoremap <up> :bnext<CR>
-:nnoremap <down> :bprevious<CR>
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
-let g:ranger_map_keys = 0
-map <C-n> :Ranger<CR> 
-cmap w!! w !sudo tee > /dev/null %
+" open ranger file explorer
+map <C-n> :Ranger<CR>
 
-" move around in insert mode 
-inoremap <c-l> <Right>
-inoremap <c-h> <Left>
-inoremap <c-k> <Up>
-inoremap <c-j> <Down>
+" Autocomplete
+" if PUM then <C-n>, else normal tab
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<Tab>"
+set completeopt=menu,menuone,noselect
 
-au BufNewFile,BufRead *.py
-    \ set textwidth=79 |
-    \ set autoindent
 
-au BufNewFile,BufRead *.{mjs,js,json}
-    \ set softtabstop=2 |
-    \ set expandtab |
-    \ set shiftwidth=2 |
-    \ set tabstop=2
-
-" neovim specific
-set clipboard=unnamedplus
-" Plugins
-call plug#begin()
-Plug 'tmsvg/pear-tree'
-Plug 'francoiscabrol/ranger.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-call plug#end()
-
-let g:airline_theme='solarized'
-let g:airline#extensions#tabline#enabled = 2
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline_section_y = ""
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#right_sep = ' '
-let g:airline#extensions#tabline#right_alt_sep = '|'
-let g:airline_left_sep = ' '
-let g:airline_left_alt_sep = '|'
-let g:airline_right_sep = ' '
-let g:airline_right_alt_sep = '|'
+if has('nvim')
+lua <<EOF
+-- require('modules.core')
+-- require('modules.lsp')
+EOF
+endif
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<Tab>"
