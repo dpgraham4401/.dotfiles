@@ -19,7 +19,22 @@
 
 !.config/nvim/
 .config/nvim/*
-!.config/nvim/init.vim
+!.config/nvim/init.lua
+
+!.config/nvim/lua/
+.config/nvim/lua/*
+!.config/nvim/lua/plugins.lua
+
+!.config/nvim/lua/plugins/
+.config/nvim/lua/plugins/*
+!.config/nvim/lua/plugins/autopairs.lua
+!.config/nvim/lua/plugins/cmp.lua
+!.config/nvim/lua/plugins/kommentary.lua
+!.config/nvim/lua/plugins/lightline.lua
+!.config/nvim/lua/plugins/lsp.lua
+!.config/nvim/lua/plugins/telescope.lua
+!.config/nvim/lua/plugins/treesitter.lua
+!.config/nvim/lua/plugins/trouble.lua
 
 !.config/environment.d/
 .config/environment.d/*
@@ -28,10 +43,6 @@
 !.config/spotifyd
 .config/spotifyd/*
 !.config/spotifyd/spotifyd.conf
-
-!.config/nvim/lua/
-.config/nvim/lua/*
-!.config/nvim/lua/lsp-settings.lua
 
 !.config/qutebrowser/
 .config/qutebrowser/*
@@ -53,6 +64,10 @@
 .config/waybar/*
 !.config/waybar/config
 !.config/waybar/style.css
+
+!.config/waybar/modules
+.config/waybar/modules/*
+!.config/waybar/modules/test_mod.py
 
 !.config/ranger/
 .config/ranger/*

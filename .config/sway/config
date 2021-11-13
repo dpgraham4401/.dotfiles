@@ -20,7 +20,6 @@
 
 	# Wallpaper
 	output * bg /home/dg/.config/wallpaper/floating_nature_1900x1200.jpg fill
-
     focus_wrapping no
    
     # Window colors
@@ -168,7 +167,7 @@ exec swayidle -w \
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    # bindsym $mod+space focus mode_toggle
+    bindsym $mod+ctrl+space focus mode_toggle
 
 ### Scratchpad:
 	bindsym $mod+Shift+minus move scratchpad
@@ -176,17 +175,24 @@ exec swayidle -w \
 	bindsym $mod+minus scratchpad show
 
 	# move cursor
-	bindsym $mod+KP_Left seat - cursor move -10 0
-	bindsym $mod+KP_Down seat - cursor move 0 10
-	bindsym $mod+KP_Up seat - cursor move 0 -10
-	bindsym $mod+KP_Right seat - cursor move 10 0
+	mode "mouse" {
+	bindsym KP_Left seat - cursor move -10 0
+	bindsym KP_Down seat - cursor move 0 10
+	bindsym KP_Up seat - cursor move 0 -10
+	bindsym KP_Right seat - cursor move 10 0
 
-	bindsym $mod+Shift+KP_Left seat - cursor move -50 0
-	bindsym $mod+Shift+KP_Down seat - cursor move 0 50
-	bindsym $mod+Shift+KP_Up seat - cursor move 0 -50
-	bindsym $mod+Shift+KP_Right seat - cursor move 50 0
+	bindsym Shift+KP_Left seat - cursor move -50 0
+	bindsym Shift+KP_Down seat - cursor move 0 50
+	bindsym Shift+KP_Up seat - cursor move 0 -50
+	bindsym Shift+KP_Right seat - cursor move 50 0
 
-	bindsym KP_Begin seat - cursor press button1
+	bindsym --release KP_Begin seat - cursor press button1, seat - cursor release button1
+	bindsym --release KP_DELETE seat - cursor press button3, seat - cursor release button3
+    
+	bindsym Return mode "default"
+    bindsym Escape mode "default"
+	}
+	bindsym $mod+Shift+m mode "mouse"
 
 ### Resizing containers:
 mode "resize" {
@@ -238,4 +244,5 @@ output HDMI-A-1 {
 
 input * {
 	xkb_layout "us"
+	xkb_numlock enable
 }
