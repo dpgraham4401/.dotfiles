@@ -12,13 +12,12 @@ return require('packer').startup(function()
   -- ui
   use { 'francoiscabrol/ranger.vim'}
   use { 'kyazdani42/nvim-web-devicons' }
-  use { 'tjdevries/colorbuddy.nvim' }
-  use { '~/.config/nvim/colors/onedark.nvim' }
-  use { 'olimorris/onedarkpro.nvim' }
+  -- use { '~/.config/nvim/colors/onedark.nvim' }
+  -- use { 'olimorris/onedarkpro.nvim' }
   use { 'akinsho/nvim-bufferline.lua' }
   use { 'itchyny/lightline.vim' }
   use { 'folke/trouble.nvim' }
-  use { 'preservim/nerdtree' }
+  -- use { 'preservim/nerdtree' }
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'} }
@@ -48,7 +47,7 @@ return require('packer').startup(function()
   use { 'JoosepAlviste/nvim-ts-context-commentstring' }
 
   -- utils
-  use { 'nvim-lua/plenary.nvim' }
+  use { 'nvim-lua/plenary.nvim' } -- required for telescope
   use { 'tpope/vim-abolish' } -- better substitution
   use { 'tpope/vim-surround' } -- change inner word surrounding w/ cs<current><replace>
   use { 'b3nj5m1n/kommentary' } -- comment/uncomment w/ "gcc"
