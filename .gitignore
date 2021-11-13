@@ -36,6 +36,10 @@
 !.config/nvim/lua/plugins/treesitter.lua
 !.config/nvim/lua/plugins/trouble.lua
 
+!.config/nvim/lua/modules/
+.config/nvim/lua/modules/*
+!.config/nvim/lua/modules/utils.lua
+
 !.config/environment.d/
 .config/environment.d/*
 !.config/environment.d/envvars.conf
