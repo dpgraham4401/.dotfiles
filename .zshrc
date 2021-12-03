@@ -14,7 +14,9 @@ export XDG_CONFIG_HOME='/home/dg/.config/'
 export XDG_DATA_HOME='/home/dg/.local/share/applications/'
 export PATH="${PATH}:${HOME}/.local/bin/"
 export RANGER_LOAD_DEFAULT_RC=FALSE
-export GOPATH="$HOME/go"
+export GOPATH="/home/dg/Projects/go"
+export PATH="${PATH}:${GOPATH}/bin"
+export GOROOT=`go env GOROOT`
 fpath+=~/.zfunc
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -51,7 +53,15 @@ CASE_SENSITIVE="false"
 
 # Plugins
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git)
+plugins=(
+    golang 
+    git
+    web-search
+    copybuffer
+    dirhistory
+    history
+    pip
+)
 
 source $ZSH/oh-my-zsh.sh
 if [ -n "$RANGER_LEVEL" ]; then export PS1="[ranger]$PS1"; fi

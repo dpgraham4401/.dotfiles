@@ -12,6 +12,7 @@ return require('packer').startup(function()
   -- ui
   use { 'francoiscabrol/ranger.vim'}
   use { 'kyazdani42/nvim-web-devicons' }
+  use ( 'rafi/awesome-vim-colorschemes')
   -- use { '~/.config/nvim/colors/onedark.nvim' }
   -- use { 'olimorris/onedarkpro.nvim' }
   use { 'akinsho/nvim-bufferline.lua' }
@@ -48,6 +49,7 @@ return require('packer').startup(function()
 
   -- utils
   use { 'nvim-lua/plenary.nvim' } -- required for telescope
+  use { 'mfussenegger/nvim-lint' }
   use { 'tpope/vim-abolish' } -- better substitution
   use { 'tpope/vim-surround' } -- change inner word surrounding w/ cs<current><replace>
   use { 'b3nj5m1n/kommentary' } -- comment/uncomment w/ "gcc"

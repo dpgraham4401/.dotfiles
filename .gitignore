@@ -17,6 +17,10 @@
 .config/sway/*
 !.config/sway/config
 
+!.config/fusuma/
+.config/fusuma/*
+!.config/fusuma/config.yml
+
 !.config/nvim/
 .config/nvim/*
 !.config/nvim/init.lua

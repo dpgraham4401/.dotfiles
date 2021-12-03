@@ -1,0 +1,10 @@
+swipe:
+  3:
+    right:
+      command: 'swaymsg "workspace next"'
+    left:
+      command: 'swaymsg "workspace prev"'
+    up:
+      command: 'swaymsg "workspace next"'
+    down:
+      command: 'swaymsg "workspace prev"'

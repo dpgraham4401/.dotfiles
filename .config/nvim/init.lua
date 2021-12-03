@@ -1,27 +1,6 @@
 -- uncomment if installing or updating packer
-----------------------------------------------------------
--- local vim = vim
--- local execute = vim.api.nvim_command
--- local fn = vim.fn
--- -- ensure that packer is installed
--- local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
--- if fn.empty(fn.glob(install_path)) > 0 then
---     execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
---     execute 'packadd packer.nvim'
--- end
--- vim.cmd('packadd packer.nvim')
--- local packer = require'packer'
--- local util = require'packer.util'
--- packer.init({
---   package_root = util.join_paths(vim.fn.stdpath('data'), 'site', 'pack')
--- })
--- --- startup and add configure plugins
--- packer.startup(function()
---   local use = use
---   -- add you plugins here like:
---   -- use 'neovim/nvim-lspconfig'
---   end
--- )
+-------------------------------------------------------------
+-- require('install_packer')
 ----------------------------------------------------------
 vim.o.completeopt = 'menuone,noinsert,noselect'
 vim.o.mouse = 'a'
@@ -69,6 +48,7 @@ vim.cmd([[
   autocmd FileType lua setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
   autocmd FileType typescript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
   autocmd FileType typescriptreact setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+  au BufWritePost <buffer> lua require('lint').try_lint()
 ]])
 
 
