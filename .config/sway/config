@@ -201,6 +201,7 @@ bar {
 	exec --no-startup-id gammastep -l 38.89511:-77.03637 -t 5000:3000
     exec mako
     exec hexchat
+    exec fusuma
 	exec nm-applet --indicator
 	exec blueman-applet
     exec_always autotiling

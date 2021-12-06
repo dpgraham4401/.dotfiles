@@ -91,6 +91,5 @@
 
 !Scripts/
 Scripts/*
-!Scripts/Bash
-Scripts/Bash/*
-!Scripts/Bash/start_webenv.sh
+!Scripts/start_webenv.sh
+!Scripts/install_script.py

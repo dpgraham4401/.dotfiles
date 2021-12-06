@@ -4,7 +4,8 @@ swipe:
       command: 'swaymsg "workspace next"'
     left:
       command: 'swaymsg "workspace prev"'
+  4:
     up:
-      command: 'swaymsg "workspace next"'
+      command: 'swaymsg "move scratchpad"'
     down:
-      command: 'swaymsg "workspace prev"'
+      command: 'swaymsg "scratchpad show"'
