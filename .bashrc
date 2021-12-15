@@ -32,6 +32,8 @@ export XDG_CONFIG_HOME='/home/dg/.config/'
 export XDG_DATA_HOME='/home/dg/.local/share/applications/'
 export PATH="${PATH}:${HOME}/.local/bin/"
 export GOPATH="$HOME/go"
+export PATH="${PATH}:${GOPATH}/bin"
+export GOROOT=`go env GOROOT`
 export RANGER_LOAD_DEFAULT_RC=FALSE
 #export GDK_DPI_SCALE=1.6
 . "$HOME/.cargo/env"

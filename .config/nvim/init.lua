@@ -60,20 +60,18 @@ local key_mapper = require('modules.utils').key_mapper
 key_mapper('i', 'jk', '<ESC>')
 key_mapper('n', '<C-s>', ':w<CR>')
 key_mapper('n', '<C-q>', ':bd<CR>')
-key_mapper('n', '<CS-q>', ':q<CR>')
+-- key_mapper('n', '<CS-q>', ':q<CR>')
+key_mapper('n', '<C-q>', '<cmd>lua require("modules.utils").close_buffer()<CR>')
 key_mapper('n', '<S-j>', ':bprevious<CR>')
 key_mapper('n', '<S-k>', ':bnext<CR>')
 key_mapper('v', '<C-c>', ':y<CR>')
 key_mapper('n', '<C-n>', ':Ranger<CR>')
 key_mapper('n', '<C-t>', ':TroubleToggle<CR>')
 key_mapper('n', '<C-l>', ':noh<CR>')
-key_mapper('n', '<Up>', ':wincmd k<CR>')
-key_mapper('n', '<Down>', ':wincmd j<CR>')
-key_mapper('n', '<Left>', ':wincmd h<CR>')
-key_mapper('n', '<Rigt>', ':wincmd l<CR>')
-
--- Tester
--- key_mapper('n', '<C-l>', ':lua require("modules.utils").yo_momma()<CR>')
+key_mapper('n', '<C-Up>', ':wincmd k<CR>')
+key_mapper('n', '<C-Down>', ':wincmd j<CR>')
+key_mapper('n', '<C-Left>', ':wincmd h<CR>')
+key_mapper('n', '<C-Rigt>', ':wincmd l<CR>')
 
 
 -- Notes on Plugin functionality
@@ -92,7 +90,7 @@ key_mapper('n', '<Rigt>', ':wincmd l<CR>')
 
 -- testing area
 ----------------------------------------------------------
-local test_func = function()
-  print("yo momma")
-end
-test_func()
+-- local test_func = function()
+--   print("yo momma")
+-- end
+-- test_func()

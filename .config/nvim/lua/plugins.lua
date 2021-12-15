@@ -43,9 +43,9 @@ return require('packer').startup(function()
   use { 'lewis6991/spellsitter.nvim' }
 
   -- typescript
-  use { 'jose-elias-alvarez/nvim-lsp-ts-utils' }
-  use { 'windwp/nvim-ts-autotag' }
-  use { 'JoosepAlviste/nvim-ts-context-commentstring' }
+  -- use { 'jose-elias-alvarez/nvim-lsp-ts-utils' }
+  -- use { 'windwp/nvim-ts-autotag' }
+  -- use { 'JoosepAlviste/nvim-ts-context-commentstring' }
 
   -- utils
   use { 'nvim-lua/plenary.nvim' } -- required for telescope
