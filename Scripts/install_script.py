@@ -1,9 +1,11 @@
 #!/usr/bin/python
-"""docstring"""
+"""
+    install my Sway setup and the configuration files
+"""
 
 import argparse
-import subprocess
 import sys
+import subprocess
 import os
 import shutil
 
@@ -32,7 +34,7 @@ def install_cli():
     return args
 
 
-def get_files(lines):
+def parse_gitignore(lines):
     directories = []
     files = []
     for i in lines:
@@ -45,24 +47,31 @@ def get_files(lines):
     for i in directories:
         print('dir: ', i)
 
-def main():
-    """docstring"""
-    args = install_cli()
-    git_args = ['git', 'clone', args.config]
-    
+
+def git_clone(args):
     if args.config:
         try:
             shutil.which('git')
             print('git found')
+            git_args = ['git', 'clone', args.config, 'dotfiles-tmp']
+            subprocess.call(git_args) 
         except:
             print("git not found")
             sys.exit()
-        # subprocess.call(git_args) 
-        os.chdir('./dotfiles-sway')
-        gitignore_file = open('./.gitignore', 'r')
-        lines = gitignore_file.readlines()
-        get_files(lines)
 
+
+def get_files():
+    os.chdir('./dotfiles-tmp')
+    gitignore_file = open('./.gitignore', 'r')
+    lines = gitignore_file.readlines()
+    parse_gitignore(lines)
+
+
+def main():
+    args = install_cli()
+    git_clone(args)
+    get_files()
+    
 
 if __name__ == '__main__':
     main()
