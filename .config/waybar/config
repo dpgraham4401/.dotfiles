@@ -2,6 +2,7 @@
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock", "idle_inhibitor"],
     "modules-right": ["tray", "custom/scratchpad-indicator", "pulseaudio", "temperature", "battery", "custom/power", "custom/menu"],
+
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },

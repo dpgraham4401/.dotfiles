@@ -1,7 +1,7 @@
 ### Sway Configuration
-
+	
 ### Variables
-	set $mod Mod4
+	set $mod Mod1
 
 	# Home row direction keys, like vim
 	set $left h
@@ -9,21 +9,23 @@
 	set $up k
 	set $right l
 
+	# cursor movement
+	set $fast 50
+	set $slow 10
+
 	# Preferred terminal emulator
-	set $term kitty
+	set $term kitty 
 
 ### Apperance
 
 	# Wallpaper
 	output * bg /home/dg/.config/wallpaper/floating_nature_1900x1200.jpg fill
-
     focus_wrapping no
    
     # Window colors
     # Class                 border  Backgr  Text    indicator   child_border
-    client.focused          #000000 #c0c0cc #c0c0cc #c0c0cc     #efeff5
-    #client.focused         #000000 #909099 #909095 #efeff5     #909099
-    client.unfocused        #4080bf #4080bf #003d99 #b0b0b9     #4080bf
+    client.focused          #ffffff #ffffff #ffffff #0066ff     #ffffff
+    client.unfocused        #4080bf #4080bf #4080bf #4080bf     #4080bf
     client.urgent           #33ccff #33ccff #33ccff #33ccff     #33ccff
 
 	# Gaps
@@ -43,24 +45,28 @@ exec swayidle -w \
 ### Key bindings
 	
     ## Volume
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% 
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% 
-	bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle 
-    # bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-    # bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+	bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
    
 	# Media playerctl  
 	bindsym XF86AudioNext exec playerctl next
 	bindsym XF86AudioPrev exec playerctl previous
 	bindsym XF86AudioPlay exec playerctl play-pause
 
-    # Backlight
+    # Calculator
+    bindsym XF86Calculator exec gnome-calculator
+
+	# Backlight
 	bindsym XF86MonBrightnessUp exec light -A 2
 	bindsym XF86MonBrightnessDown exec light -U 2
 
+    # Screenshot
+    bindsym print exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
+
     # Leds
-    bindsym XF86KbdBrightnessUp exec light -A 5 -s sysfs/leds/smc::kbd_backlight
-    bindsym XF86KbdBrightnessDown exec light -U 5 -s sysfs/leds/smc::kbd_backlight
+    # bindsym XF86KbdBrightnessUp exec light -A 5 -s sysfs/leds/smc::kbd_backlight
+    # bindsym XF86KbdBrightnessDown exec light -U 5 -s sysfs/leds/smc::kbd_backlight
 
     # Screenshot
     bindsym XF86LaunchA exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
@@ -80,11 +86,10 @@ exec swayidle -w \
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33 --button-margin-right=10px
 
-
 ### Applications shortcuts 
 	# Launcher
-	bindsym XF86LaunchB exec --no-startup-id wofi --show drun -I -i 
-	bindsym $mod+Space exec --no-startup-id wofi --show drun -I -i 
+	bindsym $mod+space exec --no-startup-id wofi --show drun -I -i
+	# bindsym XF86LaunchB exec --no-startup-id wofi --show drun -I -i
 
 	# Start a terminal
     bindsym $mod+Return exec $term
@@ -94,10 +99,14 @@ exec swayidle -w \
 	
 	# Browser
 	bindsym $mod+Shift+f exec firefox
-	bindsym $mod+b exec qutebrowser
+	bindsym $mod+q exec qutebrowser
+
 
     # Explorer
     bindsym $mod+n exec kitty --class=ranger sh -c "source ~/.zshrc & source ranger"
+
+	# spotify-tui
+	bindsym $mod+s exec kitty --class=spotify -e "spt"
 
 ### Moving around:
     # Move your focus around
@@ -116,11 +125,12 @@ exec swayidle -w \
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
+
     # Ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
+    # bindsym $mod+Shift+Left move left
+    # bindsym $mod+Shift+Down move down
+    # bindsym $mod+Shift+Up move up
+    # bindsym $mod+Shift+Right move right
 
 ### Workspaces:
     # Switch to workspace
@@ -169,6 +179,26 @@ exec swayidle -w \
 
 	bindsym $mod+minus scratchpad show
 
+	# move cursor
+	mode "mouse" {
+	bindsym KP_Left seat - cursor move -10 0
+	bindsym KP_Down seat - cursor move 0 10
+	bindsym KP_Up seat - cursor move 0 -10
+	bindsym KP_Right seat - cursor move 10 0
+
+	bindsym Shift+KP_Left seat - cursor move -50 0
+	bindsym Shift+KP_Down seat - cursor move 0 50
+	bindsym Shift+KP_Up seat - cursor move 0 -50
+	bindsym Shift+KP_Right seat - cursor move 50 0
+
+	bindsym --release KP_Begin seat - cursor press button1, seat - cursor release button1
+	bindsym --release KP_DELETE seat - cursor press button3, seat - cursor release button3
+    
+	bindsym Return mode "default"
+    bindsym Escape mode "default"
+	}
+	bindsym $mod+Shift+m mode "mouse"
+
 ### Resizing containers:
 mode "resize" {
     bindsym $left resize shrink width 40px
@@ -190,7 +220,6 @@ bindsym $mod+r mode "resize"
 
 ### Status Bar:
 bar {
-	# Config in $HOME/.config/waybar/config    
 	swaybar_command waybar
 	workspace_buttons yes
 }
@@ -207,22 +236,18 @@ bar {
     exec_always autotiling
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
-    # exec_always --no-startup-id /home/dg/.cargo/bin/workstyle &> /tmp/workstyle.log
+	exec "avizo-service"
+
+### Startup Applications
+    # exec --no-startup-id swaymsg 'workspace 1; exec /usr/bin/kitty'
 
 ### Input/Output devices
-input type:touchpad {
-    tap enabled
-}
-
-output eDP-1 {
-	resolution 2560x1600
-	scale 1.8
-	pos 0 0
-    scale_filter linear
-}
-
 output HDMI-A-1 {
 	resolution 1920x1080
 	pos 1600 0
 }
 
+input * {
+	xkb_layout "us"
+	xkb_numlock enable
+}
