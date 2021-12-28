@@ -102,8 +102,10 @@ def make_directories(dir):
         subprocess.call(dir_args)
 
 def copy_files(file_path):
+    home_index = len(get_home_dir())
     for i in file_path:
-        file = file_path.split(i, '/')[-1]
+        file = i[home_index:]
+        print(file)
         cp_args = ['cp', file, i, '-u']
         subprocess.call(cp_args)
 
