@@ -94,3 +94,4 @@ Scripts/*
 !Scripts/start_webenv.sh
 !Scripts/install_script.py
 !Scripts/fedora_sway.txt
+!Scripts/fedora_devel.txt

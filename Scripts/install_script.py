@@ -1,5 +1,6 @@
 #!/usr/bin/python
 """
+    The world's worst script
     install my Sway setup and the configuration files
 """
 
@@ -132,7 +133,9 @@ def get_packager_args(args):
 def install_packages(args):
     packages = parse_packages(args)
     package_args = get_packager_args(args)
-    install_args = ['sudo', package_args, 'install'] + packages
+    if package_args == None:
+        sys.exit(1)
+    install_args = ['sudo'] + package_args + packages
     subprocess.call(install_args)
 
 
