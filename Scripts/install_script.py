@@ -16,8 +16,11 @@ def install_cli():
     parser = argparse.ArgumentParser(description="install packages from a text file on various distros")
     parser.add_argument('-v','--version', action='version', version="why are you checking the version? it's an install script. loser.")
     
-    parser.add_argument('path',
+    parser.add_argument('--install', '-i',
                         help='path to the text file with packages to install')
+
+    parser.add_argument('--config', '-c',
+                        help='copy configs from currently checkout out branch')
 
     parser.add_argument('--repo', '-r',
                         help='git repo URL with root at $HOME and .gitignore')
@@ -105,17 +108,43 @@ def copy_files(file_path):
     home_index = len(get_home_dir())
     for i in file_path:
         file = i[home_index:]
-        print(file)
         cp_args = ['cp', file, i, '-u']
         subprocess.call(cp_args)
 
 
+def parse_packages(args):
+    files = open(args.install, 'r')
+    lines = files.readlines()
+    packages = remove_new_line(lines)
+    return packages
+
+
+def get_packager_args(args):
+    arch_based = ['pacman', 'arch', 'manjaro', 'artix']
+    if args.packager == 'dnf':
+        package_args = ['dnf', 'install']
+        return package_args
+    elif args.packager in arch_based:
+        package_args = ['pacman', '-S']
+        return package_args
+
+
+def install_packages(args):
+    packages = parse_packages(args)
+    package_args = get_packager_args(args)
+    install_args = ['sudo', package_args, 'install'] + packages
+    subprocess.call(install_args)
+
+
 def main():
     args = install_cli()
-    go_to_files(args)
-    files, dir = get_files()
-    make_directories(dir)
-    copy_files(files)
+    if args.config:
+        go_to_files(args)
+        files, dir = get_files()
+        make_directories(dir)
+        copy_files(files)
+    if args.install:
+        install_packages(args)
     
 
 if __name__ == '__main__':

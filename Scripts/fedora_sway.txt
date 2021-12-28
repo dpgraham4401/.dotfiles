@@ -1,0 +1,17 @@
+sway
+swayidle
+swaylock
+waybar
+mako
+wev
+wofi
+playerctl
+gammastep
+grim
+slurp
+kitty
+ranger
+zsh
+neovim
+firefox
+qutebrowser
