@@ -4,7 +4,7 @@
 ----------------------------------------------------------
 vim.o.completeopt = 'menuone,noinsert,noselect'
 vim.o.mouse = 'a'
--- vim.o.autoindent = true
+vim.o.autoindent = true
 vim.o.number = true
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
@@ -14,15 +14,12 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.spell = false
 vim.o.spelllang = 'en_us'
 vim.o.wrap = false
--- vim.o.termguicolors = true
--- vim.o.background = 'dark'
+vim.o.termguicolors = true
 vim.o.showcmd = true
 vim.o.swapfile = false
--- vim.o.foldenable = false
 vim.o.hidden = true
-
-vim.g.python3_host_prog = '/usr/bin/python'
-vim.g.colors_name = 'onedark'
+-- vim.g.python3_host_prog = '/usr/bin/python'
+-- vim.g.colors_name = 'onehalfdark'
 
 require('plugins')
 require('plugins.cmp')
@@ -42,15 +39,14 @@ vim.cmd [[command! PackerUpdate packadd packer.nvim | lua require('plugins').upd
 vim.cmd [[command! PackerSync packadd packer.nvim | lua require('plugins').sync()]]
 vim.cmd [[command! PackerClean packadd packer.nvim | lua require('plugins').clean()]]
 vim.cmd [[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]]
+vim.cmd [[colorscheme onehalfdark]]
 
 require('bufferline').setup{}
 
-vim.cmd([[
-  autocmd FileType lua setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-  autocmd FileType typescript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-  autocmd FileType typescriptreact setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-  au BufWritePost <buffer> lua require('lint').try_lint()
-]])
+-- vim.cmd([[
+--   autocmd FileType lua setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+--   au BufWritePost <buffer> lua require('lint').try_lint()
+-- ]])
 
 
 -- Keybindings 
@@ -87,10 +83,3 @@ key_mapper('n', '<C-Rigt>', ':wincmd l<CR>')
 -- gcc to comment
 -- gc<motion> to toggle comment 
 
-
--- testing area
-----------------------------------------------------------
--- local test_func = function()
---   print("yo momma")
--- end
--- test_func()

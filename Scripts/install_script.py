@@ -19,7 +19,7 @@ def install_cli():
     parser.add_argument('path',
                         help='path to the text file with packages to install')
 
-    parser.add_argument('--config', '-c',
+    parser.add_argument('--repo', '-r',
                         help='git repo URL with root at $HOME and .gitignore')
 
     parser.add_argument('--branch', '-b',
@@ -34,44 +34,88 @@ def install_cli():
     return args
 
 
+def remove_new_line(lines):
+    new_lines = []
+    for git_line in lines:
+        if git_line in ['\n', '\r\n']:
+            pass
+        else:
+            new_lines.append(git_line.replace("\n", ""))
+    return new_lines
+
+
+def get_home_dir():
+    home_raw = os.getenv('HOME')
+    if home_raw == None:
+        print("HOME environment not found")
+        sys.exit(1)
+    else:
+        home = home_raw + '/'
+    return home
+
+
 def parse_gitignore(lines):
+    home_dir = get_home_dir()
     directories = []
     files = []
+    lines = remove_new_line(lines)
     for i in lines:
         if i[0] == '!':
-            files.append(i)
+            if i[-1] != '/':
+                files.append(home_dir + i[1:])
         elif '*' in i:
-            directories.append(i)
-    for i in files:
-        print('file: ', i)
-    for i in directories:
-        print('dir: ', i)
-
+            directories.append(home_dir + i[:-1])
+    return files, directories
 
 def git_clone(args):
     if args.config:
         try:
             shutil.which('git')
-            print('git found')
             git_args = ['git', 'clone', args.config, 'dotfiles-tmp']
             subprocess.call(git_args) 
+            os.chdir('./dotfiles-tmp')
+            if args.branch:
+                branch_args = ['git', 'checkout', args.branch]
+                subprocess.call(branch_args)
         except:
-            print("git not found")
-            sys.exit()
+            print("Error while calling git subprocess")
+            sys.exit(1)
+
+
+def go_to_files(args):
+    if args.repo:
+        git_clone(args)
+    else:
+        os.chdir('..')
 
 
 def get_files():
-    os.chdir('./dotfiles-tmp')
     gitignore_file = open('./.gitignore', 'r')
     lines = gitignore_file.readlines()
-    parse_gitignore(lines)
+    files, dir = parse_gitignore(lines)
+    return files, dir
+
+
+def make_directories(dir):
+    for i in dir:
+        dir_args = ['mkdir', i, '-p']
+        subprocess.call(dir_args)
+
+def copy_files(file_path):
+    for i in file_path:
+        file = file_path.split(i, '/')[-1]
+        cp_args = ['cp', file, i, '-u']
+        subprocess.call(cp_args)
 
 
 def main():
     args = install_cli()
-    git_clone(args)
-    get_files()
+    go_to_files(args)
+    files, dir = get_files()
+    make_directories(dir)
+    copy_files(files)
     
 
 if __name__ == '__main__':
     main()
+

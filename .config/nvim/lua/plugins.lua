@@ -14,7 +14,7 @@ return require('packer').startup(function()
   use { 'kyazdani42/nvim-web-devicons' }
   use ( 'rafi/awesome-vim-colorschemes')
   -- use { '~/.config/nvim/colors/onedark.nvim' }
-  -- use { 'olimorris/onedarkpro.nvim' }
+  use { 'olimorris/onedarkpro.nvim' }
   use { 'akinsho/nvim-bufferline.lua' }
   use { 'itchyny/lightline.vim' }
   use { 'folke/trouble.nvim' }
