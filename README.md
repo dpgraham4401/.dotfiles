@@ -1,5 +1,16 @@
-# dotfiles-sway
+# .dotfiles
 ![test](https://i.ibb.co/xMmpgrw/screenshot-21-08-27-09-42.png)
+
+## Install ##
+Uses GNU stow to symlink files to the appropriate place
+1. install git and stow
+```$ dnf install git stow ```
+2. Clone in home directory
+```$ git clone git@github.com:dpgraham4401/.dotfiles $HOME/.dotfiles```
+3. stow files
+```$ stow configs shell scripts```
+4. scripts to install packages via text files in the $HOME/Scripts directory
+
 
 ### sway essesitals
 1. [sway](https://github.com/swaywm/sway)
