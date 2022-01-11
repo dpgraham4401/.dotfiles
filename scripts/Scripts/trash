@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+mv -f "$@" /home/dg/.local/share/Trash/
