@@ -1,20 +1,27 @@
 # .zshrc
 ###--Old file--###
 autoload -U colors && colors
+alias dev="cd /home/dg/Projects"
 alias ssh="kitty +kitten ssh"
 alias vim="/usr/bin/nvim"
 alias v="/usr/bin/nvim"
 alias venv="python -m venv"
 alias rm="move_to_trash.sh"
 alias od="onedrive --synchronize"
+alias untar="tar -zxvf"
+alias ping="ping -c 5"
+alias speed="speedtest-cli --simple"
+alias c="clear"
+alias py="python"
 alias rustbook="firefox /home/dg/OneDrive/Documents/Books/theRustBookHtml/index.html"
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export EDITOR='/usr/bin/nvim'
 export VISUAL='/usr/bin/nvim'
 export XDG_CONFIG_HOME='/home/dg/.config/'
 export XDG_DATA_HOME='/home/dg/.local/share/applications/'
 export PATH="${PATH}:${HOME}/.local/bin/"
 export RANGER_LOAD_DEFAULT_RC=FALSE
-export GOPATH="/home/dg/go"
+export GOPATH="/home/dg/Projects/go"
 export PATH="${PATH}:${GOPATH}/bin"
 export GOROOT=`go env GOROOT`
 fpath+=~/.zfunc
@@ -25,6 +32,7 @@ setopt autocd nomatch
 unsetopt beep extendedglob notify
 
 bindkey '^H' backward-kill-word
+bindkey -s '^F' 'nvim $(fzf)\n'
 
 ###--Prompt-###
 autoload -Uz vcs_info 

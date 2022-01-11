@@ -2,7 +2,7 @@
 -------------------------------------------------------------
 -- require('install_packer')
 ----------------------------------------------------------
-vim.o.completeopt = 'menuone,noinsert,noselect'
+vim.o.completeopt = 'menuone,noselect'
 vim.o.mouse = 'a'
 vim.o.autoindent = true
 vim.o.number = true
@@ -18,20 +18,22 @@ vim.o.termguicolors = true
 vim.o.showcmd = true
 vim.o.swapfile = false
 vim.o.hidden = true
+vim.g.mapleader = " "
 -- vim.g.python3_host_prog = '/usr/bin/python'
 -- vim.g.colors_name = 'onehalfdark'
 
+-- plugins
 require('plugins')
 require('plugins.cmp')
 require('plugins.lsp')
 require('plugins.treesitter')
 require('plugins.lightline')
 require('plugins.trouble')
--- require('plugins.nerdtree')
 require('plugins.autopairs')
 require('plugins.kommentary')
 require('plugins.telescope')
 
+-- Custom modules
 require('modules.utils')
 
 vim.cmd [[command! PackerInstall packadd packer.nvim | lua require('plugins').install()]]
@@ -55,20 +57,21 @@ local key_mapper = require('modules.utils').key_mapper
 
 key_mapper('i', 'jk', '<ESC>')
 key_mapper('n', '<C-s>', ':w<CR>')
-key_mapper('n', '<C-q>', ':bd<CR>')
--- key_mapper('n', '<CS-q>', ':q<CR>')
+-- key_mapper('n', '<C-q>', ':bd<CR>')
 key_mapper('n', '<C-q>', '<cmd>lua require("modules.utils").close_buffer()<CR>')
 key_mapper('n', '<S-j>', ':bprevious<CR>')
 key_mapper('n', '<S-k>', ':bnext<CR>')
 key_mapper('v', '<C-c>', ':y<CR>')
-key_mapper('n', '<C-n>', ':Ranger<CR>')
-key_mapper('n', '<C-t>', ':TroubleToggle<CR>')
-key_mapper('n', '<C-l>', ':noh<CR>')
+key_mapper('n', '<Leader>l', ':noh<CR>')
 key_mapper('n', '<C-Up>', ':wincmd k<CR>')
 key_mapper('n', '<C-Down>', ':wincmd j<CR>')
 key_mapper('n', '<C-Left>', ':wincmd h<CR>')
 key_mapper('n', '<C-Rigt>', ':wincmd l<CR>')
 
+-- plugin mapping
+key_mapper('n', '<C-t>', ':TroubleToggle<CR>')
+key_mapper('n', '<S-f>', ':Files<CR>')
+key_mapper('n', '<C-n>', ':Ranger<CR>')
 
 -- Notes on Plugin functionality
 ----------------------------------------------------------
