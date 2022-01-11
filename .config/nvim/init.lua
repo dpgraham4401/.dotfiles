@@ -5,6 +5,7 @@
 vim.o.completeopt = 'menuone,noselect'
 vim.o.mouse = 'a'
 vim.o.autoindent = true
+
 vim.o.number = true
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
@@ -85,4 +86,3 @@ key_mapper('n', '<C-n>', ':Ranger<CR>')
 -- Kommentary --
 -- gcc to comment
 -- gc<motion> to toggle comment 
-

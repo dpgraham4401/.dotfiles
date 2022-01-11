@@ -24,17 +24,24 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 export GOPATH="/home/dg/Projects/go"
 export PATH="${PATH}:${GOPATH}/bin"
 export GOROOT=`go env GOROOT`
+alias pacr="pacman -Rs"
+alias pacs="pacman -Ss"
+alias paci="pacman -Si"
+export PATH="${PATH}:${HOME}/.local/bin/:/usr/bin/vendor_perl/"
 fpath+=~/.zfunc
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 setopt autocd nomatch
 unsetopt beep extendedglob notify
+. "$HOME/.cargo/env"
 
 bindkey '^H' backward-kill-word
 bindkey -s '^F' 'nvim $(fzf)\n'
 
 ###--Prompt-###
+autoload -Uz compinit
+compinit
 autoload -Uz vcs_info 
 precmd () { vcs_info } 
 zstyle ':vcs_info:*' enable git
@@ -74,3 +81,10 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 if [ -n "$RANGER_LEVEL" ]; then export PS1="[ranger]$PS1"; fi
 
+# autostart ssh agent
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+if [[ ! "$SSH_AUTH_SOCK" ]]; then
+    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+fi

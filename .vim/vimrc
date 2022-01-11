@@ -49,6 +49,7 @@ filetype plugin indent on
 colorscheme desert
 " highlight Normal ctermbg=black
 
+
 " Keybindings
 inoremap jk <Esc>
 nnoremap ; :

@@ -4,7 +4,6 @@ local M ={}
 
 function M.yo_momma()
   print("yo momma")
-end
 
 
 -- function M.close_buffer()
