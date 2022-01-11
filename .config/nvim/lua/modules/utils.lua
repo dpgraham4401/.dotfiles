@@ -2,13 +2,6 @@
 
 local M ={}
 
-function M.yo_momma()
-  print("yo momma")
-
-
--- function M.close_buffer()
-
-
 function M.key_mapper(mode, key, result)
   vim.api.nvim_set_keymap(
     mode,
@@ -36,15 +29,10 @@ end
 function M.close_buffer()
   local bufTable = count_bufs_by_type()
   if (bufTable.normal <= 1) then
-    -- print(numBufLoaded)
-    -- print("Exiting")
     local result = vim.api.nvim_exec([[:q]], true)
   else
     local result = vim.api.nvim_exec([[:bd]], true)
-    -- print(numBufLoaded)
-    -- print("stay open")
   end
 end
 
 return M
-
