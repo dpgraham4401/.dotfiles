@@ -1,7 +1,7 @@
 ### Sway Configuration
 	
 ### Variables
-	set $mod Mod1
+	set $mod Mod4
 
 	# Home row direction keys, like vim
 	set $left h
@@ -99,7 +99,6 @@ exec swayidle -w \
 	
 	# Browser
 	bindsym $mod+Shift+f exec firefox
-	bindsym $mod+q exec qutebrowser
 
 
     # Explorer
@@ -243,11 +242,15 @@ bar {
 
 ### Input/Output devices
 output HDMI-A-1 {
-	resolution 1920x1080
+	# resolution 1920x1080
 	pos 1600 0
 }
 
 input * {
 	xkb_layout "us"
 	xkb_numlock enable
+}
+
+input type:touchpad {
+    tap enabled
 }
