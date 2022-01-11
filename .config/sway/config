@@ -1,7 +1,7 @@
 ### Sway Configuration
 	
 ### Variables
-	set $mod Mod1
+	set $mod Mod4
 
 	# Home row direction keys, like vim
 	set $left h

@@ -17,7 +17,8 @@
         "format-icons": {
             "activated": "",
             "deactivated": ""
-        }
+        },
+        "on-click": "/home/dg/.local/bin/remotecontrol"
     },
     "tray": {
         "icon-size": 15,
