@@ -1,0 +1,68 @@
+#!/usr/bin/python
+"""
+    The world's worst script
+    install a text file of packages, 1 package per line
+"""
+
+import argparse
+import sys
+import subprocess
+
+
+def install_cli():
+    """ Conn's command line interface for conn """
+    # Top level: --version, --help, sub commands
+    parser = argparse.ArgumentParser(description="install packages from a text file on various distros")
+    parser.add_argument('-v','--version', action='version', version="why are you checking the version? it's an install script. loser.")
+    
+    parser.add_argument('--path', '-p',
+                        help='path to the text file with packages to install')
+
+    args = parser.parse_args()
+    return args
+
+
+def remove_new_line(lines):
+    new_lines = []
+    for git_line in lines:
+        if git_line in ['\n', '\r\n']:
+            pass
+        else:
+            new_lines.append(git_line.replace("\n", ""))
+    return new_lines
+
+
+def parse_packages(args):
+    files = open(args.install, 'r')
+    lines = files.readlines()
+    packages = remove_new_line(lines)
+    return packages
+
+
+def get_packager_args(args):
+    arch_based = ['pacman', 'arch', 'manjaro', 'artix']
+    if args.packager == 'dnf':
+        package_args = ['dnf', 'install']
+        return package_args
+    elif args.packager in arch_based:
+        package_args = ['pacman', '-S']
+        return package_args
+
+
+def install_packages(args):
+    packages = parse_packages(args)
+    package_args = get_packager_args(args)
+    if package_args == None:
+        sys.exit(1)
+    install_args = ['sudo'] + package_args + packages
+    subprocess.call(install_args)
+
+
+def main():
+    args = install_cli()
+    install_packages(args)
+    
+
+if __name__ == '__main__':
+    main()
+

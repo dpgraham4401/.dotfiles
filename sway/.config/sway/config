@@ -88,8 +88,7 @@ exec swayidle -w \
 
 ### Applications shortcuts 
 	# Launcher
-	bindsym $mod+space exec --no-startup-id wofi --show drun -I -i
-	# bindsym XF86LaunchB exec --no-startup-id wofi --show drun -I -i
+	# bindsym $mod+space exec --no-startup-id wofi --show drun -I -i
 
 	# Start a terminal
     bindsym $mod+Return exec $term
@@ -242,8 +241,16 @@ bar {
 
 ### Input/Output devices
 output HDMI-A-1 {
-	# resolution 1920x1080
+	resolution 1920x1080
+    scale 1.0
 	pos 1600 0
+    scale_filter linear
+}
+
+output eDP-1 {
+	resolution 2560x1600
+    scale 1.8
+    scale_filter linear
 }
 
 input * {
@@ -254,3 +261,7 @@ input * {
 input type:touchpad {
     tap enabled
 }
+
+for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
+set $menu exec $term --class=launcher -e /home/dg/sway-launcher-desktop/sway-launcher-desktop.sh
+bindsym $mod+space exec $menu

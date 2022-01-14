@@ -1,0 +1,35 @@
+#!/bin/bash
+# replacement for normal rm command that archives
+archivedir="$HOME/.local/share/Trash"
+realrm="$(which rm)"
+copy="$(which cp) -R"
+
+if [ $# -eq 0 ] ; then  
+  exec $realrm 
+fi
+
+flags=""
+
+while getopts "dfiPRrvW" opt
+do
+  case $opt in
+    f ) exec $realrm "$@"     ;;  
+    * ) flags="$flags -$opt"  ;; 
+  esac
+done
+shift $(( $OPTIND - 1 ))
+
+for arg 
+do
+  newname="$archivedir/$(basename "$arg").$(date "+%m-%d.%H.%M.S")"
+  if [ -d "$arg" ] ; then
+    $copy "$arg" "$newname"	
+    $realrm "-rf" "$arg"
+  fi
+  if [ -f "$arg" -o -d "$arg" ] ; then
+    $copy "$arg" "$newname"	
+    $realrm $flags "$arg"
+  fi
+done
+
+# exec $realrm $flags "$@"

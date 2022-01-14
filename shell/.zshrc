@@ -1,12 +1,24 @@
 # .zshrc
 ###--Old file--###
 autoload -U colors && colors
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export EDITOR='/usr/bin/nvim'
+export VISUAL='/usr/bin/nvim'
+export XDG_CONFIG_HOME='/home/dg/.config/'
+export XDG_DATA_HOME='/home/dg/.local/share/applications/'
+export RANGER_LOAD_DEFAULT_RC=FALSE
+export GOPATH="/home/dg/Projects/go"
+export PATH="${PATH}:${HOME}/.local/bin/"
+export PATH="${PATH}:${GOPATH}/bin"
+export PATH="${PATH}:${HOME}/.local/bin/:/usr/bin/vendor_perl/"
+export PATH="${HOME}/Scripts:${PATH}"
+export GOROOT=`go env GOROOT`
 alias dev="cd /home/dg/Projects"
 alias ssh="kitty +kitten ssh"
 alias vim="/usr/bin/nvim"
 alias v="/usr/bin/nvim"
 alias venv="python -m venv"
-alias rm="move_to_trash.sh"
+alias rm="$(which trash)"
 alias od="onedrive --synchronize"
 alias untar="tar -zxvf"
 alias ping="ping -c 5"
@@ -14,20 +26,9 @@ alias speed="speedtest-cli --simple"
 alias c="clear"
 alias py="python"
 alias rustbook="firefox /home/dg/OneDrive/Documents/Books/theRustBookHtml/index.html"
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-export EDITOR='/usr/bin/nvim'
-export VISUAL='/usr/bin/nvim'
-export XDG_CONFIG_HOME='/home/dg/.config/'
-export XDG_DATA_HOME='/home/dg/.local/share/applications/'
-export PATH="${PATH}:${HOME}/.local/bin/"
-export RANGER_LOAD_DEFAULT_RC=FALSE
-export GOPATH="/home/dg/Projects/go"
-export PATH="${PATH}:${GOPATH}/bin"
-export GOROOT=`go env GOROOT`
 alias pacr="pacman -Rs"
 alias pacs="pacman -Ss"
 alias paci="pacman -Si"
-export PATH="${PATH}:${HOME}/.local/bin/:/usr/bin/vendor_perl/"
 fpath+=~/.zfunc
 HISTFILE=~/.histfile
 HISTSIZE=10000
