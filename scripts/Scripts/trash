@@ -21,7 +21,7 @@ shift $(( $OPTIND - 1 ))
 
 for arg 
 do
-  newname="$archivedir/$(basename "$arg").$(date "+%m-%d.%H.%M.S")"
+  newname="$archivedir/$(basename "$arg").$(date "+%m-%d.%H.%M.%S")"
   if [ -d "$arg" ] ; then
     $copy "$arg" "$newname"	
     $realrm "-rf" "$arg"
