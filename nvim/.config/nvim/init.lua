@@ -21,7 +21,7 @@ vim.o.swapfile = false
 vim.o.hidden = true
 vim.g.mapleader = " "
 -- vim.g.python3_host_prog = '/usr/bin/python'
--- vim.g.colors_name = 'onehalfdark'
+vim.g.colors_name = 'onehalfdark'
 
 -- plugins
 require('plugins')
@@ -32,10 +32,12 @@ require('plugins.lightline')
 require('plugins.trouble')
 require('plugins.autopairs')
 require('plugins.kommentary')
-require('plugins.telescope')
+require('lua.plugins.terminal')
+require('bufferline').setup{}
 
 -- Custom modules
 require('modules.utils')
+require('lua.modules.term')
 
 vim.cmd [[command! PackerInstall packadd packer.nvim | lua require('plugins').install()]]
 vim.cmd [[command! PackerUpdate packadd packer.nvim | lua require('plugins').update()]]
@@ -44,21 +46,12 @@ vim.cmd [[command! PackerClean packadd packer.nvim | lua require('plugins').clea
 vim.cmd [[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]]
 vim.cmd [[colorscheme onehalfdark]]
 
-require('bufferline').setup{}
-
--- vim.cmd([[
---   autocmd FileType lua setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
---   au BufWritePost <buffer> lua require('lint').try_lint()
--- ]])
-
-
 -- Keybindings 
 ----------------------------------------------------------
 local key_mapper = require('modules.utils').key_mapper
 
 key_mapper('i', 'jk', '<ESC>')
 key_mapper('n', '<C-s>', ':w<CR>')
--- key_mapper('n', '<C-q>', ':bd<CR>')
 key_mapper('n', '<C-q>', '<cmd>lua require("modules.utils").close_buffer()<CR>')
 key_mapper('n', '<S-j>', ':bprevious<CR>')
 key_mapper('n', '<S-k>', ':bnext<CR>')
@@ -67,12 +60,13 @@ key_mapper('n', '<Leader>l', ':noh<CR>')
 key_mapper('n', '<C-Up>', ':wincmd k<CR>')
 key_mapper('n', '<C-Down>', ':wincmd j<CR>')
 key_mapper('n', '<C-Left>', ':wincmd h<CR>')
-key_mapper('n', '<C-Rigt>', ':wincmd l<CR>')
+key_mapper('n', '<C-Right>', ':wincmd l<CR>')
 
 -- plugin mapping
 key_mapper('n', '<C-t>', ':TroubleToggle<CR>')
 key_mapper('n', '<S-f>', ':Files<CR>')
-key_mapper('n', '<C-n>', ':Ranger<CR>')
+key_mapper('n', '<C-n>', ':NERDTreeToggle<CR>')
+key_mapper('n', "'", ':ToggleTerm<CR>')
 
 -- Notes on Plugin functionality
 ----------------------------------------------------------
@@ -86,3 +80,6 @@ key_mapper('n', '<C-n>', ':Ranger<CR>')
 -- Kommentary --
 -- gcc to comment
 -- gc<motion> to toggle comment 
+--
+--ToggleTerm
+-- single quote "'" to toggle terminal
