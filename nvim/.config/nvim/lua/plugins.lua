@@ -49,7 +49,7 @@ return require('packer').startup(function()
   use({
   	"akinsho/nvim-toggleterm.lua",
   	config = function()
-  		require("lua.plugins.terminal").setup()
+  		require("plugins.terminal").setup()
   	end,
   })
 

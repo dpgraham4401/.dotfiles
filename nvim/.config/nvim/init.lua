@@ -32,12 +32,12 @@ require('plugins.lightline')
 require('plugins.trouble')
 require('plugins.autopairs')
 require('plugins.kommentary')
-require('lua.plugins.terminal')
+require('plugins.terminal')
 require('bufferline').setup{}
 
 -- Custom modules
 require('modules.utils')
-require('lua.modules.term')
+require('modules.term')
 
 vim.cmd [[command! PackerInstall packadd packer.nvim | lua require('plugins').install()]]
 vim.cmd [[command! PackerUpdate packadd packer.nvim | lua require('plugins').update()]]
