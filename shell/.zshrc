@@ -1,5 +1,11 @@
 # .zshrc
 ###--Old file--###
+export EDITOR='/usr/bin/vim'
+export XDG_CONFIG_HOME='/home/dg/.config/'
+export XDG_DATA_DIRS='/usr/share/:/usr/local/share/'
+export PATH="${PATH}:${HOME}/.local/bin/:/usr/bin/vendor_perl/"
+export GOPATH="${HOME}/go"
+export GOBIN="${GOPATH}/bin"
 autoload -U colors && colors
 alias ssh="kitty +kitten ssh"
 alias vim="/usr/bin/nvim"
@@ -8,10 +14,10 @@ alias rustbook="setsid qutebrowser /home/dg/OneDrive/Documents/Books/theRustBook
 alias pacr="pacman -Rs"
 alias pacs="pacman -Ss"
 alias paci="pacman -Si"
-export EDITOR='/usr/bin/vim'
-export XDG_CONFIG_HOME='/home/dg/.config/'
-export XDG_DATA_DIRS='/usr/share/:/usr/local/share/'
-export PATH="${PATH}:${HOME}/.local/bin/:/usr/bin/vendor_perl/"
+alias dev="cd ~/Projects"
+alias godev="cd ${GOPATH}/src/github.com/dpgraham4401"
+alias dotfiles="cd ~/.dotfiles"
+alias godev="cd ${GOPATH}/src/github.com/dpgraham4401"
 fpath+=~/.zfunc
 HISTFILE=~/.histfile
 HISTSIZE=10000
