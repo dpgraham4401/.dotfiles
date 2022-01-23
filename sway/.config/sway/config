@@ -221,6 +221,7 @@ bar {
 	swaybar_command waybar
 	workspace_buttons yes
 }
+    # exec_always nwg-panel
 
 ### Startup commands
 	exec GDK_BACKEND=wayland
