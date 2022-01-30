@@ -19,7 +19,7 @@
 ### Apperance
 
 	# Wallpaper
-	output * bg /home/dg/.config/wallpaper/floating_nature_1900x1200.jpg fill
+	output * bg /home/dg/.local/share/backgrounds/astronaut.png fill
     focus_wrapping no
    
     # Window colors
