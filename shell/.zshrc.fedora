@@ -1,7 +1,5 @@
 # .zshrc
-if [ -f "$HOME/.alias" ]; then
-    source $HOME/.alias
-fi
+source ~/.alias
 autoload -U colors && colors
 fpath+=~/.zfunc
 HISTFILE=~/.histfile

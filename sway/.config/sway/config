@@ -19,8 +19,10 @@
 ### Apperance
 
 	# Wallpaper
-	output * bg /home/dg/.local/share/backgrounds/astronaut.png fill
+	# output * bg /home/dg/.local/share/backgrounds/astronaut.png fill
     focus_wrapping no
+    exec oguri-swaybg
+    exec dwall -s sahara
    
     # Window colors
     # Class                 border  Backgr  Text    indicator   child_border
@@ -228,6 +230,7 @@ bar {
 	exec blueman-applet
 	exec spotifyd
 	exec remotecontrol
+	exec autotiling
     # Xwayland enable
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
