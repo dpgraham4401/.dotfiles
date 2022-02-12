@@ -23,15 +23,16 @@ vim.g.mapleader = " "
 -- vim.g.python3_host_prog = '/usr/bin/python'
 vim.g.colors_name = 'onehalfdark'
 
+
 -- plugins
 require('plugins')
 require('plugins.cmp')
+-- require('plugins.ale')
 require('plugins.lsp')
 require('plugins.treesitter')
 require('plugins.lightline')
 require('plugins.trouble')
 require('plugins.autopairs')
-require('plugins.kommentary')
 require('plugins.terminal')
 require('bufferline').setup{}
 
@@ -51,35 +52,40 @@ vim.cmd [[colorscheme onehalfdark]]
 local key_mapper = require('modules.utils').key_mapper
 
 key_mapper('i', 'jk', '<ESC>')
+key_mapper('i', 'kj', '<ESC>')
 key_mapper('n', '<C-s>', ':w<CR>')
 key_mapper('n', '<C-q>', '<cmd>lua require("modules.utils").close_buffer()<CR>')
 key_mapper('n', '<S-j>', ':bprevious<CR>')
 key_mapper('n', '<S-k>', ':bnext<CR>')
-key_mapper('v', '<C-c>', ':y<CR>')
-key_mapper('n', '<Leader>l', ':noh<CR>')
-key_mapper('n', '<C-Up>', ':wincmd k<CR>')
-key_mapper('n', '<C-Down>', ':wincmd j<CR>')
-key_mapper('n', '<C-Left>', ':wincmd h<CR>')
-key_mapper('n', '<C-Right>', ':wincmd l<CR>')
+key_mapper('n', '<C-l>', ':noh<CR>')
+key_mapper('n', '<A-k>', ':wincmd k<CR>')
+key_mapper('n', '<A-j>', ':wincmd j<CR>')
+key_mapper('n', '<A-h>', ':wincmd h<CR>')
+key_mapper('n', '<A-l>', ':wincmd l<CR>')
+key_mapper('n', '<C-_>', ':Commentary<CR>')
 
 -- plugin mapping
-key_mapper('n', '<C-t>', ':TroubleToggle<CR>')
+key_mapper('n', '<Leader>t', ':TroubleToggle<CR>')
 key_mapper('n', '<Leader>f', ':Files<CR>')
-key_mapper('n', '<C-n>', ':NERDTreeToggle<CR>')
+key_mapper('n', '<Leader>n', ':NERDTreeToggle<CR>')
 key_mapper('n', "<Leader>'", ':ToggleTerm<CR>')
 
 -- Notes on Plugin functionality
 ----------------------------------------------------------
+-- I generally reserver <Leader> for plugins that bring up windows
+-- or something like that
+--
 -- Trouble --
--- <C-t> toggle diagnostics
+-- <Leader>t toggle diagnostics
 --
 -- cmp-nvim --
 -- keybinding for using completions are set in cmp.lua
--- <C-n> open completions and go to next (<C-p> for previous)
+-- in insert mode <C-n> open completions and go to next (<C-p> for previous)
+-- <tab> go to next, <enter> select current
 --
 -- Kommentary --
 -- gcc to comment
 -- gc<motion> to toggle comment 
 --
 --ToggleTerm
--- single quote "'" to toggle terminal
+-- leader + single quote "'" to toggle terminal

@@ -41,12 +41,12 @@ return require('packer').startup(function()
 
   -- utils
   use { 'nvim-lua/plenary.nvim' } -- required for telescope
-  use { 'mfussenegger/nvim-lint' }
+  use { 'dense-analysis/ale'}
+  -- use { 'mfussenegger/nvim-lint' }
   use { 'tpope/vim-abolish' } -- better substitution
   use { 'tpope/vim-surround' } -- change inner word surrounding w/ cs<current><replace>
-  use { 'b3nj5m1n/kommentary' } -- comment/uncomment w/ "gcc"
+  use { 'tpope/vim-commentary' } -- see :help Commentary
   use { 'jeffkreeftmeijer/vim-numbertoggle' } -- when buffer not in focus, use absolute number lines
-  -- use {"akinsho/toggleterm.nvim"} -- terminal window in nvim
   use({
   	"akinsho/nvim-toggleterm.lua",
   	config = function()
