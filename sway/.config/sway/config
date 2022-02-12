@@ -22,7 +22,7 @@
 	# output * bg /home/dg/.local/share/backgrounds/astronaut.png fill
     focus_wrapping no
     exec oguri-swaybg
-    exec dwall -s sahara
+    exec dwall -s bitday
    
     # Window colors
     # Class                 border  Backgr  Text    indicator   child_border

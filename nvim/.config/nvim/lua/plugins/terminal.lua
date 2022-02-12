@@ -2,7 +2,7 @@ local M = {}
 
 M.config = {
 	-- size can be a number or function which is passed the current terminal
-	size = 20,
+	size = 10,
 	-- open_mapping = [[<c-\>]],
 	hide_numbers = true, -- hide the number column in toggleterm buffers
 	shade_filetypes = {},
@@ -25,7 +25,7 @@ M.config = {
 		border = "curved",
 		-- width = <value>,
 		-- height = <value>,
-		winblend = 0,
+		winblend = 0, -- percentage
 		highlights = { border = "Normal", background = "Normal" },
 	},
 }

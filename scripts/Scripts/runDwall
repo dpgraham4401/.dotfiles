@@ -1,0 +1,11 @@
+#!/bin/bash
+shelld=/usr/bin/zsh
+displayd=":0"
+deskd="sway"
+busd="unix:path=/run/user/1000/bus"
+xdgd=/run/user/1000
+pathd="/usr/bin/"
+pic="bitday"
+
+env PATH=$pathd DISPLAY=$displayd DESKTOP_SESSION=$deskd DBUS_SESSION_BUS_ADDRESS=$busd XDG_RUNTIME_DIR=$xdgd /usr/bin/dwall -s $pic
+

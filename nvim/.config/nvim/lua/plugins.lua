@@ -15,6 +15,7 @@ return require('packer').startup(function()
   use { 'itchyny/lightline.vim' } -- line at bottom of vim with info
   use { 'folke/trouble.nvim' } -- get diagnostic info for current buffer
   use { 'preservim/nerdtree' }
+  use { 'airblade/vim-gitgutter' }
 
   -- lsp
   use { 'neovim/nvim-lspconfig' } -- part of base native LSP setup
@@ -40,18 +41,21 @@ return require('packer').startup(function()
 
   -- utils
   use { 'nvim-lua/plenary.nvim' } -- required for telescope
-  use { 'mfussenegger/nvim-lint' }
+  use { 'dense-analysis/ale'}
+  -- use { 'mfussenegger/nvim-lint' }
   use { 'tpope/vim-abolish' } -- better substitution
   use { 'tpope/vim-surround' } -- change inner word surrounding w/ cs<current><replace>
-  use { 'b3nj5m1n/kommentary' } -- comment/uncomment w/ "gcc"
+  use { 'tpope/vim-commentary' } -- see :help Commentary
   use { 'jeffkreeftmeijer/vim-numbertoggle' } -- when buffer not in focus, use absolute number lines
-  -- use {"akinsho/toggleterm.nvim"} -- terminal window in nvim
   use({
   	"akinsho/nvim-toggleterm.lua",
   	config = function()
-  		require("lua.plugins.terminal").setup()
+  		require("plugins.terminal").setup()
   	end,
   })
+
+  -- html
+  use { 'mattn/emmet-vim' }
 
 end)
 
