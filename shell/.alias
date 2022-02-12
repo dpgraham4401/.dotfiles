@@ -11,7 +11,11 @@ export GOROOT=`go env GOROOT`
 export EDITOR='/usr/bin/nvim'
 export VISUAL='/usr/bin/nvim'
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export KUBECONFG="$HOME/.kube/config"
 # aliases
+alias fuck="sudo !!"
+alias mv="mv -i"
+alias mkdir="mkdir -pv"
 alias ssh="kitty +kitten ssh"
 alias vim="/usr/bin/nvim"
 alias venv="python -m venv"
@@ -21,8 +25,9 @@ alias untar="tar -zxvf"
 alias ping="ping -c 5"
 alias c="clear"
 alias py="python"
-alias dotfile="cd /home/dg/.dotfiles"
+alias config="cd /home/dg/.dotfiles"
 alias dev="cd /home/dg/Projects"
+alias kube="kubectl"
 alias godev="cd $GOPATH/src/github.com/dpgrahm4401"
 alias rustbook="firefox /home/dg/OneDrive/Documents/Books/theRustBookHtml/index.html"
 alias speed="speedtest-cli --simple"
@@ -31,6 +36,10 @@ if [ $DIST = "arch" ]; then
     alias pacr="pacman -Rs"
     alias pacs="pacman -Ss"
     alias paci="pacman -Si"
+else
+    alias dnfu="sudo dnf update"
+    alias dnfi="sudo dnf install"
+    alias dnfr="sudo dnf remove"
 fi
 # Rust
 if [ -f "$HOME/.cargo/env" ]; then

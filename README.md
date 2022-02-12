@@ -45,22 +45,11 @@ Uses GNU stow to symlink files to the appropriate place
 ### Arch specific
 1. chromium-widevine &rarr; simplicity to play DRM on arch 
 
-### pip packages
-1. pynvim &rarr; 
-2. pillow &rarr; image preview in ranger
-
-### npm packages (global)
-1. eslint
-2. neovim
-3. typescript
-4. semvar
-
-
-### NeoVim Plugins
-1. neovim/nvim-lspconfig &rarr; neovim native LSP client
-2. kabouzeid/nvim-lspinstall &rarr; install language servers independent of package manager
-3. nvim-lua/lspextensions.nvim
-4. tmsvg/pear-tree &rarr; auto close (){}[]
-5. francoiscabrol/ranger &rarr; file explorer
-6. vim-airline/vim-airline &rarr; airline status
-7. vim-airline/vim-airline-theme &rarr; make airline loos cool
+### tips
+1. add the following to /etc/environment
+```bash
+if [ "$XDG_SESSION_DESKTOP" = "sway" ] ; then
+    export _JAVA_AWT_WM_NONREPARENTING=1
+fi
+```
+to use java applications like pycharm a

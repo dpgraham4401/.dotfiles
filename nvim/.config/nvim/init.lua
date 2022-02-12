@@ -64,9 +64,9 @@ key_mapper('n', '<C-Right>', ':wincmd l<CR>')
 
 -- plugin mapping
 key_mapper('n', '<C-t>', ':TroubleToggle<CR>')
-key_mapper('n', '<S-f>', ':Files<CR>')
+key_mapper('n', '<Leader>f', ':Files<CR>')
 key_mapper('n', '<C-n>', ':NERDTreeToggle<CR>')
-key_mapper('n', "'", ':ToggleTerm<CR>')
+key_mapper('n', "<Leader>'", ':ToggleTerm<CR>')
 
 -- Notes on Plugin functionality
 ----------------------------------------------------------

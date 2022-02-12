@@ -3,7 +3,6 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 # if alias file exist
-if [ -f ~/.alias ]; then
 if [ -f "$HOME/.alias" ]; then
     source ~/.alias 
 fi

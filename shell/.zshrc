@@ -41,6 +41,8 @@ CASE_SENSITIVE="false"
 # Plugins
 plugins=(
     golang 
+    kubectl
+    docker
     git
     web-search
     copybuffer

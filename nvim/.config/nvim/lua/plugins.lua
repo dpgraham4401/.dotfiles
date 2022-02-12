@@ -15,6 +15,7 @@ return require('packer').startup(function()
   use { 'itchyny/lightline.vim' } -- line at bottom of vim with info
   use { 'folke/trouble.nvim' } -- get diagnostic info for current buffer
   use { 'preservim/nerdtree' }
+  use { 'airblade/vim-gitgutter' }
 
   -- lsp
   use { 'neovim/nvim-lspconfig' } -- part of base native LSP setup
@@ -52,6 +53,9 @@ return require('packer').startup(function()
   		require("plugins.terminal").setup()
   	end,
   })
+
+  -- html
+  use { 'mattn/emmet-vim' }
 
 end)
 
