@@ -1,5 +1,6 @@
 # .dotfiles
-![test](https://i.ibb.co/xMmpgrw/screenshot-21-08-27-09-42.png)
+<!-- ![test](https://i.ibb.co/xMmpgrw/screenshot-21-08-27-09-42.png) -->
+![test2](https://i.ibb.co/xYbCZwj/screenshot-22-02-18-15-20.png)
 
 ## Install ##
 Uses [GNU stow](https://www.gnu.org/software/stow/) to symlink files to the appropriate place
