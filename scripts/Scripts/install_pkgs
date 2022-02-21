@@ -13,7 +13,9 @@ def install_cli():
     """ Conn's command line interface for conn """
     # Top level: --version, --help, sub commands
     parser = argparse.ArgumentParser(description="install packages from a text file on various distros")
-    parser.add_argument('-v','--version', action='version', version="why are you checking the version? it's an install script. loser.")
+
+    parser.add_argument('-v','--version',
+			action='version', version="why are you checking the version? it's an install script. loser.")
     
     parser.add_argument('--path', '-p',
                         help='path to the text file with packages to install')
@@ -33,25 +35,20 @@ def remove_new_line(lines):
 
 
 def parse_packages(args):
-    files = open(args.install, 'r')
+    files = open(args.path, 'r')
     lines = files.readlines()
     packages = remove_new_line(lines)
     return packages
 
 
-def get_packager_args(args):
-    arch_based = ['pacman', 'arch', 'manjaro', 'artix']
-    if args.packager == 'dnf':
-        package_args = ['dnf', 'install']
-        return package_args
-    elif args.packager in arch_based:
-        package_args = ['pacman', '-S']
-        return package_args
+def get_packager_args():
+    package_args = ['dnf', 'install', '--skip-broken']
+    return package_args
 
 
 def install_packages(args):
     packages = parse_packages(args)
-    package_args = get_packager_args(args)
+    package_args = get_packager_args()
     if package_args == None:
         sys.exit(1)
     install_args = ['sudo'] + package_args + packages

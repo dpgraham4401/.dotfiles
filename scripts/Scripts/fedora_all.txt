@@ -1,52 +1,47 @@
-firefox                                                                                                            | 2022-02-16 08:26 | Install        |    1   
-meld                                                                                                               | 2022-01-29 09:34 | Install        |    1   
-librewolf                                                                                                          | 2022-01-13 14:34 | Install        |    1   
-stow                                                                                                               | 2022-01-09 21:27 | Install        |    1   
-kubernetes-client                                                                                                  | 2022-01-07 15:12 | Install        |    1   
-flat-remix-icon-theme                                                                                              | 2022-01-03 17:09 | Install        |    4 >#
-broadcom-bt-firmware                                                                                            | 2021-11-02 19:03 | Install        |    1   
-brave-browser                                                                                                      | 2021-10-30 16:59 | Install        |    2 EE
-lxappearance                                                                                                       | 2021-10-08 07:32 | Install        |    2   
-pipewire-pulseaudio --allowerasing                                                                                 | 2021-09-12 21:57 | E, I, U        |    7 EE
-blueman                                                                                                            | 2021-09-04 11:18 | Install        |    1   
-bluez bluez-tools                                                                                                  | 2021-08-31 17:13 | Install        |    1   
-qt5-qtwebengine-freeworld                                                                                          | 2021-07-31 09:21 | Install        |    1   
-wayland-devel                                                                                                      | 2021-07-31 08:43 | Install        |    1   
-meson                                                                                                              | 2021-07-30 06:50 | Install        |    2   
-fzf                                                                                                                | 2021-07-18 20:16 | Install        |    1   
-bat                                                                                                                | 2021-07-17 10:13 | Install        |    1   
-neovim                                                                                                             | 2021-06-23 22:13 | Install        |    7   
-timeshift                                                                                                          | 2021-06-21 19:28 | Install        |    1   
-qutebrowser                                                                                                        | 2021-06-18 18:10 | Install        |   18   
-zsh                                                                                                                | 2021-06-10 06:05 | Install        |    1   
-mako                                                                                                               | 2021-06-06 06:32 | Install        |    1   
-ranger                                                                                                             | 2021-06-05 06:53 | Install        |    1   
-flat-remix-theme                                                                                                   | 2021-04-21 17:24 | Install        |    5   
-slurp                                                                                                              | 2021-04-16 07:29 | Install        |    1   
-clusterssh                                                                                                         | 2021-03-28 09:20 | Install        |   21   
-python3-pip python3-setuptools                                                                   | 2021-03-12 12:03 | Install        |    1   
-nodejs                                                                                                             | 2020-12-14 23:43 | Install        |    7   
-golang                                                                                                             | 2020-12-14 23:42 | Install        |    9   
-cmake                                                                                                              | 2020-12-14 23:39 | Install        |    6   
-kitty                                                                                                              | 2020-12-12 10:06 | Install        |    3   
-hexchat                                                                                                            | 2020-12-06 18:29 | Install        |    1   
-mpd                                                                                                                | 2020-12-05 09:59 | Install        |   13 EE
-gammastep                                                                                                          | 2020-12-05 01:31 | Install        |    1   
-light                                                                                                              | 2020-12-04 19:53 | Install        |    1   
-rofi                                                                                                               | 2020-12-04 18:22 | Install        |    3   
-nnn                                                                                                                | 2020-12-04 15:39 | Install        |    1   
-swaylock                                                                                                           | 2020-12-04 15:31 | Install        |    1   
-wl-clipboard                                                                                                       | 2020-12-04 15:07 | Install        |    1   
-waybar                                                                                                             | 2020-12-04 12:06 | Install        |    7   
-swayidle                                                                                                           | 2020-12-04 11:29 | Install        |    1   
-sway                                                                                                               | 2020-12-03 23:11 | Install        |    8   
-multimedia                                                                                                 | 2020-12-02 22:47 | Install        |    9   
-fedy                                                                                                               | 2020-12-02 22:45 | Install        |    1   
-exfat-utils                                                                                                        | 2020-12-02 22:40 | Install        |    1   
-fedora-workstation-repositories                                                                                    | 2020-12-02 22:08 | Install        |    2   
-vim                                                                                                                | 2020-12-02 19:18 | Install        |    3   
-tlp tlp-rdw                                                                                                        | 2020-12-02 19:14 | Install        |   16 EE
-vlc                                                                                                                | 2020-12-02 19:14 | Install        |   61   
-dkms                                                                                                               | 2020-12-02 19:03 | Install        |    1 EE
-kmod-wl                                                                                                            | 2020-12-02 13:05 | Install        |   38 EE
-htop                                                                                                               | 2020-12-02 12:29 | Install        |    1   
+firefox
+neovim
+vim
+golang-bin
+meld
+stow
+kubernetes-client
+flat-remix-icon-theme
+lxappearance
+pipewire-pulseaudio
+blueman
+bluez
+bluez-tools
+wayland-devel
+meson
+fzf
+bat
+neovim
+timeshift
+qutebrowser
+zsh
+mako
+ranger
+flat-remix-theme
+slurp
+clusterssh
+python3-pip
+python3-setuptools
+nodejs
+golang-bin
+cmake
+kitty
+hexchat
+gammastep
+light
+rofi
+nnn
+swaylock
+wl-clipboard
+waybar
+swayidle
+sway
+fedora-workstation-repositories
+vim
+tlptlp-rdw
+dkms
+htop
