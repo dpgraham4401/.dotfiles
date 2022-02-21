@@ -27,7 +27,7 @@ vim.g.colors_name = 'onehalfdark'
 -- plugins
 require('plugins')
 require('plugins.cmp')
--- require('plugins.ale')
+require('plugins.ale')
 require('plugins.lsp')
 require('plugins.treesitter')
 require('plugins.lightline')

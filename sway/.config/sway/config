@@ -19,7 +19,7 @@
 ### Apperance
 
 	# Wallpaper
-	output * bg /home/dg/.local/share/backgrounds/purple_sand.png fill
+	output * bg $HOME/.local/share/backgrounds/floating_nature.jpg fill
     focus_wrapping no
    
     # Window colors
@@ -155,9 +155,11 @@ exec swayidle -w \
     bindsym $mod+Shift+0 move container to workspace number 10
 
 ### Layout stuff:
+    # toggle next window split direction
     bindsym $mod+backspace split toggle
-    #bindsym $mod+b splith
-    #bindsym $mod+v splitv
+    
+    # set current floating window to sticky
+    bindsym $mod+Shift+Up sticky toggle
 
     #bindsym $mod+s layout stacking
     bindsym $mod+t layout tabbed
@@ -235,6 +237,7 @@ bar {
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
 	exec "avizo-service"
+    exec light -S 75
 
 ### Startup Applications
     # exec --no-startup-id swaymsg 'workspace 1; exec /usr/bin/kitty'

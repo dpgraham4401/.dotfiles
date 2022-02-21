@@ -2,7 +2,7 @@
 export XDG_CONFIG_HOME='/home/dg/.config/'
 export XDG_DATA_HOME='/home/dg/.local/share/applications/'
 export RANGER_LOAD_DEFAULT_RC=FALSE
-export GOPATH="/home/dg/Projects/go"
+export GOPATH="/home/dg/go"
 export PATH="${PATH}:${HOME}/.local/bin/"
 export PATH="${PATH}:${GOPATH}/bin"
 export PATH="${PATH}:${HOME}/.local/bin/:/usr/bin/vendor_perl/"
@@ -12,6 +12,7 @@ export EDITOR='/usr/bin/nvim'
 export VISUAL='/usr/bin/nvim'
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export KUBECONFG="$HOME/.kube/config"
+export GITHUB_USER="dpgraham4401"
 # aliases
 alias fuck="sudo !!"
 alias mv="mv -i"
