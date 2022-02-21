@@ -4,16 +4,17 @@
 
 ## Install ##
 Uses [GNU stow](https://www.gnu.org/software/stow/) to symlink files to the appropriate place
-1. install git and stow
-```$ dnf install git stow ```
+1. install git and stow and python if not already installed
+```$ dnf install git stow python3 ```
 2. Clone thsi git repo into $HOME/.dotfiles
 ```$ git clone git@github.com:dpgraham4401/.dotfiles $HOME/.dotfiles```
 3. stow files
 ```$ stow configs shell scripts```
 - or use the ./stowAll.sh script directories (see ./stowAll.sh -h)
 ```$ chmod +x ./stowAll.sh && ./stowAll.sh```
-4. scripts to install packages via text files in the $HOME/Scripts directory
-
+4. A script with accompanying text files with packages is in the $HOME/Scripts directory
+``` $ cd $HOME/Scripts```
+``` $ chmod +x ./install_pkgs && ./install_pkgs --path fedora_all.txt```
 
 ### sway essesitals
 1. [sway](https://github.com/swaywm/sway)
