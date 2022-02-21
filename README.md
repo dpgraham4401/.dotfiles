@@ -1,14 +1,17 @@
 # .dotfiles
-![test](https://i.ibb.co/xMmpgrw/screenshot-21-08-27-09-42.png)
+<!-- ![test](https://i.ibb.co/xMmpgrw/screenshot-21-08-27-09-42.png) -->
+![test2](https://i.ibb.co/xYbCZwj/screenshot-22-02-18-15-20.png)
 
 ## Install ##
-Uses GNU stow to symlink files to the appropriate place
+Uses [GNU stow](https://www.gnu.org/software/stow/) to symlink files to the appropriate place
 1. install git and stow
 ```$ dnf install git stow ```
-2. Clone in home directory
+2. Clone thsi git repo into $HOME/.dotfiles
 ```$ git clone git@github.com:dpgraham4401/.dotfiles $HOME/.dotfiles```
 3. stow files
 ```$ stow configs shell scripts```
+- or use the ./stowAll.sh script directories (see ./stowAll.sh -h)
+```$ chmod +x ./stowAll.sh && ./stowAll.sh```
 4. scripts to install packages via text files in the $HOME/Scripts directory
 
 
@@ -46,10 +49,10 @@ Uses GNU stow to symlink files to the appropriate place
 1. chromium-widevine &rarr; simplicity to play DRM on arch 
 
 ### tips
-1. add the following to /etc/environment
+1. add the following to /etc/environment to use java applications like pycharm
 ```bash
 if [ "$XDG_SESSION_DESKTOP" = "sway" ] ; then
     export _JAVA_AWT_WM_NONREPARENTING=1
 fi
 ```
-to use java applications like pycharm a
+
