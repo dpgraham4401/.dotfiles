@@ -1,16 +1,20 @@
 # .dotfiles
-![test](https://i.ibb.co/xMmpgrw/screenshot-21-08-27-09-42.png)
+<!-- ![test](https://i.ibb.co/xMmpgrw/screenshot-21-08-27-09-42.png) -->
+![test2](https://i.ibb.co/xYbCZwj/screenshot-22-02-18-15-20.png)
 
 ## Install ##
-Uses GNU stow to symlink files to the appropriate place
-1. install git and stow
-```$ dnf install git stow ```
-2. Clone in home directory
+Uses [GNU stow](https://www.gnu.org/software/stow/) to symlink files to the appropriate place
+1. install git and stow and python if not already installed
+```$ dnf install git stow python3 ```
+2. Clone thsi git repo into $HOME/.dotfiles
 ```$ git clone git@github.com:dpgraham4401/.dotfiles $HOME/.dotfiles```
 3. stow files
 ```$ stow configs shell scripts```
-4. scripts to install packages via text files in the $HOME/Scripts directory
-
+- or use the ./stowAll.sh script directories (see ./stowAll.sh -h)
+```$ chmod +x ./stowAll.sh && ./stowAll.sh```
+4. A script with accompanying text files with packages is in the $HOME/Scripts directory
+``` $ cd $HOME/Scripts```
+``` $ chmod +x ./install_pkgs && ./install_pkgs --path fedora_all.txt```
 
 ### sway essesitals
 1. [sway](https://github.com/swaywm/sway)
@@ -45,22 +49,11 @@ Uses GNU stow to symlink files to the appropriate place
 ### Arch specific
 1. chromium-widevine &rarr; simplicity to play DRM on arch 
 
-### pip packages
-1. pynvim &rarr; 
-2. pillow &rarr; image preview in ranger
+### tips
+1. add the following to /etc/environment to use java applications like pycharm
+```bash
+if [ "$XDG_SESSION_DESKTOP" = "sway" ] ; then
+    export _JAVA_AWT_WM_NONREPARENTING=1
+fi
+```
 
-### npm packages (global)
-1. eslint
-2. neovim
-3. typescript
-4. semvar
-
-
-### NeoVim Plugins
-1. neovim/nvim-lspconfig &rarr; neovim native LSP client
-2. kabouzeid/nvim-lspinstall &rarr; install language servers independent of package manager
-3. nvim-lua/lspextensions.nvim
-4. tmsvg/pear-tree &rarr; auto close (){}[]
-5. francoiscabrol/ranger &rarr; file explorer
-6. vim-airline/vim-airline &rarr; airline status
-7. vim-airline/vim-airline-theme &rarr; make airline loos cool
