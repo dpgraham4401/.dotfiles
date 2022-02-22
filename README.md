@@ -5,7 +5,7 @@
 ## Install ##
 Uses [GNU stow](https://www.gnu.org/software/stow/) to symlink files to the appropriate place
 1. install git and stow and python if not already installed
-```$ dnf install git stow python3 ```
+```$ pacman -S git stow python3 ```
 2. Clone thsi git repo into $HOME/.dotfiles
 ```$ git clone git@github.com:dpgraham4401/.dotfiles $HOME/.dotfiles```
 3. stow files
