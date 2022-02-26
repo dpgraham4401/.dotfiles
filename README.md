@@ -2,21 +2,34 @@
 <!-- ![test](https://i.ibb.co/xMmpgrw/screenshot-21-08-27-09-42.png) -->
 ![test2](https://i.ibb.co/xYbCZwj/screenshot-22-02-18-15-20.png)
 
-## Install ##
+## Install and Usage ##
 Uses [GNU stow](https://www.gnu.org/software/stow/) to symlink files to the appropriate place
-1. install git and stow and python if not already installed
-```$ dnf install git stow python3 ```
+1. install git, stow if not already installed
+```
+$ dnf install git stow
+```
 2. Clone thsi git repo into $HOME/.dotfiles
-```$ git clone git@github.com:dpgraham4401/.dotfiles $HOME/.dotfiles```
-3. stow files
-```$ stow configs shell scripts```
-- or use the ./stowAll.sh script directories (see ./stowAll.sh -h)
-```$ chmod +x ./stowAll.sh && ./stowAll.sh```
-4. A script with accompanying text files with packages is in the $HOME/Scripts directory
-``` $ cd $HOME/Scripts```
-``` $ chmod +x ./install_pkgs && ./install_pkgs --path fedora_all.txt```
+```
+$ git clone git@github.com:dpgraham4401/.dotfiles $HOME/.dotfiles
+```
+3. stow files from the directories you need (see `stow -h`)
+```
+$ stow configs shell scripts
+```
+or use the ./stowAll.sh script (see `./stowAll.sh -h`)
+```
+$ chmod +x ./stowAll.sh && ./stowAll.sh
+```
+Note: stow will not replace a file that is already present, but it will complain to stdout. Remeber to back up those files incase you'd don't like these configs.
+```
+$ mv ~/.bashrc ~/.bashrc.bak
+```
+4. A script with accompanying text files with packages is in the `$HOME/Scripts` directory
+```
+$ chmod +x ./install_pkgs && ./install_pkgs --path fedora_all.txt
+```
 
-### sway essesitals
+### Packages
 1. [sway](https://github.com/swaywm/sway)
 2. [swaylock](https://github.com/swaywm/swaylock)
 3. [swayidle](https://github.com/swaywm/swayidle)
@@ -33,8 +46,7 @@ Uses [GNU stow](https://www.gnu.org/software/stow/) to symlink files to the appr
 5. [gammastep](https://gitlab.com/chinstrap/gammastep)
 6. [grim](https://github.com/emersion/grim)
 7. [slurp](https://github.com/emersion/slurp)
-8. [Rust](https://rustup.rs/)
-### Other applications
+### applications
 1. [kitty](https://sw.kovidgoyal.net/kitty/)
 2. [Ranger](https://github.com/ranger/ranger)
 3. [zsh](https://zsh.sourceforge.io/)
@@ -44,10 +56,10 @@ Uses [GNU stow](https://www.gnu.org/software/stow/) to symlink files to the appr
 7. [qutebrowser](https://github.com/qutebrowser/qutebrowser)
 
 ### Fedora specific
-1. qt5-qtwebengine-freeworld to play DRM (netflix etc.) on the qutebrowser
+1. qt5-qtwebengine-freeworld to play DRM (netflix etc.) on qutebrowser
 
 ### Arch specific
-1. chromium-widevine &rarr; simplicity to play DRM on arch 
+1. chromium-widevine &rarr; will install dependencies to play DRM on arch 
 
 ### tips
 1. add the following to /etc/environment to use java applications like pycharm
