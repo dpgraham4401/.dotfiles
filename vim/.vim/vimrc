@@ -46,8 +46,8 @@ syntax enable
 filetype plugin indent on
 
 " Appearance
-colorscheme desert
-" highlight Normal ctermbg=black
+set termguicolors
+colorscheme nord
 
 
 " Keybindings

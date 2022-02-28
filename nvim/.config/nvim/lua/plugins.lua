@@ -16,6 +16,7 @@ return require('packer').startup(function()
   use { 'folke/trouble.nvim' } -- get diagnostic info for current buffer
   use { 'preservim/nerdtree' }
   use { 'airblade/vim-gitgutter' }
+  use { 'mhinz/vim-startify' }
 
   -- lsp
   use { 'neovim/nvim-lspconfig' } -- part of base native LSP setup
@@ -30,19 +31,17 @@ return require('packer').startup(function()
   use { 'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp' }
   use { 'onsails/lspkind-nvim' } -- add vs-code like glyphs/pictograms to LSP
   use { 'L3MON4D3/LuaSnip' }
+  use { 'dense-analysis/ale'}
   
-  use { 'windwp/nvim-autopairs' }
-  use { 'josa42/nvim-lightline-lsp', requires = 'itchyny/lightline.vim' }
-  use { 'RRethy/nvim-treesitter-textsubjects' }
-  use { 'lewis6991/spellsitter.nvim' }
-
   -- Go
   use { 'fatih/vim-go' }
 
   -- utils
   use { 'nvim-lua/plenary.nvim' } -- required for telescope
-  use { 'dense-analysis/ale'}
-  -- use { 'mfussenegger/nvim-lint' }
+  use { 'windwp/nvim-autopairs' }
+  use { 'josa42/nvim-lightline-lsp', requires = 'itchyny/lightline.vim' }
+  use { 'RRethy/nvim-treesitter-textsubjects' }
+  use { 'lewis6991/spellsitter.nvim' }
   use { 'tpope/vim-abolish' } -- better substitution
   use { 'tpope/vim-surround' } -- change inner word surrounding w/ cs<current><replace>
   use { 'tpope/vim-commentary' } -- see :help Commentary
@@ -56,17 +55,4 @@ return require('packer').startup(function()
 
   -- html
   use { 'mattn/emmet-vim' }
-
 end)
-
--- Not in use currently
--- 1
-  -- telescope and fzf seem to do the same thing
-  -- use {
-    -- 'nvim-telescope/telescope.nvim',
-    -- requires = { {'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'} }
-  -- } 
--- 2
-  -- use { 'francoiscabrol/ranger.vim'} -- navigate with ranger inside vim (using NERDTree)
--- 3
-  -- use { 'simrat39/rust-tools.nvim' } -- not currently writing much in rust

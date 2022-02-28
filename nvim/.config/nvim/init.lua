@@ -20,8 +20,6 @@ vim.o.showcmd = true
 vim.o.swapfile = false
 vim.o.hidden = true
 vim.g.mapleader = " "
--- vim.g.python3_host_prog = '/usr/bin/python'
-vim.g.colors_name = 'onehalfdark'
 
 
 -- plugins
@@ -45,14 +43,13 @@ vim.cmd [[command! PackerUpdate packadd packer.nvim | lua require('plugins').upd
 vim.cmd [[command! PackerSync packadd packer.nvim | lua require('plugins').sync()]]
 vim.cmd [[command! PackerClean packadd packer.nvim | lua require('plugins').clean()]]
 vim.cmd [[command! PackerCompile packadd packer.nvim | lua require('plugins').compile()]]
-vim.cmd [[colorscheme onehalfdark]]
+vim.cmd [[colorscheme nord]]
 
 -- Keybindings 
 ----------------------------------------------------------
 local key_mapper = require('modules.utils').key_mapper
 
 key_mapper('i', 'jk', '<ESC>')
-key_mapper('i', 'kj', '<ESC>')
 key_mapper('n', '<C-s>', ':w<CR>')
 key_mapper('n', '<C-q>', '<cmd>lua require("modules.utils").close_buffer()<CR>')
 key_mapper('n', '<S-j>', ':bprevious<CR>')
