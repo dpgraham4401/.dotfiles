@@ -1,4 +1,0 @@
-python3
-golang
-nodejs
-npm
