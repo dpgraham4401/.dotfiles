@@ -9,7 +9,3 @@ swipe:
       command: 'swaymsg "move scratchpad"'
     down:
       command: 'swaymsg "scratchpad show"'
-    right:
-      command: 'swaymsg "workspace next"'
-    left:
-      command: 'swaymsg "workspace prev"'

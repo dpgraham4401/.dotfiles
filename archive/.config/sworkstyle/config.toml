@@ -28,7 +28,6 @@ unique = true
 [matching]
 'discord' = ''
 'Hexchat' = ''
-'Element' = ''
 'telegramdesktop' = ''
 'Steam' = ''
 'vlc' = ''

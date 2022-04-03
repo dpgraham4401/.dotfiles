@@ -1,7 +1,7 @@
 ### Sway Configuration
 	
 ### Variables
-	set $mod Mod4
+	set $mod Mod1
 
 	# Home row direction keys, like vim
 	set $left h
@@ -19,7 +19,7 @@
 ### Apperance
 
 	# Wallpaper
-	output * bg $HOME/.local/share/backgrounds/floating_nature.jpg fill
+	output * bg /home/dg/.config/wallpaper/floating_nature_1900x1200.jpg fill
     focus_wrapping no
    
     # Window colors
@@ -58,15 +58,15 @@ exec swayidle -w \
     bindsym XF86Calculator exec gnome-calculator
 
 	# Backlight
-	bindsym XF86MonBrightnessUp exec light -A 5
-	bindsym XF86MonBrightnessDown exec light -U 5
+	bindsym XF86MonBrightnessUp exec light -A 2
+	bindsym XF86MonBrightnessDown exec light -U 2
 
     # Screenshot
     bindsym print exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
 
     # Leds
-    bindsym XF86KbdBrightnessUp exec light -A 5 -s sysfs/leds/smc::kbd_backlight
-    bindsym XF86KbdBrightnessDown exec light -U 5 -s sysfs/leds/smc::kbd_backlight
+    # bindsym XF86KbdBrightnessUp exec light -A 5 -s sysfs/leds/smc::kbd_backlight
+    # bindsym XF86KbdBrightnessDown exec light -U 5 -s sysfs/leds/smc::kbd_backlight
 
     # Screenshot
     bindsym XF86LaunchA exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
@@ -88,7 +88,8 @@ exec swayidle -w \
 
 ### Applications shortcuts 
 	# Launcher
-	# bindsym $mod+space exec --no-startup-id wofi --show drun -I -i
+	bindsym $mod+space exec --no-startup-id wofi --show drun -I -i
+	# bindsym XF86LaunchB exec --no-startup-id wofi --show drun -I -i
 
 	# Start a terminal
     bindsym $mod+Return exec $term
@@ -98,6 +99,7 @@ exec swayidle -w \
 	
 	# Browser
 	bindsym $mod+Shift+f exec firefox
+	bindsym $mod+q exec qutebrowser
 
 
     # Explorer
@@ -155,11 +157,9 @@ exec swayidle -w \
     bindsym $mod+Shift+0 move container to workspace number 10
 
 ### Layout stuff:
-    # toggle next window split direction
     bindsym $mod+backspace split toggle
-    
-    # set current floating window to sticky
-    bindsym $mod+Shift+Up sticky toggle
+    #bindsym $mod+b splith
+    #bindsym $mod+v splitv
 
     #bindsym $mod+s layout stacking
     bindsym $mod+t layout tabbed
@@ -223,21 +223,20 @@ bar {
 	swaybar_command waybar
 	workspace_buttons yes
 }
-    # exec_always nwg-panel
 
 ### Startup commands
 	exec GDK_BACKEND=wayland
 	exec CLUTTER_BACKEND=wayland
 	exec --no-startup-id gammastep -l 38.89511:-77.03637 -t 5000:3000
     exec mako
+    exec hexchat
     exec fusuma
 	exec nm-applet --indicator
 	exec blueman-applet
-    exec autotiling
+    exec_always autotiling
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
 	exec "avizo-service"
-    exec light -S 75
 
 ### Startup Applications
     # exec --no-startup-id swaymsg 'workspace 1; exec /usr/bin/kitty'
@@ -245,26 +244,10 @@ bar {
 ### Input/Output devices
 output HDMI-A-1 {
 	resolution 1920x1080
-    scale 1.0
 	pos 1600 0
-    scale_filter linear
-}
-
-output eDP-1 {
-	resolution 2560x1600
-    scale 1.8
-    scale_filter linear
 }
 
 input * {
 	xkb_layout "us"
 	xkb_numlock enable
 }
-
-input type:touchpad {
-    tap enabled
-}
-
-for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
-set $menu exec $term --class=launcher -e /home/dg/.local/bin/sway-launcher-desktop
-bindsym $mod+space exec $menu
