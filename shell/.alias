@@ -1,25 +1,21 @@
 # shell aliases to be used by both bash and zsh
-export XDG_CONFIG_HOME='/home/dg/.config/'
-export XDG_DATA_HOME='/home/dg/.local/share/applications/'
-export GOPATH="/home/dg/go"
+export GOPATH="$HOME/go"
 export PATH="${PATH}:${HOME}/.local/bin/"
 export PATH="${PATH}:${GOPATH}/bin"
 export GOROOT=`go env GOROOT`
-export EDITOR='/usr/bin/nvim'
-export VISUAL='/usr/bin/nvim'
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export EDITOR="$(which nvim)"
+export VISUAL=$EDITOR
+# export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export KUBECONFG="$HOME/.kube/config"
-# aliases
 alias mv="mv -i"
 alias vim="$EDITOR"
 alias ssh="kitty +kitten ssh"
-alias rm="$(which trash)"
+# alias rm="$(which trash)"
 alias untar="tar -zxvf"
 alias ping="ping -c 5"
-alias c="clear"
-alias py="python"
-alias config="cd /home/dg/.dotfiles"
-alias dev="cd /home/dg/Projects"
+alias py="python3"
+alias config="cd $HOME/.dotfiles"
+alias dev="cd $HOME/Projects"
 alias kube="kubectl"
 alias godev="cd $GOPATH/src/github.com/dpgraham4401"
 alias speed="speedtest-cli --simple"
