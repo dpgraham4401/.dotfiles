@@ -19,10 +19,8 @@
 ### Apperance
 
 	# Wallpaper
-	# output * bg /home/dg/.local/share/backgrounds/astronaut.png fill
+	output * bg /home/dg/.local/share/backgrounds/astronaut.png fill
     focus_wrapping no
-    exec oguri-swaybg
-    exec dwall -s bitday
    
     # Window colors
     # Class                 border  Backgr  Text    indicator   child_border
@@ -240,9 +238,10 @@ bar {
     # exec --no-startup-id swaymsg 'workspace 1; exec /usr/bin/kitty'
 
 ### Input/Output devices
-output HDMI-A-1 {
+output Unknown-1 {
 	resolution 1920x1080
 	pos 1600 0
+    scale 1.8
 }
 
 input * {

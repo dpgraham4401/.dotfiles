@@ -27,7 +27,7 @@ return require('packer').startup(function()
   use { 'hrsh7th/cmp-nvim-lsp', requires = 'hrsh7th/nvim-cmp' }
   use { 'hrsh7th/cmp-buffer', requires = 'hrsh7th/nvim-cmp' }
   use { 'hrsh7th/nvim-cmp' }
-  use { 'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp' }
+  -- use { 'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp' }
   use { 'onsails/lspkind-nvim' } -- add vs-code like glyphs/pictograms to LSP
   use { 'L3MON4D3/LuaSnip' }
   
