@@ -14,7 +14,7 @@
 	set $slow 10
 
 	# Preferred terminal emulator
-	set $term kitty 
+	set $term foot
 
 ### Apperance
 
@@ -93,7 +93,7 @@ exec swayidle -w \
 
 	# Start a terminal
     bindsym $mod+q exec qutebrowser
-	
+
 	# Browser
 	bindsym $mod+Shift+f exec firefox
 
