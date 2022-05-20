@@ -1,5 +1,5 @@
 ### Sway Configuration
-	
+
 ### Variables
 	set $mod Mod4
 
@@ -21,7 +21,7 @@
 	# Wallpaper
 	output * bg $HOME/.local/share/backgrounds/floating_nature.jpg fill
     focus_wrapping no
-   
+
     # Window colors
     # Class                 border  Backgr  Text    indicator   child_border
     client.focused          #ffffff #ffffff #ffffff #0066ff     #ffffff
@@ -43,12 +43,10 @@ exec swayidle -w \
     before-sleep 'swaylock -f -C /home/dg/.config/swaylock/config'
 
 ### Key bindings
-	
     ## Volume
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 	bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-   
 	# Media playerctl  
 	bindsym XF86AudioNext exec playerctl next
 	bindsym XF86AudioPrev exec playerctl previous
@@ -238,6 +236,7 @@ bar {
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
 	exec "avizo-service"
     exec light -S 75
+    exec /usr/bin/Xwayland
 
 ### Startup Applications
     # exec --no-startup-id swaymsg 'workspace 1; exec /usr/bin/kitty'
@@ -250,19 +249,9 @@ output HDMI-A-1 {
     scale_filter linear
 }
 
-output eDP-1 {
-	resolution 2560x1600
-    scale 1.8
-    scale_filter linear
-}
-
 input * {
 	xkb_layout "us"
 	xkb_numlock enable
-}
-
-input type:touchpad {
-    tap enabled
 }
 
 for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
