@@ -11,7 +11,7 @@ export GOROOT=`go env GOROOT`
 export EDITOR='/usr/bin/nvim'
 export VISUAL='/usr/bin/nvim'
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-export KUBECONFG="$HOME/.kube/config"
+export KUBECONFIG="$HOME/.kube/config"
 export GITHUB_USER="dpgraham4401"
 # aliases
 alias fuck="sudo !!"
@@ -19,7 +19,6 @@ alias mv="mv -i"
 alias v="$EDITOR"
 alias vim="$EDITOR"
 alias mkdir="mkdir -pv"
-alias ssh="kitty +kitten ssh"
 alias venv="python -m venv"
 alias vact="source ./venv/bin/activate"
 alias rm="$(which trash)"
@@ -45,6 +44,10 @@ else
     alias dnfi="sudo dnf install"
     alias dnfr="sudo dnf remove"
 fi
+# Kitty terminal 
+if [ "$TERM" = "xterm-kitty" ]; then
+	alias ssh="kitty +kitten ssh"
+fi
 # Rust
 if [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
@@ -59,3 +62,4 @@ fi
 if [[ ! "$SSH_AUTH_SOCK" ]]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
 fi
+export GPG_TTY=$(tty)

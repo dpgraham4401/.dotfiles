@@ -13,6 +13,9 @@ settings:
     - bookmarks
     - history
     - filesystem
+  content.notifications.enabled:
+    https://www.netflix.com: false
+    https://www.reddit.com: false
   url.default_page:
     global: https://google.com/
   url.searchengines:

@@ -1,7 +1,8 @@
 {
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock", "idle_inhibitor"],
-    "modules-right": ["tray", "custom/scratchpad-indicator", "pulseaudio", "temperature", "battery", "custom/power", "custom/menu"],
+    /* "modules-right": ["tray", "custom/scratchpad-indicator", "pulseaudio", "custom/power"], */
+    "modules-right": ["tray", "custom/scratchpad-indicator", "pulseaudio", "custom/power"],
 
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -29,36 +30,7 @@
         // "format-alt": "{:%Y-%m-%d}"
 		"on-click": "gnome-calendar"
     },
-    // "cpu": {
-    //     "format": "{usage}% ",
-    //     "tooltip": false
-    // },
-    // "memory": {
-    //     "format": "{}% "
-    // },
-    "temperature": {
-        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
-        "critical-threshold": 82,
-        "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": [""]
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 20,
-            "critical": 10
-        },
-        "interval": 5,
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        /* "format-plugged": "{capacity}% ", */
-        "format-alt": "{time} {icon}",
-        "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} ",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
@@ -80,15 +52,6 @@
 		"format": "",
 		"on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Restart' 'shutdown -r now' -b 'Shutdown'  'shutdown -h now' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33"
 	},
-	// "custom/example_runscript_3 seconds": {
-	// 	"interval": 3,
-	// 	"exec": "/home/dg/.config/waybar/modules/menu_test.py",
-	// 	"format": "{}",
-	// },
-	// "custom/menu": {
-	// 	"format": "",
-	//  	"on-click": "/home/dg/.config/waybar/modules/menu_test.py",
-	// },
     "custom/scratchpad-indicator": {
         "format-text": "{}",
         "return-type": "json",
