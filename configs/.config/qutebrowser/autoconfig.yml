@@ -13,9 +13,13 @@ settings:
     - bookmarks
     - history
     - filesystem
+  content.headers.user_agent:
+    global: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/97.0.4692.99 Safari/537.36
   content.notifications.enabled:
     https://www.netflix.com: false
     https://www.reddit.com: false
+    https://www.youtube.com: false
   url.default_page:
     global: https://google.com/
   url.searchengines:

@@ -7,14 +7,13 @@ call plug#begin()
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-sensible'
-	" Plug 'tpope/vim-fugative'
-	Plug 'kyazdani42/nvim-web-devicons'
-	Plug 'akinsho/bufferline.nvim'
+	Plug 'kyazdani42/nvim-web-devicons' " bufferline recommended
+	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 	Plug 'preservim/nerdtree' 
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim' 
-	" Plug 'lewis6991/spellsitter.nvim'
-	" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+	Plug 'lewis6991/spellsitter.nvim'
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'akinsho/toggleterm.nvim'
 	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
@@ -27,12 +26,12 @@ set nowrap
 set relativenumber
 set number
 set mouse=a
-set spell
+" set spell
 set clipboard=unnamed
 set belloff=all
 set hidden
 let mapleader=" "
-syntax enable
+syntax on
 filetype plugin indent on
 
 " Appearance
@@ -48,10 +47,13 @@ map <C-s> :w<CR>
 " map <C-q> :q<CR>
 
 " Plugin key mappings
+" See 'let mpaleader=' above for what leader is set to 
 nnoremap <leader>n	:NERDTreeToggle<CR>
 nnoremap <leader>f	:Files<CR>
-nnoremap <C-_>		:Commentary<bar> j<CR>
-nnoremap <Leader>' :ToggleTerm<CR>
+" Comment out with Control-ForwardSlash
+nnoremap <C-/>		:Commentary<bar><CR>
+nnoremap <leader>' :ToggleTerm<CR>
+
 
 " move around splits with Alt-arrow
 nmap <silent> <A-Up> :wincmd k<CR>
@@ -61,12 +63,13 @@ nmap <silent> <A-Right> :wincmd l<CR>
 
 lua << EOF
 -- require('utils')
--- require("bufferline").setup{}
--- require('spellsitter').setup()
 require("terminal").setup()
+require("spellsitter").setup()
+require("bufferline").setup()
 require("term_options")
 
 local key_mapper = require('utils').key_mapper
+-- close buffer on Control-q
 key_mapper('n', '<C-q>', '<cmd>lua require("utils").close_buffer()<CR>')
 EOF
 

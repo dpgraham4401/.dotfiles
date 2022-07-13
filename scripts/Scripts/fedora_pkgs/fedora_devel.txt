@@ -2,6 +2,5 @@ python3
 golang
 nodejs
 npm
-wayland-devel
-sway-devel
-cairo
+gcc
+gcc-c++
