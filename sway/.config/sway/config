@@ -247,4 +247,5 @@ output Unknown-1 {
 input * {
 	xkb_layout "us"
 	xkb_numlock enable
+    tap enable
 }
