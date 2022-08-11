@@ -10,8 +10,8 @@ call plug#begin()
 	Plug 'kyazdani42/nvim-web-devicons' " bufferline recommended
 	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 	Plug 'preservim/nerdtree' 
-	Plug 'junegunn/fzf'
-	Plug 'junegunn/fzf.vim' 
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	Plug 'junegunn/fzf.vim'
 	Plug 'lewis6991/spellsitter.nvim'
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'akinsho/toggleterm.nvim'

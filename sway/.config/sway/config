@@ -220,6 +220,7 @@ output HDMI-A-1 {
 input * {
 	xkb_layout "us"
 	xkb_numlock enable
+	pointer_accel 0.25
 }
 
 # Browser picture-in-picture mode

@@ -10,9 +10,10 @@ export PATH="${HOME}/Scripts:${PATH}"
 export GOROOT=`go env GOROOT`
 export EDITOR='/usr/bin/nvim'
 export VISUAL='/usr/bin/nvim'
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='find . \( -name node_modules -o -name .git \) -prune -o -print'
 export KUBECONFIG="$HOME/.kube/config"
 export GITHUB_USER="dpgraham4401"
+export GPG_TTY=$(tty)
 # aliases
 alias fuck="sudo !!"
 alias mv="mv -i"
