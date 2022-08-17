@@ -15,8 +15,19 @@ call plug#begin()
 	Plug 'lewis6991/spellsitter.nvim'
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'akinsho/toggleterm.nvim'
+	Plug 'williamboman/mason.nvim'
 	Plug 'neovim/nvim-lspconfig'
-	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'hrsh7th/cmp-nvim-lsp'
+	Plug 'hrsh7th/cmp-buffer'
+	Plug 'hrsh7th/cmp-path'
+	Plug 'hrsh7th/cmp-cmdline'
+	Plug 'hrsh7th/nvim-cmp'
+
+	" For vsnip users.
+	Plug 'hrsh7th/cmp-vsnip'
+	Plug 'hrsh7th/vim-vsnip'
 call plug#end()
 
 " settings
@@ -31,6 +42,7 @@ set mouse=a
 set clipboard=unnamed
 set belloff=all
 set hidden
+set completeopt=menu,menuone,noselect
 let mapleader=" "
 syntax on
 filetype plugin indent on
@@ -67,11 +79,14 @@ lua << EOF
 require("terminal").setup()
 require("spellsitter").setup()
 require("bufferline").setup()
+require("mason").setup()
 require("term_options")
+require("cmp_config")
 require'lspconfig'.pyright.setup{}
 
 local key_mapper = require('utils').key_mapper
 -- close buffer on Control-q
 key_mapper('n', '<C-q>', '<cmd>lua require("utils").close_buffer()<CR>')
+
 EOF
 
