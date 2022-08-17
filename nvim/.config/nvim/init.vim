@@ -15,6 +15,7 @@ call plug#begin()
 	Plug 'lewis6991/spellsitter.nvim'
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'akinsho/toggleterm.nvim'
+	Plug 'neovim/nvim-lspconfig'
 	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -67,6 +68,7 @@ require("terminal").setup()
 require("spellsitter").setup()
 require("bufferline").setup()
 require("term_options")
+require'lspconfig'.pyright.setup{}
 
 local key_mapper = require('utils').key_mapper
 -- close buffer on Control-q
