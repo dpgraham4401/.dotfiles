@@ -5,11 +5,14 @@ export PATH="${PATH}:${GOPATH}/bin"
 export GOROOT=`go env GOROOT`
 export EDITOR="$(which nvim)"
 export VISUAL=$EDITOR
-# export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-export KUBECONFG="$HOME/.kube/config"
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export KUBECONFIG="$HOME/.kube/config"
+export TOOLCHAINS=swift
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 alias mv="mv -i"
 alias vim="$EDITOR"
-alias ssh="kitty +kitten ssh"
+# alias ssh="kitty +kitten ssh"
 # alias rm="$(which trash)"
 alias untar="tar -zxvf"
 alias ping="ping -c 5"
@@ -20,9 +23,6 @@ alias kube="kubectl"
 alias godev="cd $GOPATH/src/github.com/dpgraham4401"
 alias speed="speedtest-cli --simple"
 # autostart ssh agent
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
-fi
-if [[ ! "$SSH_AUTH_SOCK" ]]; then
-    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-fi
+# if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+#     ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+# fi

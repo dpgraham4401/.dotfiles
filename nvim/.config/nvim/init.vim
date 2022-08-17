@@ -59,18 +59,17 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
+if has('nvim')
 lua << EOF
-require('utils')
-require("bufferline").setup{}
-require('spellsitter').setup()
-require("terminal").setup()
-require("term_options")
-
+	require('utils')
+	require("bufferline").setup{}
+	require('spellsitter').setup()
+	require("terminal").setup()
+	require("term_options")
 local key_mapper = require('utils').key_mapper
 key_mapper('n', '<C-q>', '<cmd>lua require("utils").close_buffer()<CR>')
 EOF
-
-
+endif
 
 " Coc.nvim
 " TextEdit might fail if hidden is not set.
@@ -156,8 +155,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -220,6 +219,7 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+autocmd BufRead,BufNewFile *.gohtml set filetype=html
 " Mappings for CoCList
 " Show all diagnostics.
 nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
