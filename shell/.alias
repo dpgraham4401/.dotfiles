@@ -9,10 +9,11 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 export KUBECONFIG="$HOME/.kube/config"
 export TOOLCHAINS=swift
 export NVM_DIR=~/.nvm
+export HOMEBREW_NO_ENV_HINTS=1
 source $(brew --prefix nvm)/nvm.sh
 alias mv="mv -i"
 alias vim="$EDITOR"
-# alias ssh="kitty +kitten ssh"
+alias ssh="kitty +kitten ssh"
 # alias rm="$(which trash)"
 alias untar="tar -zxvf"
 alias ping="ping -c 5"

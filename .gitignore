@@ -1,7 +1,7 @@
 # # Ingore all
 # *
 #
-# **/.DS_Store
+# **/*.DS_Store
 
 # # Except these files
 # !.bashrc
