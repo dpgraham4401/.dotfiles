@@ -8,3 +8,4 @@ ldd3 https://lwn.net/Kernel/LDD3/
 gmail https://mail.google.com/mail/u/0/#inbox
 kindle https://read.amazon.com/kindle-library
 hub.docker https://hub.docker.com/u/dpgraham4401
+created a shared library in C https://iakko.medium.com/creating-a-c-shared-library-with-cmake-50c6d2f97ee8

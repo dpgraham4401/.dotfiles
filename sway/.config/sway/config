@@ -19,7 +19,7 @@
 ### Apperance
 
 	# Wallpaper
-	output * bg $HOME/.local/share/backgrounds/floating_nature.jpg fill
+	output * bg $HOME/.local/share/backgrounds/astronaut.png fill
     focus_wrapping no
 
     # Window colors
@@ -60,14 +60,14 @@ exec swayidle -w \
 	bindsym XF86MonBrightnessDown exec light -U 5
 
     # Screenshot
-    bindsym $mod+p exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
+    bindsym $mod+p exec grim -g "$(slurp)" $HOME/Documents/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
 
     # Leds
     bindsym XF86KbdBrightnessUp exec light -A 5 -s sysfs/leds/smc::kbd_backlight
     bindsym XF86KbdBrightnessDown exec light -U 5 -s sysfs/leds/smc::kbd_backlight
 
     # Screenshot
-    bindsym XF86LaunchA exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
+    bindsym XF86LaunchA exec grim -g "$(slurp)" $HOME/Documents/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -202,7 +202,7 @@ bar {
     exec mako
 	exec nm-applet --indicator
 	exec /usr/bin/blueman-applet
-    # exec autotiling
+    exec autotiling
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
 	# exec "avizo-service"

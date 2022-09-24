@@ -27,4 +27,6 @@ gammastep-indicator
 fontawesome5-fonts-all
 network-manager-applet
 neofetch
+yaru-icon-theme
+chromium-freeworld
 https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$\(rpm -E %fedora).noarch.rpm
