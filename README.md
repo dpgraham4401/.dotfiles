@@ -68,7 +68,10 @@ $ chmod +x ./install_pkgs && ./install_pkgs --path fedora_all.txt
     * This is a finicky process, I usually just install chromium-freeworld. It may not work immeadiately. Not sure why. 
 
 ### Arch specific
-1. chromium-widevine &rarr; will install dependencies to play DRM on arch 
+1. chromium-widevine &rarr; will install dependencies to play DRM on arch
+
+### PyPi Packages
+1. [autotiling](https://github.com/nwg-piotr/autotiling)
 
 ## Other Tips
 1. add the following to /etc/environment to use java applications like PyCharm
