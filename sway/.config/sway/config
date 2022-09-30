@@ -19,8 +19,8 @@
 	# Screensaver
 
 	# ScreenSaver preferences
-	set $screensave_time 60*30
-	set $sleep_time $screensave_time+(60*5)
+	set $screensave_time 1800
+	set $sleep_time 2700
 
 ### Apperance
 
