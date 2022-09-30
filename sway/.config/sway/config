@@ -9,17 +9,23 @@
 	set $up k
 	set $right l
 
-	# cursor movement
+	# Sursor movement
 	set $fast 50
 	set $slow 10
 
 	# Preferred terminal emulator
 	set $term foot
 
+	# Screensaver
+
+	# ScreenSaver preferences
+	set $screensave_time 60*30
+	set $sleep_time $screensave_time+(60*5)
+
 ### Apperance
 
 	# Wallpaper
-	output * bg $HOME/.local/share/backgrounds/astronaut.png fill
+		output * bg $HOME/.local/share/backgrounds/astronaut.png fill
     focus_wrapping no
 
     # Window colors
@@ -37,8 +43,8 @@
 
 ### Idle configuration
 exec swayidle -w \
-    timeout 1800 'swaylock -f -C /home/dg/.config/swaylock/config' \
-    timeout 1920 'systemctl suspend' \
+    timeout $screensave_time 'swaylock -f -C /home/dg/.config/swaylock/config' \
+    timeout $sleep_time 'systemctl suspend' \
         resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f -C /home/dg/.config/swaylock/config'
 
@@ -158,7 +164,7 @@ exec swayidle -w \
 	bindsym $mod+Shift+minus move scratchpad
 	bindsym $mod+minus scratchpad show
 
-	# move cursor
+	# Move cursor
 	mode "mouse" {
 	bindsym KP_Left seat - cursor move -10 0
 	bindsym KP_Down seat - cursor move 0 10
@@ -205,7 +211,6 @@ bar {
     exec autotiling
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
-	# exec "avizo-service"
     # exec light -S 75
     # exec /usr/bin/Xwayland
 

@@ -30,7 +30,7 @@ PS1='%F{5}%n@%F{14}%1~%f$vcs_info_msg_0_ %(?.%F{#00ff00}√.%F{#ff0000}✗%F{#ff
 export ZSH="/home/dg/.oh-my-zsh"
 
 # Themes
-#ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="false"
@@ -38,9 +38,10 @@ CASE_SENSITIVE="false"
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 
-# Plugins
 plugins=(
     golang 
+	dnf
+	dotenv
     kubectl
     docker
     git
