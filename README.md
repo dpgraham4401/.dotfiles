@@ -27,9 +27,13 @@ Note: stow will not replace a file that is already present, but it will complain
 $ mv ~/.bashrc ~/.bashrc.bak && ./stowAll.sh
 ```
 
-4. A script to help install packages, with accompanying text files, is in the `$HOME/Scripts` directory
+4. A script to help install packages, is found in `$HOME/.local/bin/install_pkgs` with accompanying text files, with lists of packages, in the `$HOME/.local/share/` directory
+	- fedora_all.txt
+	- fedora_sway.txt
+	- fedora_devel.txt
+	- brew_pkgs.txt (for macos and HomeBrew)
 ```
-$ chmod +x ./install_pkgs && ./install_pkgs --path fedora_all.txt
+$ chmod +x ~/.local/bin/install_pkgs && install_pkgs -f ~$HOME/.local/sharefedora_all.txt
 ```
 
 ### Packages
