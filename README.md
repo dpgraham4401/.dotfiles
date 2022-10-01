@@ -1,7 +1,4 @@
 # .dotfiles (Macbook M1 branch)
-<!-- ![test](https://i.ibb.co/xMmpgrw/screenshot-21-08-27-09-42.png) -->
-<!-- ![test2](https://i.ibb.co/xYbCZwj/screenshot-22-02-18-15-20.png) -->
-
 This branch differs from the other two, I don't have a tiling window manager for mac, I haven't found one that was worth it
 
 ## Install and Usage ##
@@ -26,48 +23,8 @@ Note: stow will not replace a file that is already present, but it will complain
 ```
 $ mv ~/.bashrc ~/.bashrc.bak
 ```
-4. A script with accompanying text files with packages is in the `$HOME/Scripts` directory
+4. A script to help install packages is found in `$HOME/.local/bin` directory with list of text files in `$HOME/.local/share`
 ```
-$ chmod +x ./install_pkgs && ./install_pkgs --path fedora_all.txt
-```
-
-### Packages
-1. [sway](https://github.com/swaywm/sway)
-2. [swaylock](https://github.com/swaywm/swaylock)
-3. [swayidle](https://github.com/swaywm/swayidle)
-4. [sworkstyle](https://github.com/Lyr-7D1h/swayest_workstyle)
-5. [waybar](https://github.com/Alexays/Waybar)
-6. [mako](https://github.com/emersion/mako)
-7. [wev](https://git.sr.ht/~sircmpwn/wev)
-8. [wofi](https://hg.sr.ht/~scoopta/wofi)
-### Useful Utilities
-1. [playerctl](https://github.com/altdesktop/playerctl)
-2. [pulseaudio (pactl)](https://freedesktop.org/software/pulseaudio/pavucontrol/)
-3. [pavucontrol](https://freedesktop.org/software/pulseaudio/pavucontrol/)
-4. [light](https://github.com/haikarainen/light) (or [brightnessctl](https://github.com/Hummer12007/brightnessctl))
-5. [gammastep](https://gitlab.com/chinstrap/gammastep)
-6. [grim](https://github.com/emersion/grim)
-7. [slurp](https://github.com/emersion/slurp)
-### applications
-1. [kitty](https://sw.kovidgoyal.net/kitty/)
-2. [Ranger](https://github.com/ranger/ranger)
-3. [zsh](https://zsh.sourceforge.io/)
-4. [oh-my-zsh](https://github.com/ohmyzsh)
-5. [neovim](https://github.com/neovim/neovim)
-6. [firefox-wayland](https://www.mozilla.org/en-US/firefox/)
-7. [qutebrowser](https://github.com/qutebrowser/qutebrowser)
-
-### Fedora specific
-1. qt5-qtwebengine-freeworld to play DRM (netflix etc.) on qutebrowser
-
-### Arch specific
-1. chromium-widevine &rarr; will install dependencies to play DRM on arch 
-
-### tips
-1. add the following to /etc/environment to use java applications like pycharm
-```bash
-if [ "$XDG_SESSION_DESKTOP" = "sway" ] ; then
-    export _JAVA_AWT_WM_NONREPARENTING=1
-fi
+$ chmod +x ~/.local/share/bin/install_pkgs && install_pkgs -f ~/.local/share/brew_pkgs.txt
 ```
 
