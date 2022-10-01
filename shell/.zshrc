@@ -1,7 +1,9 @@
 # .zshrc
-source ~/.alias
 autoload -U colors && colors
-alias zshrc="source ~/.zshrc"
+# if alias file exist
+if [ -f "$HOME/.alias" ]; then
+    source ~/.alias 
+fi
 fpath+=~/.zfunc
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -36,7 +38,7 @@ export ZSH="$HOME/.oh-my-zsh"
 CASE_SENSITIVE="false"
 
 # Uncomment the following line to enable command auto-correction.
-#ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Plugins
 plugins=(
@@ -52,7 +54,7 @@ plugins=(
     dirhistory
     history
     pip
+	helm
 )
 source $ZSH/oh-my-zsh.sh
 
-export PATH="/opt/homebrew/opt/swift/bin:$PATH"
