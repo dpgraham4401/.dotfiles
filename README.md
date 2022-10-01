@@ -1,12 +1,14 @@
-# .dotfiles
+# .dotfiles (Macbook M1 branch)
 <!-- ![test](https://i.ibb.co/xMmpgrw/screenshot-21-08-27-09-42.png) -->
-![test2](https://i.ibb.co/xYbCZwj/screenshot-22-02-18-15-20.png)
+<!-- ![test2](https://i.ibb.co/xYbCZwj/screenshot-22-02-18-15-20.png) -->
+
+This branch differs from the other two, I don't have a tiling window manager for mac, I haven't found one that was worth it
 
 ## Install and Usage ##
 Uses [GNU stow](https://www.gnu.org/software/stow/) to symlink files to the appropriate place
 1. install git, stow if not already installed
 ```
-$ dnf install git stow
+$ brew install git stow
 ```
 2. Clone thsi git repo into $HOME/.dotfiles
 ```

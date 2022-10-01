@@ -1,0 +1,90 @@
+#!/bin/bash
+
+DOTFILE_DIR="$HOME/.dotpkg_files"
+MY_OS=0 # used to determine which 
+pkg_manager="dnf"
+distro="default"
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	MY_OS=1
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+	MY_OS=2
+	pkg_manager="brew"
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+	MY_OS=0
+	echo "Windows not supported"
+	echo "Sorry"
+	exit 0
+elif [[ "$OSTYPE" == "msys" ]]; then
+	echo "Windows not supported"
+	echo "Sorry"
+	MY_OS=0
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+	echo "FreeBsd not supported"
+	echo "Sorry"
+	MY_OS=0
+else
+	MY_OS=0
+fi
+
+print_usage(){
+   # Display Help
+   echo "Use GNU stow to stash all config in appropriate place"
+   echo
+   echo "Syntax: stowAll.sh [ -f <pkg_file>] [-d <distro>] "
+   echo "options:"
+   echo "f		text pkg_file with list of packages to install"
+   echo "d		If on Linux, you'll need to pass the distro"
+   echo "h		Print this help and exit"
+   echo 
+   echo "example: ./install_from_text.sh -f fedora_all.txt -d fedora"
+   echo 
+}
+
+install_from_pkg_file(){
+	if test -f "$pkg_file"; then
+		if [[ "$MY_OS" == "1" ]]; then
+			echo "Linux"
+			if [[ "$distro" == "fedora" ]]; then
+				sudo dnf install $(cat $pkg_file)
+			elif [[ "$distro" == "arch" ]]; then
+				sudo pacman -S $(cat $pkg_file)
+			elif [[ "$distro" == "ubuntu"  ]]; then
+				sudo apt-get install $(cat $pkg_file)
+			else
+				echo "Provide a distro [fedora|arch|ubuntu]"
+				exit 1
+			fi
+		elif [[ "$MY_OS" == "2" ]]; then
+			echo "Installing with brew"
+			brew install $(cat $pkg_file)
+		else
+			echo "Could not detect OS"
+			exit 1
+		fi
+	else
+		echo "\"$pkg_file\" file does not exists."
+		exit 1
+	fi
+}
+
+
+# Parse CLI argument
+while getopts ':f:h:d:' opt; do
+  case "$opt" in
+	d)
+		distro="${OPTARG}"
+		echo $distro
+		;;
+    f)
+		pkg_file="${OPTARG}"
+		echo "$pkg_file"
+		install_from_pkg_file
+        ;;
+    \?|h)
+	  print_usage
+      exit 1
+      ;;
+  esac
+done
+shift $((OPTIND-1))
