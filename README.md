@@ -1,30 +1,33 @@
 # .dotfiles
-<!-- ![test](https://i.ibb.co/xMmpgrw/screenshot-21-08-27-09-42.png) -->
-![test2](https://i.ibb.co/xYbCZwj/screenshot-22-02-18-15-20.png)
+![desktop screenshot](https://i.ibb.co/xYbCZwj/screenshot-22-02-18-15-20.png)
 
 ## Install and Usage ##
-Uses [GNU stow](https://www.gnu.org/software/stow/) to symlink files to the appropriate place
-1. install git, stow if not already installed
-```
+Only 2 packages are needed to get started, Git to clone these configs, and [GNU stow](https://www.gnu.org/software/stow/) to symlink files to the appropriate place on the local machine
+
+1. Install git & stow, if not already installed
+```bash
 $ dnf install git stow
 ```
-2. Clone thsi git repo into $HOME/.dotfiles
+
+2. Fork this repo and Clone the configs into $HOME/.dotfiles
+```bash
+$ git clone git@github.com:{{GitHub Username Here}}/.dotfiles $HOME/.dotfiles && cd $HOME/.dotfiles
 ```
-$ git clone git@github.com:dpgraham4401/.dotfiles $HOME/.dotfiles
+
+3. The Configs in this repo are broken up by catagory. Pick and choose which configs you want by directory (see `stow -h`)
+```bash
+$ stow configs shell scripts # e.g. will symlink all config files in ./configs, ./shell, & ./scripts 
 ```
-3. stow files from the directories you need (see `stow -h`)
-```
-$ stow configs shell scripts
-```
-or use the ./stowAll.sh script (see `./stowAll.sh -h`)
+or use the ./stowAll.sh shell script in the repo root (see `./stowAll.sh -h`)
 ```
 $ chmod +x ./stowAll.sh && ./stowAll.sh
 ```
-Note: stow will not replace a file that is already present, but it will complain to stdout. Remeber to back up those files incase you'd don't like these configs.
+Note: stow will not replace a file that is already present, but it will complain to stdout. Remeber to back up those files incase you'd don't like these configs, then you can use stow/stowAll.sh again. 
 ```
-$ mv ~/.bashrc ~/.bashrc.bak
+$ mv ~/.bashrc ~/.bashrc.bak && ./stowAll.sh
 ```
-4. A script with accompanying text files with packages is in the `$HOME/Scripts` directory
+
+4. A script to help install packages, with accompanying text files, is in the `$HOME/Scripts` directory
 ```
 $ chmod +x ./install_pkgs && ./install_pkgs --path fedora_all.txt
 ```
@@ -43,26 +46,35 @@ $ chmod +x ./install_pkgs && ./install_pkgs --path fedora_all.txt
 2. [pulseaudio (pactl)](https://freedesktop.org/software/pulseaudio/pavucontrol/)
 3. [pavucontrol](https://freedesktop.org/software/pulseaudio/pavucontrol/)
 4. [light](https://github.com/haikarainen/light) (or [brightnessctl](https://github.com/Hummer12007/brightnessctl))
-5. [gammastep](https://gitlab.com/chinstrap/gammastep)
-6. [grim](https://github.com/emersion/grim)
-7. [slurp](https://github.com/emersion/slurp)
-### applications
-1. [kitty](https://sw.kovidgoyal.net/kitty/)
-2. [Ranger](https://github.com/ranger/ranger)
-3. [zsh](https://zsh.sourceforge.io/)
-4. [oh-my-zsh](https://github.com/ohmyzsh)
-5. [neovim](https://github.com/neovim/neovim)
-6. [firefox-wayland](https://www.mozilla.org/en-US/firefox/)
-7. [qutebrowser](https://github.com/qutebrowser/qutebrowser)
+5. [grim](https://github.com/emersion/grim)
+6. [slurp](https://github.com/emersion/slurp)
+### Applications
+1. [foot](https://codeberg.org/dnkl/foot/commits/branch/master) 
+2. [kitty](https://sw.kovidgoyal.net/kitty/)
+3. [Ranger](https://github.com/ranger/ranger)
+4. [zsh](https://zsh.sourceforge.io/)
+5. [oh-my-zsh](https://github.com/ohmyzsh)
+6. [neovim](https://github.com/neovim/neovim)
+7. [firefox-wayland](https://www.mozilla.org/en-US/firefox/)
+8. [qutebrowser](https://github.com/qutebrowser/qutebrowser)
+### Applets (tray)
+1. [blueman-applet](https://github.com/blueman-project/blueman)
+2. [gammastep-indicator](https://gitlab.com/chinstrap/gammastep)
+3. [nm-applet (Network Manager)](https://gitlab.gnome.org/GNOME/network-manager-applet)
 
+## Notes
 ### Fedora specific
 1. qt5-qtwebengine-freeworld to play DRM (netflix etc.) on qutebrowser
+    * This is a finicky process, I usually just install chromium-freeworld. It may not work immeadiately. Not sure why. 
 
 ### Arch specific
-1. chromium-widevine &rarr; will install dependencies to play DRM on arch 
+1. chromium-widevine &rarr; will install dependencies to play DRM on arch
 
-### tips
-1. add the following to /etc/environment to use java applications like pycharm
+### PyPi Packages
+1. [autotiling](https://github.com/nwg-piotr/autotiling)
+
+## Other Tips
+1. add the following to /etc/environment to use java applications like PyCharm
 ```bash
 if [ "$XDG_SESSION_DESKTOP" = "sway" ] ; then
     export _JAVA_AWT_WM_NONREPARENTING=1
