@@ -1,6 +1,0 @@
-python3
-golang
-nodejs
-npm
-gcc
-gcc-c++

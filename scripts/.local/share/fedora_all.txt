@@ -45,4 +45,3 @@ vim
 tlptlp-rdw
 dkms
 htop
-pulseaudio-utils
