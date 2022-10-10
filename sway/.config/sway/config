@@ -92,7 +92,8 @@ exec swayidle -w \
 
 ### Applications shortcuts 
 	# Launcher
-	bindsym $mod+space exec --no-startup-id wofi --show drun -I -i
+	# bindsym $mod+space exec --no-startup-id wofi --show drun -I -i
+	bindsym $mod+space exec albert show
 
 	# Start a terminal
     bindsym $mod+Return exec $term
@@ -208,9 +209,10 @@ bar {
     exec mako
 	exec nm-applet --indicator
 	exec /usr/bin/blueman-applet
-    exec autotiling
+    exec $HOME/.local/bin/autotiling
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
+	exec albert
     # exec light -S 75
     # exec /usr/bin/Xwayland
 
