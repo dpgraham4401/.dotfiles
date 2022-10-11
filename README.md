@@ -6,15 +6,14 @@ Only 2 packages are needed to get started, Git to clone these configs, and [GNU 
 
 1. Install git & stow, if not already installed
 ```bash
-$ dnf install git stow
+$ sudo pacman -S git stow
 ```
-
 2. Fork this repo and Clone the configs into $HOME/.dotfiles
 ```bash
 $ git clone git@github.com:{{GitHub Username Here}}/.dotfiles $HOME/.dotfiles && cd $HOME/.dotfiles
 ```
 
-3. The Configs in this repo are broken up by catagory. Pick and choose which configs you want by directory (see `stow -h`)
+3. The Configs in this repo are broken up by catagory. Pick and choose which catagories you want by directory (see `stow -h`)
 ```bash
 $ stow configs shell scripts # e.g. will symlink all config files in ./configs, ./shell, & ./scripts 
 ```
@@ -31,9 +30,10 @@ $ mv ~/.bashrc ~/.bashrc.bak && ./stowAll.sh
 	- fedora_all.txt
 	- fedora_sway.txt
 	- fedora_devel.txt
+	- arch_pkgs.txt
 	- brew_pkgs.txt (for macos and HomeBrew)
 ```
-$ chmod +x ~/.local/bin/install_pkgs && install_pkgs -f ~$HOME/.local/sharefedora_all.txt
+$ chmod +x ~/.local/bin/install_pkgs && install_pkgs -d "arch" -f ~$HOME/.local/arch_pkgs.txt
 ```
 
 ### Packages
