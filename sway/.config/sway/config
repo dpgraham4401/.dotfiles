@@ -209,10 +209,11 @@ bar {
     exec mako
 	exec nm-applet --indicator
 	exec /usr/bin/blueman-applet
-    exec $HOME/.local/bin/autotiling
+    exec /home/dg/.local/bin/autotiling
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
-    exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
+    exec sworkstyle &> /tmp/sworkstyle.log
 	exec albert
+	exec jetbrains-toolbox
     # exec light -S 75
     # exec /usr/bin/Xwayland
 
@@ -230,5 +231,5 @@ input * {
 }
 
 # Browser picture-in-picture mode
-for_window [app_id="firefox" title="^Picture-in-Picture$"] \
+for_window [title="^Picture-in-Picture$"] \
     floating enable, move position 1400 700, resize set width 20 ppt height 22 ppt, sticky enable

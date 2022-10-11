@@ -36,11 +36,10 @@ export ZSH="/home/dg/.oh-my-zsh"
 CASE_SENSITIVE="false"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 plugins=(
     golang 
-	dnf
 	dotenv
     kubectl
     docker

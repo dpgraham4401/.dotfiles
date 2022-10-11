@@ -1,0 +1,24 @@
+## Other things that maybe can't be installed with pacman directly
+rustup
+oh-my-zsh
+vim-plug
+yay
+
+## Yay Pkgs
+wev
+brave
+qt5-webengine-widevine
+qt6-webengine-widevine
+sworkstyle
+albert
+jetbrains-toolbox
+gnome-browser-connector
+visual-studio-code-bin
+
+## flatpaks
+postman
+steam
+spotify
+
+## Misc things to take care of
+configure gnome settings and extensions

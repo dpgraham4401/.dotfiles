@@ -6,6 +6,7 @@ pkg_manager="dnf"
 distro="default"
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	echo "Looks like you're on linux"
 	MY_OS=1
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 	MY_OS=2
@@ -43,8 +44,9 @@ print_usage(){
 
 install_from_pkg_file(){
 	if test -f "$pkg_file"; then
+		echo "installing from $pkg_file"
 		if [[ "$MY_OS" == "1" ]]; then
-			echo "Linux"
+			echo "Looking for Package Manager"
 			if [[ "$distro" == "fedora" ]]; then
 				sudo dnf install $(cat $pkg_file)
 			elif [[ "$distro" == "arch" ]]; then
