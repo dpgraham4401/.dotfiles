@@ -55,6 +55,7 @@ plugins=(
     history
     pip
 	helm
+	rust
 )
 source $ZSH/oh-my-zsh.sh
 
