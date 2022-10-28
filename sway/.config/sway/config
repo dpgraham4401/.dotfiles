@@ -69,8 +69,8 @@ exec swayidle -w \
     bindsym $mod+p exec grim -g "$(slurp)" $HOME/Documents/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
 
     # Leds
-    bindsym XF86KbdBrightnessUp exec light -A 5 -s sysfs/leds/smc::kbd_backlight
-    bindsym XF86KbdBrightnessDown exec light -U 5 -s sysfs/leds/smc::kbd_backlight
+    # bindsym XF86KbdBrightnessUp exec light -A 5 -s sysfs/leds/smc::kbd_backlight
+    # bindsym XF86KbdBrightnessDown exec light -U 5 -s sysfs/leds/smc::kbd_backlight
 
     # Screenshot
     bindsym XF86LaunchA exec grim -g "$(slurp)" $HOME/Documents/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
@@ -82,7 +82,7 @@ exec swayidle -w \
     floating_modifier $mod normal
 
 	# Lock screen
-	bindsym $mod+Shift+backspace exec swaylock -C $HOME/.swaylock/config
+	bindsym $mod+Shift+backspace exec swaylock -C $HOME/.config/swaylock/config
 
     # Reload the configuration file
     bindsym $mod+Shift+r reload
@@ -92,8 +92,8 @@ exec swayidle -w \
 
 ### Applications shortcuts 
 	# Launcher
-	# bindsym $mod+space exec --no-startup-id wofi --show drun -I -i
-	bindsym $mod+space exec albert show
+	bindsym $mod+space exec --no-startup-id wofi --show drun -I -i
+	# bindsym $mod+space exec albert show
 
 	# Start a terminal
     bindsym $mod+Return exec $term
@@ -104,9 +104,6 @@ exec swayidle -w \
 
     # Explorer
     bindsym $mod+n exec kitty --class=ranger sh -c "source ~/.zshrc & source ranger"
-
-	# spotify-tui
-	bindsym $mod+s exec kitty --class=spotify -e "spt"
 
 ### Moving around:
     # Move your focus around
@@ -212,10 +209,9 @@ bar {
     exec /home/dg/.local/bin/autotiling
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
     exec sworkstyle &> /tmp/sworkstyle.log
-	exec albert
-	exec jetbrains-toolbox
+	# exec jetbrains-toolbox
     # exec light -S 75
-    # exec /usr/bin/Xwayland
+    exec /usr/bin/Xwayland
 
 ### Input/Output devices
 output HDMI-A-1 {
