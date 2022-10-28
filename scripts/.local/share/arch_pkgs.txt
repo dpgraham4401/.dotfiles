@@ -25,3 +25,7 @@ ttf-font-awesome
 python-pip
 flatpak
 xclip
+docker
+docker-compose
+go
+wofi
