@@ -1,92 +1,114 @@
 #!/bin/bash
 
-DOTFILE_DIR="$HOME/.dotpkg_files"
 MY_OS=0 # used to determine which 
 pkg_manager="dnf"
 distro="default"
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-	echo "Looks like you're on linux"
-	MY_OS=1
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-	MY_OS=2
-	pkg_manager="brew"
-elif [[ "$OSTYPE" == "cygwin" ]]; then
-	MY_OS=0
-	echo "Windows not supported"
-	echo "Sorry"
-	exit 0
-elif [[ "$OSTYPE" == "msys" ]]; then
-	echo "Windows not supported"
-	echo "Sorry"
-	MY_OS=0
-elif [[ "$OSTYPE" == "freebsd"* ]]; then
-	echo "FreeBsd not supported"
-	echo "Sorry"
-	MY_OS=0
-else
-	MY_OS=0
-fi
+detect_os() {
+	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+		echo "Linux operating system detected"
+		MY_OS=1
+	elif [[ "$OSTYPE" == "darwin"* ]]; then
+		echo "MacOS detected"
+		pkg_manager="brew"
+		MY_OS=2
+	elif [[ "$OSTYPE" == "cygwin" ]]; then
+		echo "Windows not supported"
+		echo "Sorry"
+		exit 1
+	elif [[ "$OSTYPE" == "msys" ]]; then
+		echo "Windows not supported"
+		echo "Sorry"
+		exit 1
+	elif [[ "$OSTYPE" == "freebsd"* ]]; then
+		echo "FreeBsd not supported"
+		echo "Sorry"
+		exit 1
+	else
+		echo "Could not detect OS Type"
+		echo "Is the evironment variable $OSTYPE set?"
+		exit 1
+	fi
+}
 
 print_usage(){
    # Display Help
-   echo "Use GNU stow to stash all config in appropriate place"
+   echo "Script to help install packages from a text file"
    echo
-   echo "Syntax: stowAll.sh [ -f <pkg_file>] [-d <distro>] "
+   echo "Syntax: install_pkgs  -f <pkg_file>"
    echo "options:"
-   echo "f		text pkg_file with list of packages to install"
-   echo "d		If on Linux, you'll need to pass the distro"
-   echo "h		Print this help and exit"
+   echo "-f, --file		path to file with list of packages to install, comments not allowed"
+   echo "-h, --help		Print this help and exit"
    echo 
-   echo "example: ./install_from_text.sh -f fedora_all.txt -d fedora"
+   echo "examples: install_pkgs -f ~/.local/share/fedora_all.txt"
+   echo "          install_pkgs -f ~/.local/share/brew_pkgs.txt"
    echo 
 }
 
 install_from_pkg_file(){
 	if test -f "$pkg_file"; then
-		echo "installing from $pkg_file"
+		echo "Installing from $pkg_file"
 		if [[ "$MY_OS" == "1" ]]; then
 			echo "Looking for Package Manager"
-			if [[ "$distro" == "fedora" ]]; then
-				sudo dnf install $(cat $pkg_file)
-			elif [[ "$distro" == "arch" ]]; then
+			if command -v pacman &> /dev/null
+			then
+				echo "pacman found"
+				# pacman --version
 				sudo pacman -S $(cat $pkg_file)
-			elif [[ "$distro" == "ubuntu"  ]]; then
-				sudo apt-get install $(cat $pkg_file)
+				exit
+			elif command -v dnf &> /dev/null
+			then
+				echo "dnf found"
+				# dnf --version
+				sudo dnf install $(cat $pkg_file)
+				exit
+			elif command -v yum &> /dev/null
+			then
+				echo "yum found"
+				# yum --version
+				sudo yum install $(cat $pkg_file)
+				exit
+			elif command -v apt &> /dev/null
+			then
+				echo "apt found"
+				# apt --version
+			    sudo apt-get install $(cat $pkg_file)
+				exit
 			else
-				echo "Provide a distro [fedora|arch|ubuntu]"
+				echo "Package manager not found"
 				exit 1
 			fi
 		elif [[ "$MY_OS" == "2" ]]; then
 			echo "Installing with brew"
 			brew install $(cat $pkg_file)
 		else
-			echo "Could not detect OS"
+			echo "Could not detect which OSTYPE. This script only supports linux and MacOS"
 			exit 1
 		fi
 	else
-		echo "\"$pkg_file\" file does not exists."
+		echo "\"$pkg_file\" file not found."
 		exit 1
 	fi
 }
 
 
-# Parse CLI argument
-while getopts ':f:h:d:' opt; do
-  case "$opt" in
-	d)
-		distro="${OPTARG}"
-		echo $distro
-		;;
-    f)
-		pkg_file="${OPTARG}"
-		echo "$pkg_file"
+# # Parse CLI argument
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -f|--file)
+		detect_os
+		pkg_file="$2"
 		install_from_pkg_file
-        ;;
-    \?|h)
-	  print_usage
+		shift # past argument
+		shift # past value
+		;;
+	-h|--help)
+		print_usage 
+		exit 1
+	    ;;
+    -*|--*)
+      echo "Unknown option $1"
       exit 1
       ;;
   esac
 done
-shift $((OPTIND-1))

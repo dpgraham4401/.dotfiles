@@ -33,7 +33,11 @@ $ mv ~/.bashrc ~/.bashrc.bak && ./stowAll.sh
 	- arch_pkgs.txt
 	- brew_pkgs.txt (for macos and HomeBrew)
 ```
-$ chmod +x ~/.local/bin/install_pkgs && install_pkgs -d "arch" -f ~$HOME/.local/arch_pkgs.txt
+$ install_pkgs -f ~$HOME/.local/arch_pkgs.txt # install_pkgs should be in your path after GNU stowing the scripts directory
+```
+for more help
+```
+$ install_pkgs -h 
 ```
 
 ### Packages
