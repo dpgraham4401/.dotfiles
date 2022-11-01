@@ -1,3 +1,4 @@
+nodejs
 sway
 swayidle
 swaylock

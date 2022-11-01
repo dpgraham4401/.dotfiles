@@ -6,13 +6,14 @@ yay
 
 ## Yay Pkgs
 wev
-brave
 qt5-webengine-widevine
 qt6-webengine-widevine
 sworkstyle
 jetbrains-toolbox
 gnome-browser-connector
 visual-studio-code-bin
+paper-icon-theme
+orchis-theme
 
 ## flatpaks
 postman

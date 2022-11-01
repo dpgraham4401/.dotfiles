@@ -40,9 +40,10 @@ CASE_SENSITIVE="false"
 
 plugins=(
     golang 
-	dotenv
     kubectl
+	dotenv
     docker
+	docker-compose
     git
     web-search
     copybuffer
