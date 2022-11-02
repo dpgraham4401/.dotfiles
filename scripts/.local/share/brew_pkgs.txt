@@ -20,6 +20,7 @@ python@3.10
 stow
 tree
 tree-sitter
+discord
 docker
 firefox
 github
