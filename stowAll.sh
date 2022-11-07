@@ -38,6 +38,9 @@ then
             if [[ $ignore == *"$package"* ]]
             then
                 echo "ignoring "$(basename $entry)
+            elif [[ "archive" == *"$package"* ]]
+            then
+                :
             else
                 echo "stowing: "$(basename $entry)
                 stow $(basename $entry)

@@ -47,6 +47,7 @@ plugins=(
     docker
 	yarn
 	npm
+	dotenv
 	nvm
     git
     web-search
