@@ -1,6 +1,8 @@
 # .dotfiles
 ![desktop screenshot](https://i.ibb.co/xYbCZwj/screenshot-22-02-18-15-20.png)
 
+**If you're looking for configs related to Arch Linux or MacOS, see the other branches**
+
 ## Install and Usage ##
 Only 2 packages are needed to get started, Git to clone these configs, and [GNU stow](https://www.gnu.org/software/stow/) to symlink files to the appropriate place on the local machine
 
@@ -28,12 +30,8 @@ $ mv ~/.bashrc ~/.bashrc.bak && ./stowAll.sh
 ```
 
 4. A script to help install packages, is found in `$HOME/.local/bin/install_pkgs` with accompanying text files, with lists of packages, in the `$HOME/.local/share/` directory
-	- fedora_all.txt
-	- fedora_sway.txt
-	- fedora_devel.txt
-	- brew_pkgs.txt (for macos and HomeBrew)
 ```
-$ chmod +x ~/.local/bin/install_pkgs && install_pkgs -f ~$HOME/.local/sharefedora_all.txt
+$ chmod +x ~/.local/bin/install_pkgs && install_pkgs -f ~$HOME/.local/share/fedora_pkgs.txt
 ```
 
 ### Packages
