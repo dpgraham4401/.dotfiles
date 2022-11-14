@@ -14,7 +14,7 @@
 	set $slow 10
 
 	# Preferred terminal emulator
-	set $term foot
+	set $term kitty
 
 	# Screensaver
 
@@ -92,8 +92,8 @@ exec swayidle -w \
 
 ### Applications shortcuts 
 	# Launcher
-	# bindsym $mod+space exec --no-startup-id wofi --show drun -I -i
-	bindsym $mod+space exec albert show
+	bindsym $mod+space exec --no-startup-id wofi --show drun -I -i
+	# bindsym $mod+space exec albert show
 
 	# Start a terminal
     bindsym $mod+Return exec $term
@@ -212,7 +212,7 @@ bar {
     exec $HOME/.local/bin/autotiling
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
-	exec albert
+	# exec albert
     # exec light -S 75
     # exec /usr/bin/Xwayland
 
