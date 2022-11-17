@@ -37,7 +37,7 @@ print_usage(){
    echo "-f, --file		path to file with list of packages to install, comments not allowed"
    echo "-h, --help		Print this help and exit"
    echo 
-   echo "examples: install_pkgs -f ~/.local/share/fedora_all.txt"
+   echo "examples: install_pkgs -f ~/.local/share/fedora_pkgs.txt"
    echo "          install_pkgs -f ~/.local/share/brew_pkgs.txt"
    echo 
 }

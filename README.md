@@ -19,7 +19,8 @@ or use the ./stowAll.sh script (see `./stowAll.sh -h`)
 ```
 $ chmod +x ./stowAll.sh && ./stowAll.sh
 ```
-Note: stow will not replace a file that is already present, but it will complain to stdout. Remeber to back up those files incase you'd don't like these configs.
+Note: stow will not replace a file that is already present, but it will complain to stdout. Remeber to back up those files incase you'd don't like these configs.  
+You can also move them to `~/.dotfiles/archive`, this directory is not stowed but it is checked into git
 ```
 $ mv ~/.bashrc ~/.bashrc.bak
 ```
@@ -27,4 +28,5 @@ $ mv ~/.bashrc ~/.bashrc.bak
 ```
 $ chmod +x ~/.local/share/bin/install_pkgs && install_pkgs -f ~/.local/share/brew_pkgs.txt
 ```
+*You should inspects random scripts from the internet before running them, like this one.*
 

@@ -1,6 +1,13 @@
 #!/bin/bash
 # replacement for normal rm command that archives
-archivedir="$HOME/.local/share/Trash"
+
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	archivedir="$HOME/.Trash"
+else
+	archivedir="$HOME/.local/share/Trash"
+fi
+
 realrm="$(which rm)"
 copy="$(which cp) -R"
 

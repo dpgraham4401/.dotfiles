@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 Help()
 {
    # Display Help
@@ -27,7 +26,7 @@ do
     esac
 done
 
-# stow all packages
+# Stow all packages
 if command -v stow &> /dev/null
 then
     for entry in "$DOTFILE_DIR"/*
@@ -48,7 +47,7 @@ then
         fi
     done
 else
-    echo "GNU stow command not found"
+    echo "stow command not found"
 fi
 
 
