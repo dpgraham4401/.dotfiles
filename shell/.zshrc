@@ -43,6 +43,7 @@ CASE_SENSITIVE="false"
 # Plugins
 plugins=(
     golang 
+	aws
     kubectl
     docker
 	yarn

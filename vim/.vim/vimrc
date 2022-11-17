@@ -4,20 +4,15 @@ if has('nvim')
 	call plug#begin()
 	Plug 'tmsvg/pear-tree'
 	Plug 'francoiscabrol/ranger.vim'
-	" colorschemes
 	Plug 'rafi/awesome-vim-colorschemes'
-	" LSP setup
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'williamboman/nvim-lsp-installer'
-	" Autocomplete
 	Plug 'hrsh7th/cmp-buffer'
 	Plug 'hrsh7th/cmp-path'
 	Plug 'hrsh7th/cmp-cmdline'
 	Plug 'hrsh7th/nvim-cmp'
-	" For vsnip users.
 	Plug 'hrsh7th/cmp-vsnip'
 	Plug 'hrsh7th/vim-vsnip'
-	" airline
 	Plug 'vim-airline/vim-airline'
 	call plug#end()
 else
@@ -25,6 +20,9 @@ else
 	Plug 'tmsvg/pear-tree'
 	Plug 'francoiscabrol/ranger.vim'
 	Plug 'rafi/awesome-vim-colorschemes'
+	Plug 'tpope/vim-commentary'
+	Plug 'tpope/vim-surround'
+	Plug 'tpope/vim-sensible'
 	call plug#end()
 endif
 
