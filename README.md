@@ -69,9 +69,6 @@ $ chmod +x ~/.local/bin/install_pkgs && install_pkgs -f ~$HOME/.local/share/fedo
 1. qt5-qtwebengine-freeworld to play DRM (netflix etc.) on qutebrowser
     * This is a finicky process, I usually just install chromium-freeworld. It may not work immeadiately. Not sure why. 
 
-### Arch specific
-1. chromium-widevine &rarr; will install dependencies to play DRM on arch
-
 ### PyPi Packages
 1. [autotiling](https://github.com/nwg-piotr/autotiling)
 
@@ -82,4 +79,7 @@ if [ "$XDG_SESSION_DESKTOP" = "sway" ] ; then
     export _JAVA_AWT_WM_NONREPARENTING=1
 fi
 ```
+2. If using an AMD graphics card, enable the `mesa-va-drivers-freeworld` from rpmfusion.
+    - As of 11/2022, the package is still in update-testing.
+    - [See this reddit post](https://www.reddit.com/r/Fedora/comments/yq9p6d/mesafreeworld_available_on_rpmfusion/)
 
