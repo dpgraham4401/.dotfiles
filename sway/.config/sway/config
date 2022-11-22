@@ -66,7 +66,8 @@ exec swayidle -w \
 	bindsym XF86MonBrightnessDown exec light -U 5
 
     # Screenshot
-    bindsym $mod+p exec grim -g "$(slurp)" $HOME/Documents/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
+    # bindsym $mod+p exec grim -g "$(slurp)" $HOME/Documents/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
+    bindsym $mod+p exec grim -g "$(slurp)" - | swappy -f -
 
     # Leds
     bindsym XF86KbdBrightnessUp exec light -A 5 -s sysfs/leds/smc::kbd_backlight
@@ -212,6 +213,7 @@ bar {
     exec $HOME/.local/bin/autotiling
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
+    exec /home/dg/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox
 	# exec albert
     # exec light -S 75
     # exec /usr/bin/Xwayland

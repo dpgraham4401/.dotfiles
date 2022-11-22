@@ -50,6 +50,7 @@ $ chmod +x ~/.local/bin/install_pkgs && install_pkgs -f ~$HOME/.local/share/fedo
 4. [light](https://github.com/haikarainen/light) (or [brightnessctl](https://github.com/Hummer12007/brightnessctl))
 5. [grim](https://github.com/emersion/grim)
 6. [slurp](https://github.com/emersion/slurp)
+7. [swappy](https://github.com/jtheoof/swappy)
 ### Applications
 1. [foot](https://codeberg.org/dnkl/foot/commits/branch/master) 
 2. [kitty](https://sw.kovidgoyal.net/kitty/)

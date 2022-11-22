@@ -34,6 +34,7 @@ pavucontrol
 light
 grim
 slurp
+swappy
 kitty
 foot
 ranger
@@ -43,3 +44,5 @@ network-manager-applet
 blueman
 bluez
 bluez-tools
+docker
+docker-compose
