@@ -35,3 +35,4 @@ spotify
 steam
 tor-browser
 visual-studio-code
+tmux
