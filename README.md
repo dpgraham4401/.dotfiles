@@ -70,11 +70,6 @@ $ install_pkgs -h
 2. [gammastep-indicator](https://gitlab.com/chinstrap/gammastep)
 3. [nm-applet (Network Manager)](https://gitlab.gnome.org/GNOME/network-manager-applet)
 
-## Notes
-### Fedora specific
-1. qt5-qtwebengine-freeworld to play DRM (netflix etc.) on qutebrowser
-    * This is a finicky process, I usually just install chromium-freeworld. It may not work immeadiately. Not sure why. 
-
 ### Arch specific
 1. chromium-widevine &rarr; will install dependencies to play DRM on arch
 
