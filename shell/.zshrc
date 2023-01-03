@@ -1,5 +1,4 @@
 # .zshrc
-source ~/.alias
 autoload -U colors && colors
 alias zshrc="source ~/.zshrc"
 fpath+=~/.zfunc
@@ -53,5 +52,6 @@ plugins=(
 	helm
 	rust
 )
+source ~/.alias
 source $ZSH/oh-my-zsh.sh
 export GPG_TTY=$(tty)
