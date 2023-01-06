@@ -1,5 +1,5 @@
 # .dotfiles
-![desktop screenshot](https://i.ibb.co/xYbCZwj/screenshot-22-02-18-15-20.png)
+![desktop screenshot](https://i.ibb.co/TBJSQ6X/sway-screenshot.png)
 
 **If you're looking for configs related to Arch Linux or MacOS, see the other branches**
 
