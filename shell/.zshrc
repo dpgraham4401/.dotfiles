@@ -52,6 +52,6 @@ plugins=(
 	helm
 	rust
 )
-source ~/.alias
 source $ZSH/oh-my-zsh.sh
+source ~/.alias
 export GPG_TTY=$(tty)
