@@ -93,7 +93,8 @@ exec swayidle -w \
 
 ### Applications shortcuts 
 	# Launcher
-	bindsym $mod+space exec --no-startup-id wofi --show drun -I -i
+	# bindsym $mod+space exec --no-startup-id wofi --show drun -I -i
+	bindsym $mod+space exec "rofi -modi drun,run -show drun"
 	# bindsym $mod+space exec albert show
 
 	# Start a terminal
