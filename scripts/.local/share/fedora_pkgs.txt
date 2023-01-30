@@ -46,3 +46,4 @@ bluez
 bluez-tools
 docker
 docker-compose
+nmtui
