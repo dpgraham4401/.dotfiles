@@ -19,7 +19,8 @@
         "format-icons": {
             "activated": "",
             "deactivated": ""
-        }
+        },
+		"on-click": "toggleRemote"
     },
     "tray": {
         "icon-size": 15,

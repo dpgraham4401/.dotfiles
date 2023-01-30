@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# Check if the remoteControl command is available is running, and toggle the service
+SERVICE="remoteControl"
+if ! command -v "$SERVICE" &> /dev/null
+then
+    echo "remoteControl could not be found"
+    exit
+fi
+
+if pgrep -x "$SERVICE" >/dev/null
+then
+	pid_of_remoteControl="$(pidof $SERVICE)"
+    echo "stopping $SERVICE <PID: $pid_of_remoteControl>"
+	kill "$pid_of_remoteControl"
+else
+    echo "starting $SERVICE"
+	remoteControl &
+fi
+

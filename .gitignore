@@ -2,5 +2,3 @@
 vim/.vim/*
 !vim/.vim/vimrc
 
-scripts/.local/bin/*
-!scripts/.local/bin/trash
