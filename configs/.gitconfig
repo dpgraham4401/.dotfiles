@@ -1,0 +1,15 @@
+[user]
+	email = dpgraham4401@gmail.com
+	name = David Graham
+	signingkey = 3899BEC82D277122
+[gpg]
+	program = gpg
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[alias]
+	logs = log --show-signature
+	cis = commit -S
+[format]
+	signoff = false
