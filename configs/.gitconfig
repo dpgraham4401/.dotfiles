@@ -9,6 +9,14 @@
 [commit]
 	gpgsign = true
 [alias]
+	glog = log --oneline --decorate --graph
+	gc = commit -v
+	ga = add
+	gst = status
+	ammend = commit -v --amend
+	gf = fetch --all --prune
+	gcam = commit -a -m
+	uncommit = reset --soft HEAD~1
 	logs = log --show-signature
 	cis = commit -S
 [format]
