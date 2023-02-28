@@ -1,0 +1,6 @@
+Change your shell
+install oh-my-zsh
+install rust
+install vim Plug
+setup docker usergroup
+sworkstyle

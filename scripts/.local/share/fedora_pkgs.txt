@@ -1,7 +1,7 @@
-firefox
 zsh
 stow
 git
+network-manager-applet
 htop
 neovim
 vim
@@ -39,11 +39,13 @@ kitty
 foot
 ranger
 qutebrowser
-qt5-qtwebengine-freeworld
 network-manager-applet
 blueman
 bluez
 bluez-tools
 docker
 docker-compose
-nmtui
+gnome-extensions-app
+gnome-tweaks
+yaru-theme
+yaru-icon-theme

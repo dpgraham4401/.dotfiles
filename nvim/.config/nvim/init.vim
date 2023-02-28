@@ -82,7 +82,6 @@ require("bufferline").setup()
 require("mason").setup()
 require("term_options")
 require("cmp_config")
-require'lspconfig'.pyright.setup{}
 
 local key_mapper = require('utils').key_mapper
 -- close buffer on Control-q

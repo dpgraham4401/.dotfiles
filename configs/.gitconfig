@@ -1,7 +1,7 @@
 [user]
 	email = dpgraham4401@gmail.com
 	name = David Graham
-	signingkey = 3899BEC82D277122
+	signingkey = CFFD143C86072C8F
 [gpg]
 	program = gpg
 [init]
