@@ -4,3 +4,9 @@ install rust
 install vim Plug
 setup docker usergroup
 sworkstyle
+create .local/bin
+create .local/share/Trash
+set default audio sink
+enable rmpfusion free/non-free
+install mesa-va-drivers-freeworld
+install ffmpeg-free
