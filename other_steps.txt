@@ -10,3 +10,4 @@ set default audio sink
 enable rmpfusion free/non-free
 install mesa-va-drivers-freeworld
 install ffmpeg-free
+turn off notifications for everything in gnome

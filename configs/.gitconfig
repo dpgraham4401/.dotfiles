@@ -21,3 +21,5 @@
 	cis = commit -S
 [format]
 	signoff = false
+[core]
+	excludesfile = **/.idea/

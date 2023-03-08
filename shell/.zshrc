@@ -40,7 +40,6 @@ CASE_SENSITIVE="false"
 plugins=(
     golang 
 	dnf
-	dotenv
     kubectl
     docker
     git

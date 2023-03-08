@@ -7,6 +7,8 @@ export PATH="${PATH}:${HOME}/.local/bin/"
 export PATH="${PATH}:${GOPATH}/bin"
 export PATH="${PATH}:${HOME}/.local/bin/:/usr/bin/vendor_perl/"
 export PATH="${HOME}/Scripts:${PATH}"
+export PATH="${PATH}:${HOME}/.npm/bin"
+export PATH="${PATH}:${HOME}/.local/share/JetBrains/Toolbox/bin"
 export GOROOT=`go env GOROOT`
 export EDITOR='/usr/bin/nvim'
 export VISUAL='/usr/bin/nvim'
@@ -17,7 +19,6 @@ export KUBECONFIG="$HOME/.kube/config"
 export GITHUB_USER="dpgraham4401"
 export GPG_TTY=$(tty)
 export NODE_PATH=$HOME/.npm/lib/node_modules
-export PATH=$PATH:$HOME/.npm/bin
 # aliases
 alias fuck="sudo !!"
 alias mv="mv -i"

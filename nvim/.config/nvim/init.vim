@@ -42,6 +42,7 @@ set mouse=a
 set clipboard=unnamed
 set belloff=all
 set hidden
+set incsearch
 set completeopt=menu,menuone,noselect
 let mapleader=" "
 syntax on
