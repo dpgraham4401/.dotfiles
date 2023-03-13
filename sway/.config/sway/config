@@ -68,6 +68,7 @@ exec swayidle -w \
     # Screenshot
     # bindsym $mod+p exec grim -g "$(slurp)" $HOME/Documents/Pictures/Screenshots/$(date +'screenshot_%y-%m-%d-%H:%M.png')
     bindsym $mod+p exec grim -g "$(slurp)" - | swappy -f -
+    bindsym XF86Pictures exec grim -g "$(slurp)" - | swappy -f -
 
     # Leds
     bindsym XF86KbdBrightnessUp exec light -A 5 -s sysfs/leds/smc::kbd_backlight
@@ -95,7 +96,9 @@ exec swayidle -w \
 	# Launcher
 	# bindsym $mod+space exec --no-startup-id wofi --show drun -I -i
 	bindsym $mod+space exec "rofi -show drun"
-	# bindsym $mod+space exec albert show
+
+	# 1password Quick Access
+	bindsym $mod+Shift+p exec 1password --quick-access
 
 	# Start a terminal
     bindsym $mod+Return exec $term
@@ -214,7 +217,8 @@ bar {
     exec $HOME/.local/bin/autotiling
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
-    # exec /home/dg/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox
+    exec /usr/bin/1password --silent
+    exec /home/dg/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox
     # exec light -S 75
     # exec /usr/bin/Xwayland
 
@@ -226,7 +230,7 @@ output HDMI-A-1 {
     scale_filter linear
 }
 
-input * {
+input type:keyboard {
 	xkb_layout "us"
 	xkb_numlock enable
 }
