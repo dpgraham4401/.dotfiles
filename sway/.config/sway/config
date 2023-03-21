@@ -218,7 +218,7 @@ bar {
     exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
     exec /home/dg/.cargo/bin/sworkstyle &> /tmp/sworkstyle.log
     exec /usr/bin/1password --silent
-    exec /home/dg/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox
+    # exec /home/dg/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox
     # exec light -S 75
     # exec /usr/bin/Xwayland
 
