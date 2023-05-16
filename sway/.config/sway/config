@@ -19,13 +19,13 @@
 	# Screensaver
 
 	# ScreenSaver preferences
-	set $screensave_time 1800
-	set $sleep_time 2700
+	set $screensave_time 2700
+	set $sleep_time 3500
 
 ### Apperance
 
 	# Wallpaper
-		output * bg $HOME/.local/share/backgrounds/astronaut.png fill
+		output * bg $HOME/.local/share/backgrounds/pxfuel.jpg fill
     focus_wrapping no
 
     # Window colors
