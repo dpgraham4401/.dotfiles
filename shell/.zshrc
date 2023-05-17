@@ -54,3 +54,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source ~/.alias
 export GPG_TTY=$(tty)
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
