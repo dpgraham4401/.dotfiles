@@ -1,15 +1,14 @@
 # .zshrc
 autoload -U colors && colors
-# if alias file exist
-if [ -f "$HOME/.alias" ]; then
-    source ~/.alias 
-fi
 fpath+=~/.zfunc
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 setopt autocd nomatch
 unsetopt beep extendedglob notify
+# Gcloud
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
 bindkey '^H' backward-kill-word
 bindkey -s '^F' 'nvim $(fzf)\n'
@@ -45,10 +44,10 @@ plugins=(
     golang 
 	aws
     kubectl
+	minikube
     docker
-	yarn
+	docker-compose
 	npm
-	dotenv
 	nvm
     git
     web-search
@@ -60,4 +59,12 @@ plugins=(
 	rust
 )
 source $ZSH/oh-my-zsh.sh
+# if alias file exist
+if [ -f "$HOME/.alias" ]; then
+    source ~/.alias 
+fi
+
+# gloud autocomplete
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 

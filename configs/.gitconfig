@@ -1,0 +1,20 @@
+[core]
+	excludesfile = /Users/dg/.gitignore_global
+[user]
+	name = David Paul Graham
+	email = dpgraham4401@gmail.com
+[credential]
+	helper = osxkeychain
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true

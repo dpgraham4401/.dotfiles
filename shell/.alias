@@ -26,6 +26,9 @@ alias dev="cd $HOME/Projects"
 alias kube="kubectl"
 alias godev="cd $GOPATH/src/github.com/dpgraham4401"
 alias speed="speedtest-cli --simple"
+alias gf="git fetch --all --prune"
+alias uncommit="git reset --soft HEAD~1"
+alias dps="docker ps"
 # autostart ssh agent
 # if ! pgrep -u "$USER" ssh-agent > /dev/null; then
 #     ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
