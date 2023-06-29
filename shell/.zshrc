@@ -41,6 +41,7 @@ plugins=(
     golang 
 	dnf
     kubectl
+	minikube
     docker
     git
     web-search
@@ -50,6 +51,7 @@ plugins=(
     pip
 	helm
 	rust
+	gcloud
 )
 source $ZSH/oh-my-zsh.sh
 source ~/.alias
