@@ -14,7 +14,7 @@
 	set $slow 10
 
 	# Preferred terminal emulator
-	set $term kitty 
+	set $term foot 
 
 ### Apperance
 
@@ -29,8 +29,8 @@
     client.urgent           #33ccff #33ccff #33ccff #33ccff     #33ccff
 
 	# Gaps
-	gaps inner 10
-	gaps outer 4
+	gaps inner 4
+	gaps outer 2
 	smart_gaps on
 	default_border pixel 3
 	for_window [app_id="gnome-calendar"] floating enable
@@ -265,6 +265,5 @@ input type:touchpad {
     tap enabled
 }
 
-for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
-set $menu exec $term --class=launcher -e /home/dg/.local/bin/sway-launcher-desktop
-bindsym $mod+space exec $menu
+set $menu $HOME/.local/bin/launch_fuzzel
+bindsym $mod+space exec $menu 

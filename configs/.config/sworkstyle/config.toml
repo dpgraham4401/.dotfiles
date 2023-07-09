@@ -57,5 +57,6 @@ unique = true
 '/node/' = ''
 '/yarn/' = ''
 'kitty' = ''
+'foot' = ''
 'org.gnome.Nautilus' = ""
 'ranger' = ""

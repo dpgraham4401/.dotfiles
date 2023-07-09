@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+fuzzel -l 5 --background-color=050a14dd

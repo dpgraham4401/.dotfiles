@@ -41,6 +41,7 @@ CASE_SENSITIVE="false"
 # Plugins
 plugins=(
     golang 
+    buffalo
     kubectl
     docker
     git
