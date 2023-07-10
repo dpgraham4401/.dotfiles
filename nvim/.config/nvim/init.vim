@@ -16,8 +16,7 @@ call plug#begin()
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'akinsho/toggleterm.nvim'
 	Plug 'williamboman/mason.nvim'
-	Plug 'neovim/nvim-lspconfig'
-
+	Plug 'williamboman/mason-lspconfig.nvim'
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'hrsh7th/cmp-nvim-lsp'
 	Plug 'hrsh7th/cmp-buffer'
@@ -76,13 +75,17 @@ nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
 lua << EOF
--- require('utils')
+require('utils')
 require("terminal").setup()
 require("spellsitter").setup()
 require("bufferline").setup()
 require("mason").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = { "tsserver", "gopls", "terraformls" }
+})
 require("term_options")
 require("cmp_config")
+require("lsp-config")
 
 local key_mapper = require('utils').key_mapper
 -- close buffer on Control-q
@@ -90,3 +93,6 @@ key_mapper('n', '<C-q>', '<cmd>lua require("utils").close_buffer()<CR>')
 
 EOF
 
+-- on save, format terraform
+autocmd BufWritePre *.tfvars lua vim.lsp.buf.format()
+autocmd BufWritePre *.tf lua vim.lsp.buf.format()
