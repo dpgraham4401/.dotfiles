@@ -46,7 +46,6 @@ plugins=(
     kubectl
 	minikube
     docker
-	docker-compose
 	npm
 	nvm
     git
@@ -57,6 +56,8 @@ plugins=(
     pip
 	helm
 	rust
+	gcloud
+	terraform
 )
 source $ZSH/oh-my-zsh.sh
 # if alias file exist
@@ -64,7 +65,4 @@ if [ -f "$HOME/.alias" ]; then
     source ~/.alias 
 fi
 
-# gloud autocomplete
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
