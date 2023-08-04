@@ -93,6 +93,3 @@ key_mapper('n', '<C-q>', '<cmd>lua require("utils").close_buffer()<CR>')
 
 EOF
 
--- on save, format terraform
-autocmd BufWritePre *.tfvars lua vim.lsp.buf.format()
-autocmd BufWritePre *.tf lua vim.lsp.buf.format()

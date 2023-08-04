@@ -52,6 +52,7 @@ plugins=(
 	helm
 	rust
 	gcloud
+	terraform
 )
 source $ZSH/oh-my-zsh.sh
 source ~/.alias
