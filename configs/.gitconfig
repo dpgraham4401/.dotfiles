@@ -3,6 +3,7 @@
 [user]
 	name = David Paul Graham
 	email = dpgraham4401@gmail.com
+	signingkey = CDD1C11D32C7FCF14117C2084DD347D6528545E8
 [credential]
 	helper = osxkeychain
 [filter "lfs"]
