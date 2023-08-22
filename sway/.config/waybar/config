@@ -20,7 +20,7 @@
             "activated": "",
             "deactivated": ""
         },
-		"on-click": "toggleRemote"
+		"on-click": "bash /home/dg/.local/bin/toggleRemote"
     },
     "tray": {
         "icon-size": 15,
@@ -54,7 +54,7 @@
 		"on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Restart' 'shutdown -r now' -b 'Shutdown'  'shutdown -h now' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33"
 	},
     "custom/scratchpad-indicator": {
-        "format-text": "{}",
+        "format-text": "{}hi",
         "return-type": "json",
         "interval": 3,
         "exec": "~/.local/bin/scratchpad-indicator 2> /dev/null",

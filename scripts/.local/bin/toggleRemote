@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # Check if the remoteControl command is available is running, and toggle the service
+# Note: remoteControl needs to be installed somewhere like /usr/local/bin. Somewhere normal PATH
 SERVICE="remoteControl"
 if ! command -v "$SERVICE" &> /dev/null
 then
