@@ -55,7 +55,7 @@ set termguicolors
 inoremap jk <Esc>
 noremap <S-j> :bnext<CR>
 noremap <S-k> :bprevious<CR>
-noremap <Tab> :bprevious<CR>
+" noremap <Tab> :bprevious<CR>
 map <C-s> :w<CR>
 " map <C-q> :q<CR>
 
