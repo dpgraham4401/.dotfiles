@@ -1,4 +1,5 @@
 # .zshrc
+if [ "$TMUX" = "" ]; then tmux; fi
 autoload -U colors && colors
 fpath+=~/.zfunc
 HISTFILE=~/.histfile

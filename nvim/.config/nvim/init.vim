@@ -16,6 +16,7 @@ call plug#begin()
 	Plug 'lewis6991/spellsitter.nvim'
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'akinsho/toggleterm.nvim'
+	Plug 'github/copilot.vim'
 	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
