@@ -1,4 +1,5 @@
 # .zshrc
+if [ "$TMUX" = "" ]; then tmux; fi
 autoload -U colors && colors
 alias zshrc="source ~/.zshrc"
 fpath+=~/.zfunc
