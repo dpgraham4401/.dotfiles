@@ -22,7 +22,7 @@ set hidden
 set termguicolors
 syntax enable
 filetype plugin indent on
-
+set rtp+=/opt/homebrew/opt/fz
 " Keybindings
 inoremap jk <Esc>
 nnoremap ; :

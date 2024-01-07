@@ -42,6 +42,7 @@ CASE_SENSITIVE="false"
 
 # Plugins
 plugins=(
+	mvn
     golang 
 	aws
     kubectl

@@ -32,6 +32,7 @@ set spell
 set clipboard=unnamed
 set belloff=all
 set hidden
+set rtp+=/opt/homebrew/opt/fz
 let mapleader=" "
 syntax enable
 filetype plugin indent on
