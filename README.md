@@ -65,6 +65,15 @@ $ chmod +x ~/.local/bin/install_pkgs && install_pkgs -f ~$HOME/.local/share/fedo
 2. [gammastep-indicator](https://gitlab.com/chinstrap/gammastep)
 3. [nm-applet (Network Manager)](https://gitlab.gnome.org/GNOME/network-manager-applet)
 
+## Manual task
+
+Some things I just do manually still
+
+1. instal oh-my-zsh
+2. install jetbrains toolbox
+3. install vim plug
+
+
 ## Notes
 ### Fedora specific
 1. qt5-qtwebengine-freeworld to play DRM (netflix etc.) on qutebrowser
