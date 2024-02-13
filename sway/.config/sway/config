@@ -14,6 +14,10 @@
 	set $fast 50
 	set $slow 10
 
+	# Colors
+	set $color1 #502436
+	set $color2 #9D6381
+
 	# Preferred terminal emulator
 	set $term kitty
 
@@ -26,15 +30,15 @@
 ### Apperance
 
 	# Wallpaper
-		output * bg $HOME/.local/share/backgrounds/pxfuel.jpg fill
+		output * bg /usr/share/backgrounds/jj_light_by_Hiking93.jpg fill
     focus_wrapping no
 
     # Window colors
     # Class                 border  Backgr  Text    indicator   child_border
     client.focused          #ffffff #ffffff #ffffff #0066ff     #ffffff
-    client.unfocused        #4080bf #4080bf #4080bf #4080bf     #4080bf
-    client.urgent           #33ccff #33ccff #33ccff #33ccff     #33ccff
-
+    client.unfocused        $color1 $color1 $color1 $color1     $color1
+    client.urgent           $color2 $color2 $color2 $color2		$color2
+ 
 	# Gaps
 	gaps inner 10
 	gaps outer 4
@@ -105,8 +109,7 @@ exec swayidle -w \
     bindsym $mod+Return exec $term
 
 	# Browsers
-	bindsym $mod+Shift+f exec firefox
-    bindsym $mod+q exec qutebrowser
+	bindsym $mod+Shift+f exec google-chrome
 
     # Explorer
     bindsym $mod+n exec kitty --class=ranger sh -c "source ~/.zshrc & source ranger"

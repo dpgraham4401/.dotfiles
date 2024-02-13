@@ -2,3 +2,7 @@
 vim/.vim/*
 !vim/.vim/vimrc
 
+kitty/.config/kitty/kitty-themes
+**/*.swp
+**.*.swo
+
