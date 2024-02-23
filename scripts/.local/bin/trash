@@ -1,5 +1,19 @@
 #!/bin/bash
-# replacement for normal rm command that archives
+# wrapper for normal rm command that archives
+
+usage() {
+  echo "Remove Command Wrapper that archives"
+  echo "Default archive is $Home/.Trash for Mac and $Home/.local/share/Trash for Linux"
+  echo "Usage: $0 [-dfiPRrvW] file ..."
+  echo "  -d  Remove directories"
+  echo "  -f  Force"
+  echo "  -i  Interactive"
+  echo "  -P  Don't follow symlinks"
+  echo "  -R  Recursive"
+  echo "  -r  Recursive"
+  echo "  -v  Verbose"
+  echo "  -W  Writable"
+}
 
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -17,10 +31,12 @@ fi
 
 flags=""
 
-while getopts "dfiPRrvW" opt
+
+while getopts "dfiPRrvWh" opt
 do
   case $opt in
     f ) exec $realrm "$@"     ;;  
+	h ) usage; exit 0         ;;
     * ) flags="$flags -$opt"  ;; 
   esac
 done

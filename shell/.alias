@@ -15,6 +15,7 @@ export PATH="/opt/homebrew/opt/swift/bin:$PATH"
 source $(brew --prefix nvm)/nvm.sh
 source "$HOME/.cargo/env"
 alias mv="mv -i"
+alias venv="python3 -m venv"
 alias vim="$EDITOR"
 alias ssh="kitty +kitten ssh"
 alias rm="$(which trash)"
