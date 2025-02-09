@@ -8,9 +8,9 @@
   // workbench
   "workbench.preferredDarkColorTheme": "JetBrains Darcula Theme",
   "workbench.colorCustomizations": {
-    "statusBar.background": "#6b3232",
-    "statusBar.noFolderBackground": "#6b3232",
-    "statusBar.debuggingBackground": "#6b3232",
+    "statusBar.background": "#363838",
+    "statusBar.noFolderBackground": "#363838",
+    "statusBar.debuggingBackground": "#363838",
     "statusBar.foreground": "#fff",
     "statusBar.debuggingForeground": "#fff"
   },
@@ -38,6 +38,7 @@
   },
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.2,
+  "terminal.integrated.inheritEnv": false,
   // editor
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
@@ -160,5 +161,7 @@
     "scminput": false
   },
   "githubLocalActions.dockerDesktopPath": "/Applications/Docker.app",
-  "editor.fontFamily": "Source Code Pro, Consolas, 'Courier New', monospace"
+  "editor.fontFamily": "Source Code Pro, Consolas, 'Courier New', monospace",
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "rust-analyzer.showSyntaxTree": true
 }

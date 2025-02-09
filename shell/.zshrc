@@ -54,8 +54,8 @@ plugins=(
     gcloud
     terraform
     1password
-    conda
-    conda-env
+    # conda
+    # conda-env
 )
 source $ZSH/oh-my-zsh.sh
 source ~/.alias
