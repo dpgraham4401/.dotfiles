@@ -5,6 +5,7 @@ source ~/.vim/vimrc
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'machakann/vim-highlightedyank'
 
 
 let mapleader = " "

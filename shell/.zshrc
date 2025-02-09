@@ -71,7 +71,7 @@ eval "$(op completion zsh)"; compdef _op op
 # Created by `pyprojectx` on 2024-09-27 19:26:39
 export PATH="$PATH:/Users/dg/.pyprojectx"
 
-# >>> conda initialize >>>
+### conda initialize ###
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/dg/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
@@ -91,3 +91,6 @@ fi
 # <<< conda initialize <<<
 
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+
+### CDPATH ###
+CDPATH="$HOME:$HOME/Projects"
