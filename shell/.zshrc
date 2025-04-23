@@ -49,7 +49,6 @@ plugins=(
 	minikube
     docker
 	npm
-	nvm
     git
     web-search
     copybuffer
@@ -67,9 +66,6 @@ if [ -f "$HOME/.alias" ]; then
 fi
 
 eval "$(op completion zsh)"; compdef _op op
-
-# Created by `pyprojectx` on 2024-09-27 19:26:39
-export PATH="$PATH:/Users/dg/.pyprojectx"
 
 ### conda initialize ###
 # !! Contents within this block are managed by 'conda init' !!
@@ -90,7 +86,3 @@ if [ -f "/Users/dg/miniforge3/etc/profile.d/mamba.sh" ]; then
 fi
 # <<< conda initialize <<<
 
-export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
-
-### CDPATH ###
-CDPATH="$HOME:$HOME/Projects"

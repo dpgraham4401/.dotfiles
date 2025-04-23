@@ -1,4 +1,3 @@
-# shell aliases to be used by both bash and zsh
 export GOPATH="$HOME/go"
 export PATH="${PATH}:${HOME}/.local/bin/"
 export PATH="${PATH}:${GOPATH}/bin"
@@ -7,12 +6,10 @@ export EDITOR="$(which nvim)"
 export VISUAL=$EDITOR
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export KUBECONFIG="$HOME/.kube/config"
-export TOOLCHAINS=swift
-export NVM_DIR=~/.nvm
 export HOMEBREW_NO_ENV_HINTS=1
 export GPG_TTY=$(tty)
 export PATH="/opt/homebrew/opt/swift/bin:$PATH"
-source $(brew --prefix nvm)/nvm.sh
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 source "$HOME/.cargo/env"
 alias mv="mv -i"
 alias venv="python3 -m venv"
@@ -39,3 +36,20 @@ alias curl="curl --fail"
 function pip-install-save { 
     pip install $1 && pip freeze | grep $1 >> requirements.txt
 }
+
+### CDPATH ###
+CDPATH="$HOME:$HOME/Projects"
+
+# pnpm
+export PNPM_HOME="/Users/dg/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# fnm
+FNM_PATH="/Users/dg/Library/Application Support/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/Users/dg/Library/Application Support/fnm:$PATH"
+  eval "`fnm env`"
+fi
