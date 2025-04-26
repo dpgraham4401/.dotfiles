@@ -7,14 +7,6 @@ SAVEHIST=10000
 setopt autocd nomatch
 unsetopt beep extendedglob notify
 
-# Gcloud
-if [[ -f "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" ]]; then
-	source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-fi
-if [[ -f "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc" ]]; then
-source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
-fi
-
 bindkey '^H' backward-kill-word
 bindkey -s '^F' 'nvim $(fzf)\n'
 
@@ -43,11 +35,15 @@ CASE_SENSITIVE="false"
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
+# Plugins
 plugins=(
-    dnf
+	1password
+	mvn
+    golang 
     kubectl
-    minikube
+	minikube
     docker
+	npm
     git
     web-search
     copybuffer
@@ -65,34 +61,20 @@ plugins=(
     # helm
 )
 source $ZSH/oh-my-zsh.sh
-source ~/.alias
-export GPG_TTY=$(tty)
+# if alias file exist
+if [ -f "$HOME/.alias" ]; then
+    source ~/.alias 
+fi
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
 
-# Created by `pyprojectx` on 2024-09-24 21:29:24
-export PATH="$PATH:/home/dg/.pyprojectx"
+eval "$(op completion zsh)"; compdef _op op
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/dg/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/dg/miniforge3/etc/profile.d/conda.sh" ]; then
-        . "/home/dg/miniforge3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/dg/miniforge3/bin:$PATH"
-    fi
-fi
 
 # if alias file exist
 if [ -f "$HOME/.local/bin/env" ]; then
 	. "$HOME/.local/bin/env"
-fi
-# <<< conda initialize <<<
-
 
 export NVM_DIR="$HOME/.config//nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

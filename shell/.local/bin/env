@@ -1,3 +1,15 @@
+#!/bin/sh
+# add binaries to PATH if they aren't added yet
+# affix colons on either side of $PATH to simplify matching
+case ":${PATH}:" in
+    *:"$HOME/.local/bin":*)
+        ;;
+    *)
+        # Prepending path in case a system-installed binary needs to be overridden
+        export PATH="$HOME/.local/bin:$PATH"
+        ;;
+esac
+
 # shell aliases to be used by both bash and zsh
 export XDG_CONFIG_HOME='/home/dg/.config/'
 export XDG_DATA_HOME='/home/dg/.local/share/applications/'
@@ -10,6 +22,7 @@ export PATH="${PATH}:${HOME}/.local/bin/:/usr/bin/vendor_perl/"
 export PATH="${HOME}/Scripts:${PATH}"
 export PATH="${PATH}:${HOME}/.npm/bin"
 export PATH="${PATH}:${HOME}/.local/share/JetBrains/Toolbox/bin"
+export GOPATH="$HOME/go"
 export GOROOT=`go env GOROOT`
 export EDITOR='/usr/bin/nvim'
 export VISUAL='/usr/bin/nvim'
@@ -41,7 +54,7 @@ alias setBrave="xdg-settings set default-web-browser com.brave.Browser.desktop"
 alias setGoogle="xdg-settings set default-web-browser com.google.Chrome.desktop"
 alias setFirefox="xdg-settings set default-web-browser org.mozilla.firefox.desktop"
 alias curl="curl --fail"
-# Kitty terminal 
+# Kitty terminal
 if [ "$TERM" = "xterm-kitty" ]; then
 	alias ssh="kitty +kitten ssh"
 fi
@@ -69,7 +82,7 @@ export NVM_DIR="$HOME/.config//nvm"
 # # TMUX
 # if [[ "$TERMINAL_EMULATOR" =~ [Jj][Ee][Tt][Bb][Rr][Aa][Ii][Nn][Ss] ]]; then
 # 	:
-# elif [[ -z "$TMUX" ]]; then 
+# elif [[ -z "$TMUX" ]]; then
 # 	exec tmux
 # fi
 
@@ -85,3 +98,7 @@ if command -v ruff &> /dev/null
 then
 	source <(ruff generate-shell-completion zsh)
 fi
+
+eval "$(op completion zsh)"; compdef _op op
+eval "$(uv generate-shell-completion zsh)"
+
