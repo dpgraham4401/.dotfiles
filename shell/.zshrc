@@ -1,5 +1,4 @@
 # .zshrc
-# if [ "$TMUX" = "" ]; then tmux; fi
 autoload -U colors && colors
 fpath+=~/.zfunc
 HISTFILE=~/.histfile
@@ -7,6 +6,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt autocd nomatch
 unsetopt beep extendedglob notify
+
 # Gcloud
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
@@ -31,41 +31,39 @@ PS1='%F{5}%n@%F{14}%1~%f$vcs_info_msg_0_ %(?.%F{#00ff00}√.%F{#ff0000}✗%F{#ff
 ###--Oh My Zsh--###
 export ZSH="$HOME/.oh-my-zsh"
 
-# Themes
-#ZSH_THEME="powerlevel10k/powerlevel10k"
-
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="false"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
-# Plugins
 plugins=(
-	1password
-	mvn
-    golang 
+    dnf
     kubectl
-	minikube
+    minikube
     docker
-	npm
     git
     web-search
     copybuffer
     dirhistory
     history
-    pip
-	rust
-	gcloud
-	terraform
+    rust
+    gcloud
+    terraform
+    1password
+	python
+    # pip
+    # conda
+    # conda-env
+    # golang 
+    # helm
 )
 source $ZSH/oh-my-zsh.sh
-# if alias file exist
-if [ -f "$HOME/.alias" ]; then
-    source ~/.alias 
-fi
 
-eval "$(op completion zsh)"; compdef _op op
+# if alias file exist
+if [ -f "$HOME/.local/bin/env" ]; then
+	. "$HOME/.local/bin/env"
+fi
 
 ### conda initialize ###
 # !! Contents within this block are managed by 'conda init' !!

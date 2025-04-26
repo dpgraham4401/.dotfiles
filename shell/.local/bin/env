@@ -1,3 +1,15 @@
+#!/bin/sh
+# add binaries to PATH if they aren't added yet
+# affix colons on either side of $PATH to simplify matching
+case ":${PATH}:" in
+    *:"$HOME/.local/bin":*)
+        ;;
+    *)
+        # Prepending path in case a system-installed binary needs to be overridden
+        export PATH="$HOME/.local/bin:$PATH"
+        ;;
+esac
+
 export GOPATH="$HOME/go"
 export PATH="${PATH}:${HOME}/.local/bin/"
 export PATH="${PATH}:${GOPATH}/bin"
@@ -53,3 +65,7 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="/Users/dg/Library/Application Support/fnm:$PATH"
   eval "`fnm env`"
 fi
+
+eval "$(op completion zsh)"; compdef _op op
+eval "$(uv generate-shell-completion zsh)"
+
