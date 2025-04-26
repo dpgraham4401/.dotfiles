@@ -38,7 +38,6 @@ CASE_SENSITIVE="false"
 # ENABLE_CORRECTION="true"
 
 plugins=(
-    golang 
     dnf
     kubectl
     minikube
@@ -48,14 +47,16 @@ plugins=(
     copybuffer
     dirhistory
     history
-    pip
-    helm
     rust
     gcloud
     terraform
     1password
+	python
+    # pip
     # conda
     # conda-env
+    # golang 
+    # helm
 )
 source $ZSH/oh-my-zsh.sh
 source ~/.alias
@@ -86,3 +87,10 @@ if [ -f "/home/dg/miniforge3/etc/profile.d/mamba.sh" ]; then
 fi
 # <<< conda initialize <<<
 
+
+export NVM_DIR="$HOME/.config//nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. "$HOME/.local/share/applications//../bin/env"
+eval "$(uv generate-shell-completion zsh)"

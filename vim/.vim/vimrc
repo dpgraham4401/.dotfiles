@@ -20,7 +20,7 @@ call plug#begin()
 	" icons for nvim
 	Plug 'kyazdani42/nvim-web-devicons'
 	" Vim HardTime
-	Plug 'takac/vim-hardtime'
+	" Plug 'takac/vim-hardtime'
 	" Fuzzy finder
 	Plug 'junegunn/fzf'
 	" Fuzzy finder for vim

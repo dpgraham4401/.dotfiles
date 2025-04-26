@@ -42,6 +42,7 @@
   // editor
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
+  "editor.lineHeight": 1.7,
   "editor.rulers": [100],
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
@@ -51,6 +52,7 @@
     "source.fixAll": "always"
   },
   // Python
+  "python.analysis.indexing": true,
   "[python]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "charliermarsh.ruff",
@@ -83,6 +85,7 @@
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "$HOME/.vim/vimrc",
   "vim.enableNeovim": false,
+  "vim.useSystemClipboard": true,
   "vim.neovimUseConfigFile": false,
   "vim.cursorStylePerMode.insert": "line",
   "vim.cursorStylePerMode.normal": "block",
@@ -161,7 +164,10 @@
     "scminput": false
   },
   "githubLocalActions.dockerDesktopPath": "/Applications/Docker.app",
-  "editor.fontFamily": "Source Code Pro, Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "JetBrains Mono, Source Code Pro, Consolas",
   "python.terminal.activateEnvInCurrentTerminal": true,
-  "rust-analyzer.showSyntaxTree": true
+  "rust-analyzer.showSyntaxTree": true,
+  "githubPullRequests.pullBranch": "never",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "editor.fontSize": 13
 }
