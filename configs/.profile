@@ -36,3 +36,5 @@ export PATH="$PATH:/home/dg/.local/share/applications/JetBrains/Toolbox/scripts"
 export PATH="$PATH:/home/dg/.local/share/JetBrains/Toolbox/scripts"
 
 . "$HOME/.cargo/env"
+
+. "$HOME/.local/share/applications//../bin/env"

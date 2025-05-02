@@ -1,7 +1,5 @@
 # .zshrc
-if [ "$TMUX" = "" ]; then tmux; fi
 autoload -U colors && colors
-alias zshrc="source ~/.zshrc"
 fpath+=~/.zfunc
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -11,6 +9,10 @@ unsetopt beep extendedglob notify
 
 bindkey '^H' backward-kill-word
 bindkey -s '^F' 'nvim $(fzf)\n'
+
+if [ -f "$HOME/.local/bin/env" ]; then
+	. "$HOME/.local/bin/env"
+fi
 
 ###--Prompt-###
 autoload -Uz compinit
@@ -37,31 +39,64 @@ CASE_SENSITIVE="false"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
-
 plugins=(
-    golang 
-	dnf
     kubectl
-	minikube
+    minikube
     docker
     git
     web-search
     copybuffer
     dirhistory
     history
-    pip
-	helm
-	rust
-	gcloud
-	terraform
-	1password
+    rust
+    gcloud
+    terraform
+    1password
+	# python
+    # pip
+    # conda
+    # conda-env
+    # golang 
+    # helm
 )
 source $ZSH/oh-my-zsh.sh
-source ~/.alias
 export GPG_TTY=$(tty)
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
 
-# Created by `pyprojectx` on 2024-09-24 21:29:24
-export PATH="$PATH:/home/dg/.pyprojectx"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/dg/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/dg/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/home/dg/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/dg/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/home/dg/miniforge3/etc/profile.d/mamba.sh" ]; then
+    . "/home/dg/miniforge3/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
+
+# Environment variables
+if [ -f "$HOME/.local/bin/env" ]; then
+	. "$HOME/.local/bin/env"
+fi
+if [ -f "$HOME/.alias" ]; then
+	. "$HOME/.alias"
+fi
+eval "$(uv generate-shell-completion zsh)"
+
+# fnm
+FNM_PATH="/home/dg/.local/share/applications//fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/dg/.local/share/applications//fnm:$PATH"
+  eval "`fnm env`"
+fi
+eval "$(fnm env --use-on-cd --shell zsh)"
