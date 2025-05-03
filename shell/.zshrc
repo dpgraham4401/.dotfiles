@@ -84,3 +84,6 @@ if [ -f "/Users/dg/miniforge3/etc/profile.d/mamba.sh" ]; then
 fi
 # <<< conda initialize <<<
 
+# Add to zsh fpath
+fpath+=~/.zfunc
+autoload -Uz compinit && compinit
