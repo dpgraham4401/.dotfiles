@@ -1,45 +1,18 @@
 "" Source your .vimrc
 source ~/.vim/vimrc
+
 " putting this here until source works again
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'machakann/vim-highlightedyank'
 
+
 let mapleader = " "
 nmap <space> <Leader>
 nnoremap <Leader>n :NERDTreeToggle<CR>
 set incsearch
-" Plugins
-"<leader>n --> toggle nerdtree
-"| Key     |  Description                                            |
-"| `o`     |  Open files, directories and bookmarks                  |
-"| `go`    |  Open selected file, but leave cursor in the NERDTree   |
-"| `t`     |  Open selected node/bookmark in a new tab               |
-"| `O`     |  Recursively open the selected directory                |
-"| `x`     |  Close the current nodes parent                         |
-"| `X`     |  Recursively close all children of the current node     |
-"| `K`     |  Jump up inside directories at the current tree depth   |
-"| `J`     |  Jump down inside directories at the current tree depth |
-"| `<C-J>` |  Jump down to next sibling of the current directory     |
-"| `<C-K>` |  Jump up to previous sibling of the current directory   |
-"| `m`     |  Display the NERDTree menu                              |
-"| `q`     |  Close the NERDTree window                              |
-"| `A`     |  Zoom (maximize/minimize) the NERDTree window           |
-
-
-
-
-
-"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-"" Map \r to the Reformat Code action
-"map \r <Action>(ReformatCode)
-
-"" Map <leader>d to start debug
-"map <leader>d <Action>(Debug)
-
-"" Map \b to toggle the breakpoint on the current line
-"map \b <Action>(ToggleLineBreakpoint)
+set clipboard+=ideaput
 
 
 " Find more examples here: https://jb.gg/share-ideavimrc
