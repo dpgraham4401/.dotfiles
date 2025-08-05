@@ -14,7 +14,7 @@
     "statusBar.foreground": "#fff",
     "statusBar.debuggingForeground": "#fff"
   },
-  "workbench.colorTheme": "JetBrains Darcula Theme",
+  "workbench.colorTheme": "Default Dark+",
   // files
   "files.exclude": {
     "**/__pycache__": true,
@@ -24,7 +24,6 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    ".vscode": true,
     "**/*.pyc": true
   },
   "files.autoSave": "afterDelay",
@@ -122,6 +121,10 @@
       "commands": ["workbench.action.files.save"]
     },
     {
+      "before": ["leader", "s"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
       "before": ["<C-q>"],
       "commands": [":q"]
     },
@@ -157,22 +160,20 @@
   "mypy-type-checker.path": [
     "C:\\Users\\DGRAHA01\\AppData\\Local\\miniforge3\\envs\\hero\\Scripts\\mypy.exe"
   ],
-  "github.copilot.enable": {
-    "*": false,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
-  },
   "githubLocalActions.dockerDesktopPath": "/Applications/Docker.app",
   "editor.fontFamily": "JetBrains Mono, Source Code Pro, Consolas",
   "python.terminal.activateEnvInCurrentTerminal": true,
   "rust-analyzer.showSyntaxTree": true,
   "githubPullRequests.pullBranch": "never",
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.defaultProfile.": "powershell",
   "editor.fontSize": 13,
   "cSpell.userWords": [
+    "aiohttp",
+    "asyncio",
+    "httpx",
     "isort",
     "mypy",
+    "numpy",
     "pathlib",
     "pycodestyle",
     "pyflakes",
@@ -181,6 +182,16 @@
     "PYTHONIOENCODING",
     "PYTHONUNBUFFERED",
     "pyupgrade",
-    "setuptools"
-  ]
+    "scipy",
+    "setuptools",
+    "uvloop"
+  ],
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "javascript": false
+  },
+  "editor.wordWrapColumn": 800
 }

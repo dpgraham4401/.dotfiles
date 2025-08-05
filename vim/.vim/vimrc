@@ -9,7 +9,7 @@ call plug#begin()
 	" sensible defaults
 	Plug 'tpope/vim-sensible'
 	" Auto add closing brackets
-	Plug 'jiangmiao/auto-pairs'
+	" Plug 'jiangmiao/auto-pairs'
 	" Plug 'Raimondi/delimitMate'
 	" NERDTree file explorer
 	Plug 'preservim/nerdtree'
@@ -26,7 +26,7 @@ call plug#begin()
 	" Fuzzy finder for vim
 	Plug 'junegunn/fzf.vim' 
 	" GitHUb Copilot - autocompletions on crack
-	Plug 'github/copilot.vim'
+	" Plug 'github/copilot.vim'
 	" Neovim specific plugins
 	if has('nvim')
 		" Add a bufferline to the top of the editor
@@ -54,6 +54,9 @@ set hidden
 set rtp+=/opt/homebrew/opt/fz
 set scrolloff=5
 " set spell
+
+" Highlight on yank
+autocmd TextYankPost * silent! lua vim.hl.on_yank {higroup='Visual', timeout=300}
 
 " disable arrow keys, and repeating keys like kkkkk or jjjjjj
 let g:hardtime_default_on = 1
@@ -96,4 +99,3 @@ nnoremap <leader>d dd
 set completeopt=menu,menuone,noselect
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<Tab>"
 
-let g:copilot_workspace_folders = [ "~/Projects/haztrak", "~/Projects/vimpirate", "~/Projects/the-manifest-game", "~/Projects/e-manifest"]
