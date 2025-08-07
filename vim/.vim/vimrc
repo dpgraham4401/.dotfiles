@@ -97,5 +97,5 @@ nnoremap <leader>d dd
 
 " Autocomplete
 set completeopt=menu,menuone,noselect
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<Tab>"
 
