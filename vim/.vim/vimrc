@@ -26,12 +26,12 @@ call plug#begin()
 	" Fuzzy finder for vim
 	Plug 'junegunn/fzf.vim' 
 	" GitHUb Copilot - autocompletions on crack
-	Plug 'github/copilot.vim'
+	" Plug 'github/copilot.vim'
 	" Neovim specific plugins
 	if has('nvim')
 		" Add a bufferline to the top of the editor
 		Plug 'akinsho/bufferline.nvim'
-		" Treesitter -- I always forget what the heck this does
+		" Treesitter -- better syntax highlighting
 		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 		" Open up a terminal without leaving vim
 		Plug 'akinsho/toggleterm.nvim'
@@ -71,8 +71,7 @@ noremap <S-k> :bprevious<CR>
 
 " save and quit
 map <C-s> :w<CR>
-" we override this in neovim with a custom fn, in vim this will close out all
-" buffers
+" we override this in neovim with a custom fn, in vim this will close out all buffers
 map <C-q> :q<CR>
 map <leader>q :q<CR>
 map <leader>s :w<CR>
@@ -84,6 +83,9 @@ if has('nvim')
 	nnoremap <Leader>' :ToggleTerm<CR>
 endif
 
+" Hihglight yanked text
+autocmd TextYankPost * silent! lua vim.hl.on_yank {higroup='Visual', timeout=300}
+
 " move around splits with Alt-arrow
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
@@ -93,6 +95,6 @@ nnoremap <leader>d dd
 
 " Autocomplete
 set completeopt=menu,menuone,noselect
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 let g:copilot_workspace_folders = [ "~/Projects/haztrak", "~/Projects/vimpirate", "~/Projects/the-manifest-game", "~/Projects/e-manifest"]
