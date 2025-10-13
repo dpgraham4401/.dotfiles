@@ -38,12 +38,10 @@ CASE_SENSITIVE="false"
 # ENABLE_CORRECTION="true"
 
 plugins=(
-    dnf
     kubectl
     minikube
     docker
     git
-    web-search
     copybuffer
     dirhistory
     history
@@ -52,6 +50,7 @@ plugins=(
     terraform
     1password
 	python
+	direnv
     # pip
     # conda
     # conda-env
