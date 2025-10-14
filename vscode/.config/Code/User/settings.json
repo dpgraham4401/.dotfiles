@@ -14,7 +14,6 @@
     "statusBar.foreground": "#fff",
     "statusBar.debuggingForeground": "#fff"
   },
-  "workbench.colorTheme": "Default Dark+",
   // files
   "files.exclude": {
     "**/__pycache__": true,
@@ -170,6 +169,7 @@
   "cSpell.userWords": [
     "aiohttp",
     "asyncio",
+    "EOIR",
     "httpx",
     "isort",
     "mypy",
@@ -193,5 +193,7 @@
     "scminput": false,
     "javascript": false
   },
-  "editor.wordWrapColumn": 800
+  "editor.wordWrapColumn": 800,
+  "docker.extension.enableComposeLanguageServer": false,
+  "workbench.colorTheme": "Default Dark+"
 }
