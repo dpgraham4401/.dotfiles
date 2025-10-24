@@ -25,10 +25,10 @@ call plug#begin()
 	Plug 'junegunn/fzf'
 	" Fuzzy finder for vim
 	Plug 'junegunn/fzf.vim' 
-	" GitHUb Copilot - autocompletions on crack
-	" Plug 'github/copilot.vim'
 	" Neovim specific plugins
 	if has('nvim')
+		" GitHUb Copilot - autocompletions on crack
+		Plug 'github/copilot.vim'
 		" Add a bufferline to the top of the editor
 		Plug 'akinsho/bufferline.nvim'
 		" Treesitter -- better syntax highlighting
