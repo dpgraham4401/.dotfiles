@@ -2,7 +2,4 @@
 vim/.vim/*
 !vim/.vim/vimrc
 
-scripts/.local/bin/*
-!scripts/.local/bin/trash
-!scripts/.local/bin/ideamux
 **/.DS_Store
