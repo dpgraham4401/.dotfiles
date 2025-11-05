@@ -8,8 +8,12 @@ setopt autocd nomatch
 unsetopt beep extendedglob notify
 
 # Gcloud
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+if [[ -f "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" ]]; then
+	source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+fi
+if [[ -f "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc" ]]; then
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+fi
 
 bindkey '^H' backward-kill-word
 bindkey -s '^F' 'nvim $(fzf)\n'
@@ -57,7 +61,9 @@ plugins=(
     # golang 
     # helm
 )
-source $ZSH/oh-my-zsh.sh
+if [ -f "$ZSH/oh-my-zsh.sh" ]; then
+	source $ZSH/oh-my-zsh.sh
+fi
 
 # if alias file exist
 if [ -f "$HOME/.local/bin/env" ]; then

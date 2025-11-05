@@ -22,7 +22,9 @@ export HOMEBREW_NO_ENV_HINTS=1
 export GPG_TTY=$(tty)
 export PATH="/opt/homebrew/opt/swift/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
-source "$HOME/.cargo/env"
+if [ -f "$HOME/.cargo/env" ]; then
+	source "$HOME/.cargo/env"
+fi
 alias mv="mv -i"
 alias venv="python3 -m venv"
 alias vim="$EDITOR"
@@ -66,8 +68,13 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 
-eval "$(op completion zsh)"; compdef _op op
-eval "$(uv generate-shell-completion zsh)"
+if command -v op >/dev/null 2>&1; then
+	eval "$(op completion zsh)"; compdef _op op
+fi
+
+if command -v uv >/dev/null 2>&1; then
+	eval "$(uv generate-shell-completion zsh)"
+fi
 
 ### Create and cd into a temporary directory
 tempe () {
