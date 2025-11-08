@@ -14,7 +14,9 @@ postgresql@14
 pre-commit
 stow
 docker
+docker-desktop
 firefox
+firefox@developer-edition
 github
 google-chrome
 jetbrains-toolbox
@@ -30,3 +32,7 @@ inkscape
 microsoft-office
 1password
 1password-cli
+imagemagick
+direnv
+gh
+dbeaver-community
