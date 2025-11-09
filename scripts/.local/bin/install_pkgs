@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+: '
+Install packages from a text file, automatically detects the operating system 
+supports MacOS and linux like operating systems.
+'
 
 MY_OS=0
 

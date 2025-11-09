@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+: '
+Create a tempoaray file, in a tempoarary directory
+and open in EDITOR
+'
 set -e
 set -u
 set -o pipefail

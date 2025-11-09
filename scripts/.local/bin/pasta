@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+: '
+A utility wrapper script around MacOS/unix
+commands to paste text from the clipboard.
+
+Usage:
+    pasta > file_from_my_clipboard.txt
+	pasta | base64 --decode
+'
 set -e
 set -u
 

@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+: '
+A utility script for printing the unix PATH
+with each path item on a separate line.
+
+USAGE:
+    prettypath
+'
 set -e
 set -u
 
