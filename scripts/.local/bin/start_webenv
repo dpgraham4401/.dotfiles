@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
  
 if pgrep -x "httpd" >/dev/null; then
     read -rp "Apache is running, would you like to stop Apache and MariaDB? (y/n) " -n 1 run
