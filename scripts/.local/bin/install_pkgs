@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-MY_OS=0 # used to determine which 
+MY_OS=0 # used to determine which operating system
 pkg_manager="dnf"
 distro="default"
 
@@ -80,6 +80,11 @@ install_from_pkg_file(){
 				exit 1
 			fi
 		elif [[ "$MY_OS" == "2" ]]; then
+			if ! command -v brew &> /dev/null; then
+				echo "brew not found, install brew first (sorry)"
+				echo "https://brew.sh"
+				exit 1
+			fi
 			echo "Installing with brew"
 			brew install $(cat $pkg_file)
 		else

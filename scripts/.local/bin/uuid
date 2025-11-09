@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 # Generate a UUID (Universally Unique Identifier) with python
 # Usage: uuid
 
