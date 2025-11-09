@@ -1,12 +1,19 @@
 # .zshrc
 autoload -U colors && colors
-alias zshrc="source ~/.zshrc"
 fpath+=~/.zfunc
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 setopt autocd nomatch
 unsetopt beep extendedglob notify
+
+# Gcloud
+if [[ -f "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" ]]; then
+	source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+fi
+if [[ -f "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc" ]]; then
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+fi
 
 bindkey '^H' backward-kill-word
 bindkey -s '^F' 'nvim $(fzf)\n'
@@ -26,10 +33,9 @@ zstyle ':vcs_info:*:*:dg' formats "%0.0r"
 PS1='%F{5}%n@%F{14}%1~%f$vcs_info_msg_0_ %(?.%F{#00ff00}√.%F{#ff0000}✗%F{#ffffff}%?)%F{5}>%F{#ffffff}'
 
 ###--Oh My Zsh--###
-export ZSH="/home/dg/.oh-my-zsh"
-
-# Themes
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+# if .oh-my-zsh is not present, run the install script
+[[ -x $HOME/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="false"
@@ -55,7 +61,7 @@ plugins=(
     # pip
     # conda
     # conda-env
-    # golang 
+    # golang
     # helm
 )
 source $ZSH/oh-my-zsh.sh
@@ -80,10 +86,10 @@ else
         export PATH="/home/dg/miniforge3/bin:$PATH"
     fi
 fi
-unset __conda_setup
 
-if [ -f "/home/dg/miniforge3/etc/profile.d/mamba.sh" ]; then
-    . "/home/dg/miniforge3/etc/profile.d/mamba.sh"
+# if alias file exist
+if [ -f "$HOME/.local/bin/env" ]; then
+	. "$HOME/.local/bin/env"
 fi
 # <<< conda initialize <<<
 

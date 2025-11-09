@@ -66,6 +66,14 @@ $ chmod +x ~/.local/bin/install_pkgs && install_pkgs -f ~$HOME/.local/share/fedo
 3. [nm-applet (Network Manager)](https://gitlab.gnome.org/GNOME/network-manager-applet)
 
 ## Notes
+
+[oh my zsh](https://ohmyz.sh/) will automtically be downloaded the first time you open a zsh shell after stowing.
+
+Optional:
+
+- [rustup](https://rustup.rs/)
+- [uv](https://docs.astral.sh/uv/)
+
 ### Fedora specific
 1. qt5-qtwebengine-freeworld to play DRM (netflix etc.) on qutebrowser
     * This is a finicky process, I usually just install chromium-freeworld. It may not work immeadiately. Not sure why. 
@@ -81,6 +89,5 @@ if [ "$XDG_SESSION_DESKTOP" = "sway" ] ; then
 fi
 ```
 2. If using an AMD graphics card, enable the `mesa-va-drivers-freeworld` from rpmfusion.
-    - As of 11/2022, the package is still in update-testing.
     - [See this reddit post](https://www.reddit.com/r/Fedora/comments/yq9p6d/mesafreeworld_available_on_rpmfusion/)
 
