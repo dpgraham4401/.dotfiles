@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
-# Generate a UUID (Universally Unique Identifier) with python
-# Usage: uuid
+: '
+Generate a UUID (Universally Unique Identifier) with python
+
+usage:
+  uuid
+' 
 
 if command -v python3 >/dev/null 2>&1; then
 	python3 -c 'import uuid; print(uuid.uuid4())'

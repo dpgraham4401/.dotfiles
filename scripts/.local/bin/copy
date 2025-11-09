@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+: '
+A wrapper script around MacOS/unix
+commands to simplify copying text from the 
+terminal
+
+Usage:
+  echo "foo" | copy
+'
 set -e
 set -u
 

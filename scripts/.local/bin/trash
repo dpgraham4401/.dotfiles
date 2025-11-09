@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 # wrapper for normal rm command that archives
+# Instead of instantly deleting a file/directory
+# This places the contents in OS's trash directory
+# (depending on the OS) so it can be recovered,
+# or automatically deleted after a period of time 
+# by the OS or a cronjob
 
 usage() {
   echo "Remove Command Wrapper that archives"
