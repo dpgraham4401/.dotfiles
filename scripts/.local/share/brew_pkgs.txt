@@ -36,3 +36,5 @@ imagemagick
 direnv
 gh
 dbeaver-community
+fnm
+pnpm
