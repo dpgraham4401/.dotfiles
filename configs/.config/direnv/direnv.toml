@@ -1,0 +1,6 @@
+[global]
+load_dotenv = true
+hide_end_diff = true
+
+[whitelist]
+prefix = ["~/Projects/haztrak", "~/Projects/ezwaste", "~Projects/ezsite"]

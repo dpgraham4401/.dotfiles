@@ -59,3 +59,5 @@ wayland-devel
 pkgconf
 1password
 1password-cli
+pnpm
+direnv
