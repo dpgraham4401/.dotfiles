@@ -61,3 +61,4 @@ pkgconf
 1password-cli
 pnpm
 direnv
+opentofu

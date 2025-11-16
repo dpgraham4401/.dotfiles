@@ -31,3 +31,5 @@ unset __conda_setup
 
 . "$HOME/.local/share/applications//../bin/env"
 eval "$(uv generate-shell-completion bash)"
+
+complete -C /usr/bin/tofu tofu

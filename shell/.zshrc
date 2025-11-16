@@ -102,3 +102,12 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+complete -o nospace -C /usr/bin/tofu tofu
+
+# fnm
+FNM_PATH="/home/dg/.local/share/applications//fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
