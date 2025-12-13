@@ -10,11 +10,11 @@ kubernetes-cli
 neofetch
 neovim
 postgresql
-postgresql@14
 pre-commit
 stow
 docker
 docker-desktop
+orbstack
 firefox
 firefox@developer-edition
 github

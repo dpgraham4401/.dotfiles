@@ -20,6 +20,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 export KUBECONFIG="$HOME/.kube/config"
 export HOMEBREW_NO_ENV_HINTS=1
 export GPG_TTY=$(tty)
+export GOOGLE_CLOUD_PROJECT="cs-poc-y7fvtcluhzx3vg0ig3qxjzq"
 export PATH="/opt/homebrew/opt/swift/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 if [ -f "$HOME/.cargo/env" ]; then

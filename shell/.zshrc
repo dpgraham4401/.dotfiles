@@ -73,3 +73,9 @@ fi
 # Add to zsh fpath
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
+
+# fnm
+FNM_PATH="/opt/homebrew/opt/fnm/bin"
+if [ -d "$FNM_PATH" ]; then
+  eval "`fnm env`"
+fi
