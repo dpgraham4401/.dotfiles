@@ -1,0 +1,142 @@
+#!/usr/bin/env bash
+: '
+Install packages from a text file, automatically detects the operating system 
+supports MacOS and linux like operating systems.
+'
+
+MY_OS=0
+# By default, if no -f flag is provided, on macos, the Brewfile is used
+pkg_file="$HOME/.local/share/Brewfile"
+
+detect_os() {
+	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+		echo -e "\tLinux operating system detected"
+		MY_OS=1
+	elif [[ "$OSTYPE" == "darwin"* ]]; then
+		echo -e "\tMacOS detected"
+		pkg_manager="brew"
+		MY_OS=2
+	elif [[ "$OSTYPE" == "cygwin" ]]; then
+		echo -e "\tWindows not supported"
+		echo -e "\tSorry"
+		exit 1
+	elif [[ "$OSTYPE" == "msys" ]]; then
+		echo -e "\tWindows not supported"
+		echo -e "\tSorry"
+		exit 1
+	elif [[ "$OSTYPE" == "freebsd"* ]]; then
+		echo -e "\tFreeBsd not supported"
+		echo -e "\tSorry"
+		exit 1
+	else
+		echo -e "\tCould not detect OS Type"
+		echo -e "\tIs the evironment variable $OSTYPE set?"
+		exit 1
+	fi
+}
+
+print_usage() {
+	cat <<-'EOF'
+	Script to help install packages from a text file
+
+	Syntax: installpkgs -f <pkg_file>
+
+	Options:
+	  -f, --file    path to file with list of packages to install, comments not allowed.
+	                If path is a Brewfile, it will use brew bundle (defaults to ~/.local/share/Brewfile)
+	  -h, --help    Print this help and exit
+
+	Examples:
+	  installpkgs -f ~/.local/share/fedora_pkgs.txt
+	  installpkgs -f ~/.local/share/Brewfile
+	EOF
+}
+
+install_brew_pkgs() {
+	if [[ "$(basename "$pkg_file")" == "Brewfile" ]] || [[ "$(basename "$pkg_file")" == "brewfile" ]]; then
+		echo -e "Brewfile found, running 'brew bundle --file=$pkg_file'"
+		brew bundle --file="$pkg_file"
+	else
+		echo -e "Installing with brew"
+		brew install $(cat $pkg_file)
+	fi
+}
+
+install_from_pkg_file(){
+	if test -f "$pkg_file"; then
+		echo -e "Installing from $pkg_file"
+		if [[ "$MY_OS" == "1" ]]; then
+			echo -e "Looking for Package Manager"
+			if command -v pacman &> /dev/null
+			then
+				echo -e "\t\tpacman found"
+				# pacman --version
+				sudo pacman -S $(cat $pkg_file)
+				exit
+			elif command -v dnf &> /dev/null
+			then
+				echo -e "\t\tdnf found"
+				# dnf --version
+				sudo dnf install $(cat $pkg_file)
+				exit
+			elif command -v yum &> /dev/null
+			then
+				echo -e "\t\tyum found"
+				# yum --version
+				sudo yum install $(cat $pkg_file)
+				exit
+			elif command -v apt &> /dev/null
+			then
+				echo -e "\t\tapt found"
+				# apt --version
+			    sudo apt-get install $(cat $pkg_file)
+				exit
+			else
+				echo -e "\t\tPackage manager not found"
+				exit 1
+			fi
+		elif [[ "$MY_OS" == "2" ]]; then
+			if ! command -v brew &> /dev/null; then
+				echo -e "\tbrew not found, install brew first (sorry)"
+				echo "https://brew.sh"
+				exit 1
+			fi
+			install_brew_pkgs
+		else
+			echo -e "\tCould not detect which OSTYPE. This script only supports linux and MacOS"
+			exit 1
+		fi
+	else
+		echo -e "\t\"$pkg_file\" file not found."
+		exit 1
+	fi
+}
+
+
+# # Parse CLI argument
+if [ $# -eq 0 ]; then
+	detect_os
+	if [[ "$MY_OS" == "2" ]]; then
+		install_from_pkg_file
+	fi
+fi
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -f|--file)
+		detect_os
+		pkg_file="$2"
+		install_from_pkg_file
+		shift # past argument
+		shift # past value
+		;;
+	-h|--help)
+		print_usage 
+		exit 1
+	    ;;
+    -*|--*)
+      echo "Unknown option $1"
+      exit 1
+      ;;
+  esac
+done

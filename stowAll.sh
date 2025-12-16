@@ -42,7 +42,7 @@ then
                 :
             else
                 echo "stowing: "$(basename $entry)
-                stow $(basename $entry)
+                stow --restow $(basename $entry)
             fi
         fi
     done

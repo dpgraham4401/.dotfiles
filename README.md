@@ -33,7 +33,8 @@ You can also move them to `~/.dotfiles/archive`, this directory is not stowed bu
 
 4. A script to help install packages is found in `$HOME/.local/bin` directory with list of text files in `$HOME/.local/share`
     ```shell
-    chmod +x ~/.local/share/bin/install_pkgs && install_pkgs -f ~/.local/share/brew_pkgs.txt
+    # ~/.local/share/Brewfile will be used by default if the -f/--file flag is not provided
+    chmod +x ~/.local/share/bin/installpkgs && installpkgs -f ~/.local/share/Brewfile
     ```
 ## Notes
 
