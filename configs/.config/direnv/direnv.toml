@@ -1,6 +1,6 @@
 [global]
 load_dotenv = true
-hide_end_diff = true
+hide_env_diff = true
 
-[whitelist]
-prefix = ["~/Projects/haztrak", "~/Projects/ezwaste"]
+# [whitelist]
+# prefix = ["~/Projects/haztrak"]
