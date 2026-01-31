@@ -1,26 +1,35 @@
-# Formulae
+
+# CLI must haves
 brew "bat"
 brew "cmake"
 brew "curl"
 brew "fzf"
 brew "gnupg"
 brew "go"
-brew "helm"
 brew "htop"
-brew "kubernetes-cli"
 brew "neofetch"
-brew "neovim"
-brew "postgresql"
-brew "pre-commit"
 brew "stow"
 brew "tmux"
+brew "neovim"
+
+# k8s tools
+brew "helm"
+brew "kubernetes-cli"
+
+# Dev CLI tools
+brew "postgresql"
+brew "pre-commit"
 brew "imagemagick"
 brew "direnv"
 brew "gh"
 brew "fnm"
 brew "pnpm"
 brew "docker"
-brew "gemini-cli"
+
+# Terraform
+tap "hashicorp/tap"
+brew "hashicorp/tap/terraform"
+brew "opentofu"
 
 # Casks
 cask "docker-desktop"

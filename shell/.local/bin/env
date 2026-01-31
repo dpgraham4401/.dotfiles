@@ -53,7 +53,7 @@ function pip-install-save {
 }
 
 ### CDPATH ###
-CDPATH="$HOME:$HOME/Projects"
+CDPATH="$HOME:$HOME/Projects:$HOME/Projects/sentry"
 
 # pnpm
 export PNPM_HOME="/Users/dg/Library/pnpm"
