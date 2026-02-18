@@ -27,6 +27,10 @@ brew "fnm"
 brew "pnpm"
 brew "docker"
 
+# AI garbage
+cask "codex"
+cask "codex-app"
+
 # Terraform
 tap "hashicorp/tap"
 brew "hashicorp/tap/terraform"
