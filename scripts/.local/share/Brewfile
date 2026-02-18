@@ -12,9 +12,10 @@ brew "stow"
 brew "tmux"
 brew "neovim"
 
-# k8s tools
+# cloud tools
 brew "helm"
 brew "kubernetes-cli"
+cask "gcloud-cli"
 
 # Dev CLI tools
 brew "postgresql"
