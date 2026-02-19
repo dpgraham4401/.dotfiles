@@ -2,7 +2,6 @@
 export EDITOR="$(which nvim)"
 export VISUAL=$EDITOR
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-export KUBECONFIG="$HOME/.kube/config"
 export GPG_TTY=$(tty)
 alias mv="mv -i"
 alias vim="$EDITOR"
@@ -12,7 +11,6 @@ alias untar="tar -zxvf"
 alias ping="ping -c 5"
 alias config="cd $HOME/.dotfiles"
 alias dev="cd $HOME/Projects"
-alias kube="kubectl"
 alias speed="speedtest-cli --simple"
 alias gf="git fetch --all --prune"
 alias uncommit="git reset --soft HEAD~1"
