@@ -48,10 +48,6 @@ alias curl="curl --fail"
 #     ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
 # fi
 
-function pip-install-save { 
-    pip install $1 && pip freeze | grep $1 >> requirements.txt
-}
-
 ### CDPATH ###
 CDPATH="$HOME:$HOME/Projects:$HOME/Projects/sentry"
 
