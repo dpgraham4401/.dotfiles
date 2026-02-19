@@ -24,5 +24,3 @@ alias curl="curl --fail"
 #     ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
 # fi
 
-### CDPATH ###
-CDPATH="$HOME:$HOME/Projects:$HOME/Projects/sentry"

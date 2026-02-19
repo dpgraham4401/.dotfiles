@@ -8,3 +8,6 @@ case ":${PATH}:" in
 esac
 
 export PATH="${PATH}:${HOME}/.local/bin/"
+
+### CDPATH ###
+CDPATH="$HOME:$HOME/Projects:$HOME/Projects/sentry"
