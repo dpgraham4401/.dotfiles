@@ -51,10 +51,6 @@ alias curl="curl --fail"
 ### CDPATH ###
 CDPATH="$HOME:$HOME/Projects:$HOME/Projects/sentry"
 
-if command -v op >/dev/null 2>&1; then
-	eval "$(op completion zsh)"; compdef _op op
-fi
-
 ### Create and cd into a temporary directory
 tempe () {
   cd "$(mktemp -d)"
