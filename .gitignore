@@ -2,3 +2,6 @@
 vim/.vim/*
 !vim/.vim/vimrc
 
+**/.DS_Store
+.idea/
+.vscode/
