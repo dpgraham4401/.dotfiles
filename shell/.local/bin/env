@@ -10,10 +10,7 @@ case ":${PATH}:" in
         ;;
 esac
 
-export GOPATH="$HOME/go"
 export PATH="${PATH}:${HOME}/.local/bin/"
-export PATH="${PATH}:${GOPATH}/bin"
-export GOROOT=`go env GOROOT`
 export EDITOR="$(which nvim)"
 export VISUAL=$EDITOR
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
@@ -34,7 +31,6 @@ alias py="python3"
 alias config="cd $HOME/.dotfiles"
 alias dev="cd $HOME/Projects"
 alias kube="kubectl"
-alias godev="cd $GOPATH/src/github.com/dpgraham4401"
 alias speed="speedtest-cli --simple"
 alias gf="git fetch --all --prune"
 alias uncommit="git reset --soft HEAD~1"
