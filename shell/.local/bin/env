@@ -3,7 +3,6 @@ export EDITOR="$(which nvim)"
 export VISUAL=$EDITOR
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export KUBECONFIG="$HOME/.kube/config"
-export HOMEBREW_NO_ENV_HINTS=1
 export GPG_TTY=$(tty)
 alias mv="mv -i"
 alias vim="$EDITOR"
@@ -23,4 +22,3 @@ alias curl="curl --fail"
 # if ! pgrep -u "$USER" ssh-agent > /dev/null; then
 #     ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
 # fi
-
