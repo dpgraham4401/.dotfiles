@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+### Create and cd into a temporary directory
+
+set -euo pipefail
+
+if [[ $# -gt 1 ]]; then
+    echo "Usage: tempe [subdir]" >&2
+    exit 1
+fi
+
+tmpdir="$(mktemp -d)"
+chmod 700 "$tmpdir"
+
+target="$tmpdir"
+if [[ $# -eq 1 ]]; then
+    mkdir -p "$tmpdir/$1"
+    target="$tmpdir/$1"
+    chmod 700 "$target"
+fi
+
+printf '%s\n' "$target"
