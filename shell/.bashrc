@@ -14,6 +14,8 @@ export PS1="\[\033[1;32m\]\u@\[\033[1;34m\]\W\[\033[1;34m\] \$\[\033[0m\] "
 eval "$(direnv hook bash)"
 
 # Modular configurations
+# Load all .sh files in ~/.sh directory
+# https://simoninglis.com/posts/modular-bashrc/
 if [ -d "$HOME/.sh" ]; then
     for config in "$HOME/.sh"/*.sh; do
         [ -r "$config" ] && . "$config"

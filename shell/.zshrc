@@ -32,9 +32,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="false"
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
 plugins=(
     kubectl
     minikube
@@ -47,10 +44,8 @@ plugins=(
     gcloud
     terraform
     1password
-	python
-	direnv
-    # pip
-    # golang 
+	  python
+	  direnv
     # helm
 )
 if [ -f "$ZSH/oh-my-zsh.sh" ]; then
@@ -67,6 +62,8 @@ fpath+=~/.zfunc
 autoload -Uz compinit && compinit
 
 # Modular configurations
+# Load all .sh files in ~/.sh directory
+# https://simoninglis.com/posts/modular-bashrc/
 if [ -d "$HOME/.sh" ]; then
     for config in "$HOME/.sh"/*.sh; do
         [ -r "$config" ] && source "$config"
