@@ -1,16 +1,4 @@
 #!/bin/sh
-# add binaries to PATH if they aren't added yet
-# affix colons on either side of $PATH to simplify matching
-case ":${PATH}:" in
-    *:"$HOME/.local/bin":*)
-        ;;
-    *)
-        # Prepending path in case a system-installed binary needs to be overridden
-        export PATH="$HOME/.local/bin:$PATH"
-        ;;
-esac
-
-export PATH="${PATH}:${HOME}/.local/bin/"
 export EDITOR="$(which nvim)"
 export VISUAL=$EDITOR
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
@@ -18,8 +6,6 @@ export KUBECONFIG="$HOME/.kube/config"
 export HOMEBREW_NO_ENV_HINTS=1
 export GPG_TTY=$(tty)
 export GOOGLE_CLOUD_PROJECT="cs-poc-y7fvtcluhzx3vg0ig3qxjzq"
-export PATH="/opt/homebrew/opt/swift/bin:$PATH"
-export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 alias mv="mv -i"
 alias venv="python3 -m venv"
 alias vim="$EDITOR"
