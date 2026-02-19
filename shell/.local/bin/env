@@ -66,10 +66,6 @@ if command -v op >/dev/null 2>&1; then
 	eval "$(op completion zsh)"; compdef _op op
 fi
 
-if command -v uv >/dev/null 2>&1; then
-	eval "$(uv generate-shell-completion zsh)"
-fi
-
 ### Create and cd into a temporary directory
 tempe () {
   cd "$(mktemp -d)"
