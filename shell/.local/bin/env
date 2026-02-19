@@ -1,0 +1,82 @@
+#!/bin/sh
+# add binaries to PATH if they aren't added yet
+# affix colons on either side of $PATH to simplify matching
+case ":${PATH}:" in
+    *:"$HOME/.local/bin":*)
+        ;;
+    *)
+        # Prepending path in case a system-installed binary needs to be overridden
+        export PATH="$HOME/.local/bin:$PATH"
+        ;;
+esac
+
+export GOPATH="$HOME/go"
+export PATH="${PATH}:${HOME}/.local/bin/"
+export PATH="${PATH}:${GOPATH}/bin"
+export GOROOT=`go env GOROOT`
+export EDITOR="$(which nvim)"
+export VISUAL=$EDITOR
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export KUBECONFIG="$HOME/.kube/config"
+export HOMEBREW_NO_ENV_HINTS=1
+export GPG_TTY=$(tty)
+export GOOGLE_CLOUD_PROJECT="cs-poc-y7fvtcluhzx3vg0ig3qxjzq"
+export PATH="/opt/homebrew/opt/swift/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+if [ -f "$HOME/.cargo/env" ]; then
+	source "$HOME/.cargo/env"
+fi
+alias mv="mv -i"
+alias venv="python3 -m venv"
+alias vim="$EDITOR"
+alias ssh="kitty +kitten ssh"
+alias rm="$(which trash)"
+alias untar="tar -zxvf"
+alias ping="ping -c 5"
+alias py="python3"
+alias config="cd $HOME/.dotfiles"
+alias dev="cd $HOME/Projects"
+alias kube="kubectl"
+alias godev="cd $GOPATH/src/github.com/dpgraham4401"
+alias speed="speedtest-cli --simple"
+alias gf="git fetch --all --prune"
+alias uncommit="git reset --soft HEAD~1"
+alias dps="docker ps"
+alias curl="curl --fail"
+# autostart ssh agent
+# if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+#     ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+# fi
+
+function pip-install-save { 
+    pip install $1 && pip freeze | grep $1 >> requirements.txt
+}
+
+### CDPATH ###
+CDPATH="$HOME:$HOME/Projects:$HOME/Projects/sentry"
+
+# pnpm
+export PNPM_HOME="/Users/dg/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+if command -v op >/dev/null 2>&1; then
+	eval "$(op completion zsh)"; compdef _op op
+fi
+
+if command -v uv >/dev/null 2>&1; then
+	eval "$(uv generate-shell-completion zsh)"
+fi
+
+### Create and cd into a temporary directory
+tempe () {
+  cd "$(mktemp -d)"
+  chmod -R 0700 .
+  if [[ $# -eq 1 ]]; then
+    \mkdir -p "$1"
+    cd "$1"
+    chmod -R 0700 .
+  fi
+}
