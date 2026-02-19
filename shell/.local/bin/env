@@ -1,17 +1,12 @@
 #!/bin/sh
-export EDITOR="$(which nvim)"
-export VISUAL=$EDITOR
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export GPG_TTY=$(tty)
 alias mv="mv -i"
+export EDITOR="$(which nvim)"
+export VISUAL=$EDITOR
 alias vim="$EDITOR"
-alias rm="$(which trash)"
 alias untar="tar -zxvf"
 alias ping="ping -c 5"
 alias config="cd $HOME/.dotfiles"
 alias dev="cd $HOME/Projects"
 alias curl="curl --fail"
-# autostart ssh agent
-# if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-#     ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
-# fi
