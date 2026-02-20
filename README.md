@@ -1,86 +1,50 @@
-# .dotfiles
-![desktop screenshot](https://i.ibb.co/TBJSQ6X/sway-screenshot.png)
+# .dotfiles (Macbook branch)
 
-**If you're looking for configs related to Arch Linux or MacOS, see the other branches**
+## Installation and Usage
 
-## Install and Usage ##
-Only 2 packages are needed to get started, Git to clone these configs, and [GNU stow](https://www.gnu.org/software/stow/) to symlink files to the appropriate place on the local machine
+These dotfiles use [GNU stow](https://www.gnu.org/software/stow/) to symlink files to the appropriate place.
 
-1. Install git & stow, if not already installed
-```bash
-$ dnf install git stow
-```
 
-2. Fork this repo and Clone the configs into $HOME/.dotfiles
-```bash
-$ git clone git@github.com:{{GitHub Username Here}}/.dotfiles $HOME/.dotfiles && cd $HOME/.dotfiles
-```
+1. install git, stow if not already installed
+    ```shell
+     brew install git stow
+    ```
+2. Clone thsi git repo into $HOME/.dotfiles
+    ```shell
+    git clone git@github.com:dpgraham4401/.dotfiles $HOME/.dotfiles
+    ```
+3. stow files from the directories you need (see `stow -h`)
+    ```shell
+    stow configs shell scripts
+    ```
 
-3. The Configs in this repo are broken up by catagory. Pick and choose which configs you want by directory (see `stow -h`)
-```bash
-$ stow configs shell scripts # e.g. will symlink all config files in ./configs, ./shell, & ./scripts 
-```
-or use the ./stowAll.sh shell script in the repo root (see `./stowAll.sh -h`)
-```
-$ chmod +x ./stowAll.sh && ./stowAll.sh
-```
-Note: stow will not replace a file that is already present, but it will complain to stdout. Remeber to back up those files incase you'd don't like these configs, then you can use stow/stowAll.sh again. 
-```
-$ mv ~/.bashrc ~/.bashrc.bak && ./stowAll.sh
-```
+or use the ./stowAll.sh script (see `./stowAll.sh -h`)
 
-4. A script to help install packages, is found in `$HOME/.local/bin/install_pkgs` with accompanying text files, with lists of packages, in the `$HOME/.local/share/` directory
-```
-$ chmod +x ~/.local/bin/install_pkgs && install_pkgs -f ~$HOME/.local/share/fedora_pkgs.txt
-```
+    ```shell
+    chmod +x ./stowAll.sh && ./stowAll.sh
+    ```
 
-### Packages
-1. [sway](https://github.com/swaywm/sway)
-2. [swaylock](https://github.com/swaywm/swaylock)
-3. [swayidle](https://github.com/swaywm/swayidle)
-4. [sworkstyle](https://github.com/Lyr-7D1h/swayest_workstyle)
-5. [waybar](https://github.com/Alexays/Waybar)
-6. [mako](https://github.com/emersion/mako)
-7. [wev](https://git.sr.ht/~sircmpwn/wev)
-8. [wofi](https://hg.sr.ht/~scoopta/wofi)
-### Useful Utilities
-1. [playerctl](https://github.com/altdesktop/playerctl)
-2. [pulseaudio (pactl)](https://freedesktop.org/software/pulseaudio/pavucontrol/)
-3. [pavucontrol](https://freedesktop.org/software/pulseaudio/pavucontrol/)
-4. [light](https://github.com/haikarainen/light) (or [brightnessctl](https://github.com/Hummer12007/brightnessctl))
-5. [grim](https://github.com/emersion/grim)
-6. [slurp](https://github.com/emersion/slurp)
-7. [swappy](https://github.com/jtheoof/swappy)
-### Applications
-1. [foot](https://codeberg.org/dnkl/foot/commits/branch/master) 
-2. [kitty](https://sw.kovidgoyal.net/kitty/)
-3. [Ranger](https://github.com/ranger/ranger)
-4. [zsh](https://zsh.sourceforge.io/)
-5. [oh-my-zsh](https://github.com/ohmyzsh)
-6. [neovim](https://github.com/neovim/neovim)
-7. [firefox-wayland](https://www.mozilla.org/en-US/firefox/)
-8. [qutebrowser](https://github.com/qutebrowser/qutebrowser)
-### Applets (tray)
-1. [blueman-applet](https://github.com/blueman-project/blueman)
-2. [gammastep-indicator](https://gitlab.com/chinstrap/gammastep)
-3. [nm-applet (Network Manager)](https://gitlab.gnome.org/GNOME/network-manager-applet)
+Note: stow will not replace a file that is already present, but it will complain to stdout. Remeber to back up those files incase you'd don't like these configs.  
+You can also move them to `~/.dotfiles/archive`, this directory is not stowed but it is checked into git
 
+    ```shell
+    mv ~/.bashrc ~/.bashrc.bak
+    ```
+
+4. A script to help install packages is found in `$HOME/.local/bin` directory with list of text files in `$HOME/.local/share`
+    ```shell
+    # ~/.local/share/Brewfile will be used by default if the -f/--file flag is not provided
+    chmod +x ~/.local/share/bin/installpkgs && installpkgs -f ~/.local/share/Brewfile
+    ```
 ## Notes
-### Fedora specific
-1. qt5-qtwebengine-freeworld to play DRM (netflix etc.) on qutebrowser
-    * This is a finicky process, I usually just install chromium-freeworld. It may not work immeadiately. Not sure why. 
 
-### PyPi Packages
-1. [autotiling](https://github.com/nwg-piotr/autotiling)
+*You should inspects random scripts from the internet before running them, like this one.*
 
-## Other Tips
-1. add the following to /etc/environment to use java applications like PyCharm
-```bash
-if [ "$XDG_SESSION_DESKTOP" = "sway" ] ; then
-    export _JAVA_AWT_WM_NONREPARENTING=1
-fi
-```
-2. If using an AMD graphics card, enable the `mesa-va-drivers-freeworld` from rpmfusion.
-    - As of 11/2022, the package is still in update-testing.
-    - [See this reddit post](https://www.reddit.com/r/Fedora/comments/yq9p6d/mesafreeworld_available_on_rpmfusion/)
+[oh my zsh](https://ohmyz.sh/) will automtically be downloaded the first time you open a zsh shell after stowing,
+but you still need to install brew [brew](https://brew.sh)
+
+Optional:
+
+- [rustup](https://rustup.rs/)
+- [uv](https://docs.astral.sh/uv/)
 
