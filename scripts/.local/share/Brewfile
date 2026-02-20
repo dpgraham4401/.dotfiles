@@ -1,0 +1,58 @@
+
+# CLI must haves
+brew "bat"
+brew "cmake"
+brew "curl"
+brew "fzf"
+brew "gnupg"
+brew "go"
+brew "htop"
+brew "neofetch"
+brew "stow"
+brew "tmux"
+brew "neovim"
+
+# cloud tools
+brew "helm"
+brew "kubernetes-cli"
+cask "gcloud-cli"
+
+# Dev CLI tools
+brew "postgresql"
+brew "pre-commit"
+brew "imagemagick"
+brew "direnv"
+brew "gh"
+brew "fnm"
+brew "pnpm"
+brew "docker"
+
+# AI garbage
+cask "codex"
+cask "codex-app"
+
+# Terraform
+tap "hashicorp/tap"
+brew "hashicorp/tap/terraform"
+brew "opentofu"
+
+# Casks
+cask "docker-desktop"
+cask "orbstack"
+cask "firefox"
+cask "firefox@developer-edition"
+cask "github"
+cask "google-chrome"
+cask "jetbrains-toolbox"
+cask "kitty"
+cask "pgadmin4"
+cask "postman"
+cask "protonvpn"
+cask "spotify"
+cask "steam"
+cask "visual-studio-code"
+cask "inkscape"
+cask "microsoft-office"
+cask "1password"
+cask "1password-cli"
+cask "dbeaver-community"
