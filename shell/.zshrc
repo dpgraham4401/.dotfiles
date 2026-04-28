@@ -36,6 +36,7 @@ plugins=(
     kubectl
     minikube
     docker
+	docker-compose
     git
     copybuffer
     dirhistory
@@ -44,8 +45,8 @@ plugins=(
     gcloud
     terraform
     1password
-	  python
-	  direnv
+	python
+    direnv
     # helm
 )
 if [ -f "$ZSH/oh-my-zsh.sh" ]; then
