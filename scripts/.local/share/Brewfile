@@ -23,37 +23,39 @@ brew "pre-commit"
 brew "imagemagick"
 brew "direnv"
 brew "gh"
-# brew "fnm"
 brew "nvm"
 brew "pnpm"
+
+# Container
 brew "docker"
+cask "docker-desktop"
+cask "orbstack"
 
 # AI garbage
-cask "codex"
-cask "codex-app"
+cask "claude"
+cask "claude-code"
 
 # Terraform
 tap "hashicorp/tap"
 brew "hashicorp/tap/terraform"
 brew "opentofu"
 
-# Casks
-cask "docker-desktop"
-cask "orbstack"
-cask "firefox@developer-edition"
+# Development
 cask "github"
+cask "jetbrains-toolbox"
+cask "visual-studio-code"
+cask "postman"
+cask "dbeaver-community"
+cask "kitty"
+
+# Everything else
+cask "firefox@developer-edition"
 cask "google-chrome"
 cask "google-drive"
-cask "jetbrains-toolbox"
-cask "kitty"
-cask "pgadmin4"
-cask "postman"
 cask "protonvpn"
 cask "spotify"
 cask "steam"
-cask "visual-studio-code"
 cask "inkscape"
-cask "microsoft-office"
 cask "1password"
 cask "1password-cli"
-cask "dbeaver-community"
+cask "raspberry-pi-manager"
